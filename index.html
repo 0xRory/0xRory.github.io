@@ -1,0 +1,1158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rory - Personal Portfolio</title>
+
+  <!--
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
+
+  <!--
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!--
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!--
+    - #MAIN
+  -->
+
+  <main>
+
+    <!--
+      - #SIDEBAR
+    -->
+
+    <aside class="sidebar" data-sidebar>
+
+      <div class="sidebar-info">
+
+        <figure class="avatar-box">
+          <img src="./assets/images/my-avatar.jpg" alt="Rory" width="80">
+        </figure>
+
+        <div class="info-content">
+          <h1 class="name" title="Rory">Rory</h1>
+
+          <p class="title">Full Stack developer</p>
+        </div>
+
+        <button class="info_more-btn" data-sidebar-btn>
+          <span>Show Contacts</span>
+
+          <ion-icon name="chevron-down"></ion-icon>
+        </button>
+
+      </div>
+
+      <div class="sidebar-info_more">
+
+        <div class="separator"></div>
+
+        <ul class="contacts-list">
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="mail-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Email</p>
+
+              <a href="mailto:richard@example.com" class="contact-link">0x1rory@gmail.com</a>
+            </div>
+
+          </li>
+
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="location-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Location</p>
+
+              <address>Taiwan, Taichung </address>
+            </div>
+
+          </li>
+
+        </ul>
+
+        <div class="separator"></div>
+
+        <ul class="social-list">
+
+          <li class="social-item">
+            <a href="https://github.com/0xRory" target="_blank" class="social-link">
+              <ion-icon name="logo-github"></ion-icon>
+            </a>
+          </li>
+
+          <li class="social-item">
+            <a href="https://twitter.com/0x_Rory" target="_blank" class="social-link">
+              <ion-icon name="logo-twitter"></ion-icon>
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+    </aside>
+
+
+
+
+
+    <!--
+      - #main-content
+    -->
+
+    <div class="main-content">
+
+      <!--
+        - #NAVBAR
+      -->
+
+      <nav class="navbar">
+
+        <ul class="navbar-list">
+
+          <li class="navbar-item">
+            <button class="navbar-link  active" data-nav-link>About</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Resume</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Portfolio</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Blog</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Contact</button>
+          </li>
+
+        </ul>
+
+      </nav>
+
+
+
+
+
+      <!--
+        - #ABOUT
+      -->
+
+      <article class="about  active" data-page="about">
+
+        <header>
+          <h2 class="h2 article-title">About me</h2>
+        </header>
+
+        <section class="about-text">
+          <h1 id="hi-my-name-is-0xrory">Hi, My name is Rory</h1>
+          <p><strong>簡介</strong>
+            <img src="https://img.shields.io/badge/About%20me-000?&amp;logo=About.me&amp;labelColor=000"
+              alt="About me"><br />
+            👨‍💻 Jack of all trades, a versatile engineer. Besides daily focus on front-end and back-end technologies,
+            mobile and desktop development, I am also deeply interested in emerging technologies like Web 3, blockchain,
+            AI, and more.
+          </p>
+          <p><strong>語言</strong></p>
+
+          <img src="https://img.shields.io/badge/日常:-blue" alt="">
+          <div class="about-skill-item">
+            <img src="https://img.shields.io/badge/HTML-000?&amp;logo=HTML5&amp;labelColor=000" alt="HTML">
+            <img src="https://img.shields.io/badge/CSS-000?&amp;logo=CSS3&amp;labelColor=000" alt="CSS">
+            <img src="https://img.shields.io/badge/JavaScript-000?&amp;logo=JavaScript&amp;labelColor=000"
+              alt="JavaScript">
+            <img src="https://img.shields.io/badge/TypeScript-000?&amp;logo=TypeScript&amp;labelColor=000"
+              alt="TypeScript">
+            <img src="https://img.shields.io/badge/Go-000?&amp;logo=GO&amp;labelColor=000" alt="GO">
+          </div>
+
+          <img src="https://img.shields.io/badge/偶爾:-yellow" alt="">
+          <div class="about-skill-item">
+            <img src="https://img.shields.io/badge/Docker-000?&amp;logo=Docker&amp;labelColor=000" alt="Docker">
+            <img src="https://img.shields.io/badge/Linux-000?&amp;logo=Linux&amp;labelColor=000" alt="Linux">
+          </div>
+
+          <img src="https://img.shields.io/badge/關注:-green" alt="">
+          <div class="about-skill-item">
+            <img src="https://img.shields.io/badge/Solidity-000?&amp;logo=Solidity&amp;labelColor=000" alt="Solidity">
+            <img src="https://img.shields.io/badge/Dart-000?&amp;logo=Dart&amp;labelColor=000" alt="Dart">
+            <img src="https://img.shields.io/badge/Python-000?&amp;logo=Python&amp;labelColor=000" alt="Python">
+          </div>
+          <p><strong>框架</strong></p>
+          <img src="https://img.shields.io/badge/FE:-deepskyblue" alt="">
+          <div class="about-skill-item">
+            <img src="https://img.shields.io/badge/React-000?&amp;logo=React&amp;labelColor=000" alt="React">
+            <img src="https://img.shields.io/badge/-Vue-000?&amp;logo=Vuedotjs&amp;labelColor=000" alt="Vue">
+            <img src="https://img.shields.io/badge/-Flutter-000?&amp;logo=Flutter&amp;labelColor=000" alt="Flutter">
+            <img
+              src="https://img.shields.io/badge/-ReactNative-000?&amp;logo=data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSItMTEuNSAtMTAuMjMxNzQgMjMgMjAuNDYzNDgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBmaWxsPSIjNjFkYWZiIiByPSIyLjA1Ii8+PGcgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNjFkYWZiIj48ZWxsaXBzZSByeD0iMTEiIHJ5PSI0LjIiLz48ZWxsaXBzZSByeD0iMTEiIHJ5PSI0LjIiIHRyYW5zZm9ybT0ibWF0cml4KC41IC44NjYwMjU0IC0uODY2MDI1NCAuNSAwIDApIi8+PGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIiB0cmFuc2Zvcm09Im1hdHJpeCgtLjUgLjg2NjAyNTQgLS44NjYwMjU0IC0uNSAwIDApIi8+PC9nPjwvc3ZnPg==&amp;labelColor=000"
+              alt="ReactNative">
+            <img src="https://img.shields.io/badge/-Webpack-000?&amp;logo=Webpack&amp;labelColor=000" alt="Webpack">
+            <img src="https://img.shields.io/badge/-Less-000?&amp;logo=Less&amp;labelColor=000" alt="Less">
+            <img src="https://img.shields.io/badge/-Sass-000?&amp;logo=Sass&amp;labelColor=000" alt="Sass">
+            <img src="https://img.shields.io/badge/-Tailwind%20CSS-000?&amp;logo=Tailwind%20CSS&amp;labelColor=000"
+              alt="Tailwind CSS">
+            <img src="https://img.shields.io/badge/-Ant%20Design-000?&amp;logo=Ant%20Design&amp;labelColor=000"
+              alt="Ant Design">
+          </div>
+
+          <img src="https://img.shields.io/badge/BE:-cadetblue" alt="">
+          <div class="about-skill-item">
+            <img src="https://img.shields.io/badge/Next.js-000?&amp;logo=NextdotJS&amp;labelColor=000" alt="NextJS">
+            <img src="https://img.shields.io/badge/Nest.js-000?&amp;logo=NestJS&amp;labelColor=000" alt="NestJS">
+            <img src="https://img.shields.io/badge/Express-000?&amp;logo=Express&amp;labelColor=000" alt="Express">
+            <img src="https://img.shields.io/badge/Django-000?&amp;logo=Django&amp;labelColor=000" alt="Django">
+            <img src="https://img.shields.io/badge/Fiber-000" alt="Fiber">
+
+          </div>
+
+          <img src="https://img.shields.io/badge/Database:-sandybrown" alt="">
+          <div class="about-skill-item">
+            <img src="https://img.shields.io/badge/MySQL-000?&amp;logo=MySQL&amp;labelColor=000" alt="MySQL">
+            <img src="https://img.shields.io/badge/PostgreSQL-000?&amp;logo=PostgreSQL&amp;labelColor=000"
+              alt="PostgreSQL">
+            <img src="https://img.shields.io/badge/MongoDB-000?&amp;logo=MongoDB&amp;labelColor=000" alt="MongoDB">
+            <img src="https://img.shields.io/badge/Redis-000?&amp;logo=Redis&amp;labelColor=000" alt="Redis">
+          </div>
+          <img src="https://img.shields.io/badge/Web3:-yellowgreen" alt="">
+          <div class="about-skill-item">
+            <img src="https://img.shields.io/badge/Solidity-000?&amp;logo=Solidity&amp;labelColor=000" alt="Solidity">
+            <img src="https://img.shields.io/badge/web3.js-000?&amp;logo=web3dotjs&amp;labelColor=000" alt="web3.js">
+            <img src="https://img.shields.io/badge/ethers.js-000?&amp;logo=ethereum&amp;labelColor=000" alt="ethers.js">
+
+          </div>
+
+
+          <p><strong>社交</strong></p>
+          <div class="about-skill-item">
+            <a href="https://github.com/0xRory"><img src="https://img.shields.io/badge/-GitHub-000?logo=GitHub"
+                alt="GitHub"></a>
+            <a href="https://twitter.com/0x_Rory"><img src="https://img.shields.io/badge/-Twitter-000?logo=Twitter"
+                alt="twitter"></a>
+          </div>
+
+        </section>
+
+
+        <!--
+          - service
+        -->
+
+        <section class="service">
+
+          <h3 class="h3 service-title">What i'm doing</h3>
+
+          <ul class="service-list">
+
+
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="./assets/images/icon-dev.svg" alt="Web development icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Developer</h4>
+
+                <p class="service-item-text">
+                  Use the framework to quickly develop back-end, image websites, shopping carts, and various systems.
+                </p>
+              </div>
+
+            </li>
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="./assets/images/icon-app.svg" alt="mobile app icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Mobile apps</h4>
+
+                <p class="service-item-text">
+                  Develop for iOS and Android with flutter.
+                </p>
+              </div>
+
+            </li>
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="./assets/images/icon-design.svg" alt="camera icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Project Management</h4>
+
+                <p class="service-item-text">
+                  Control project progress and verify open source software quickly.
+                </p>
+              </div>
+
+            </li>
+
+          </ul>
+
+        </section>
+
+
+
+
+        <!--
+          - testimonials modal
+        -->
+
+        <div class="modal-container" data-modal-container>
+
+          <div class="overlay" data-overlay></div>
+
+          <section class="testimonials-modal">
+
+            <button class="modal-close-btn" data-modal-close-btn>
+              <ion-icon name="close-outline"></ion-icon>
+            </button>
+
+            <div class="modal-img-wrapper">
+              <figure class="modal-avatar-box">
+                <img src="./assets/images/avatar-1.png" alt="Daniel lewis" width="80" data-modal-img>
+              </figure>
+
+              <img src="./assets/images/icon-quote.svg" alt="quote icon">
+            </div>
+
+            <div class="modal-content">
+
+              <h4 class="h3 modal-title" data-modal-title>Daniel lewis</h4>
+
+              <time datetime="2021-06-14">14 June, 2021</time>
+
+              <div data-modal-text>
+                <p>
+                  Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
+                  lot of experience
+                  and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
+                  consectetur adipiscing
+                  elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
+                </p>
+              </div>
+
+            </div>
+
+          </section>
+
+        </div>
+
+
+
+      </article>
+
+
+
+
+
+      <!--
+        - #RESUME
+      -->
+
+      <article class="resume" data-page="resume">
+
+        <header>
+          <h2 class="h2 article-title">Resume</h2>
+        </header>
+
+        <section class="timeline">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+
+            <h3 class="h3">Education</h3>
+          </div>
+
+          <ol class="timeline-list">
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Tunghai University</h4>
+              <h5 class="h5"> Institute of Information Engineering.</h5>
+              <span>2016.09 - 2018.06</span>
+
+
+
+            </li>
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title"> Ling Tung University</h4>
+              <h5 class="h5"> Department of Information Management </h5>
+              <span>2006.09 — 2010.06</span>
+
+
+
+            </li>
+
+
+          </ol>
+
+        </section>
+
+        <section class="timeline">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+
+            <h3 class="h3">Experience</h3>
+          </div>
+
+          <ol class="timeline-list">
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">YILE TECHNOLOGY</h4>
+
+              <span>2012.11 — Present</span>
+
+              <p class="timeline-text">
+                Mainly responsible for Web 3.0 development and game background.
+              </p>
+
+            </li>
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">SHOESCONN TECHNOLOGY</h4>
+
+              <span>2020.4 — 2021.7</span>
+
+              <p class="timeline-text">
+                Lead a team of five to develop IoT-related Web and mobile applications.
+              </p>
+
+            </li>
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">SMART ECARE INC</h4>
+
+              <span>2019.4 — 2020.3</span>
+
+              <p class="timeline-text">
+                I'm looking to transition into a role focused on research and system architecture development. I would
+                be responsible for projects related to the "Peritoneal Dialysis System," "Respiratory System," IoT
+                integration, and hybrid mobile app development.
+              </p>
+
+            </li>
+
+            <p class="timeline-item">
+
+            <h4 class="h4 timeline-item-title">Kuang Tien General Hospital</h4>
+
+            <span>2011.9 — 2018.9</span>
+
+            <p class="timeline-text">
+              From September 2011 to September 2018, I had a lot of work responsibilities and learned the importance
+              of self-growth. My job duties included:
+            </p>
+            <p class="timeline-text">
+              1. Handling the declaration business for the Health Insurance Bureau and processing IC card uploads.
+            </p>
+            <p class="timeline-text">
+              2. Maintaining and troubleshooting existing programs.
+            </p>
+            <p class="timeline-text">
+              3. Developing an internal indicator system.
+              Managing RIS and LIS systems, as well as handling laboratory and radiological instruments.
+            </p>
+            <p class="timeline-text">
+              4. Assisting with BI data processing.
+            </p>
+            <p class="timeline-text">
+              5. Conducting internal education and training.
+            </p>
+            <p class="timeline-text">
+              However, I eventually felt the desire to explore other career opportunities, which led me to choose to
+              resign from my position.
+            </p>
+
+            </li>
+
+          </ol>
+
+        </section>
+        <section class="skill">
+
+          <h3 class="h3 skills-title">Doing</h3>
+
+          <p style="    color: var(--light-gray);
+          font-size: var(--fs-6);
+          font-weight: var(--fw-3);
+          line-height: 1.6;">
+            I'm currently working on a tutorial on transitioning from Web2 to Web3, and once it's completed, I will
+            write a tutorial on exploring Web3 using Flutter. In the future, I plan to further enhance my frontend and
+            Flutter skills, and I am open to learning new knowledge without any hesitation.
+
+          </p>
+
+        </section>
+
+      </article>
+
+
+
+
+
+      <!--
+        - #PORTFOLIO
+      -->
+
+      <article class="portfolio" data-page="portfolio">
+
+        <header>
+          <h2 class="h2 article-title">Portfolio</h2>
+        </header>
+
+        <section class="projects">
+
+          <!-- <ul class="filter-list">
+
+            <li class="filter-item">
+              <button class="active" data-filter-btn>All</button>
+            </li>
+
+            <li class="filter-item">
+              <button data-filter-btn>Web design</button>
+            </li>
+
+            <li class="filter-item">
+              <button data-filter-btn>Applications</button>
+            </li>
+
+            <li class="filter-item">
+              <button data-filter-btn>Web development</button>
+            </li>
+
+          </ul> -->
+
+          <div class="filter-select-box">
+
+            <button class="filter-select" data-select>
+
+              <!-- <div class="select-value" data-selecct-value>Select category</div> -->
+
+              <!-- <div class="select-icon">
+                <ion-icon name="chevron-down"></ion-icon>
+              </div> -->
+
+            </button>
+
+            <!-- <ul class="select-list">
+
+              <li class="select-item">
+                <button data-select-item>All</button>
+              </li>
+
+              <li class="select-item">
+                <button data-select-item>Website</button>
+              </li>
+
+              <li class="select-item">
+                <button data-select-item>APP</button>
+              </li>
+              <li class="select-item">
+                <button data-select-item>Applications</button>
+              </li>
+
+
+            </ul> -->
+
+          </div>
+
+          <!--關閉作品展示-->
+          <div class="tip_product sd">
+            <a href="javascript:;" class="r5 tip_area_close" aria-hidden="true">
+              <ion-icon name="close-outline"></ion-icon>
+            </a>
+
+            <div id="tip_carousel" class="carousel slide" data-ride="carousel">
+              <div class="carousel-inner">
+
+                <!--CSBS-->
+                <div class="item">
+                  <div class="banner product_h2">
+                    <div class="logo" style="
+                          font-size: x-large;
+                          text-align: center;
+                          vertical-align: middle;
+                          opacity: 1;
+                          top: 50%;
+                          color: aliceblue;">
+                      <h1>CSBS</h1>
+                    </div>
+                    <div class="banner_bg"></div>
+                  </div>
+                  <div class="descprition">
+                    <h3><i aria-hidden="true" data-icon="&#xe013;"></i>Community SBT Basket and Seal</h3>
+                    <p class="quote">
+                      Community SBT Basket and Seal：一款免費開源的SBT DApp，幫助社區和多重身份的個體來發行和管理分散於各個社區Event、Activity的時光碎片。<br />
+                    </p>
+                    <p>
+                      主要實作：批次發放 SBT , 以及社區活動的管理。
+                    </p>
+                    <p class="pic">
+                      <video id="movie" preload controls loop poster="poster.png" width="640" height="360">
+                        <source src="./assets/project3/demo.mp4" type="video/mp4" />
+                        您的瀏覽器不支援HTML 5影片播放標籤<video>格式。
+                          Your browser doesn't support the <video> tag.
+                          </video>
+                    </p>
+                    <p> 可以參考： <a href="https://github.com/PlanckerLabs/CSBS"
+                        target="_blank">https://github.com/PlanckerLabs/CSBS</a></p>
+                  </div>
+
+                </div>
+                <!--i-lolly-->
+                <div class="item">
+                  <div class="banner product_h3">
+                    <div class="logo" style="
+                          font-size: x-large;
+                          text-align: center;
+                          vertical-align: middle;
+                          opacity: 1;
+                          top: 50%;
+                          color: aliceblue;">
+                      <h1>i-lolly</h1>
+                    </div>
+                    <div class="banner_bg"></div>
+                  </div>
+                  <div class="descprition">
+                    <h3><i aria-hidden="true" data-icon="&#xe013;"></i>i-lolly</h3>
+                    <p class="quote">
+                      利用 IOT 人臉溫度機＋溫濕度傳感器整合在校園裡面。<br />
+                    </p>
+                    <p>
+                      施作技術 雲端伺服器＋中繼資料緩衝區＋後台＋資料庫＋IOT＋APP(推播通知)
+                    </p>
+                    <p style="display: flex; justify-content: center;">
+                      IOT 中台是使用 <a href="https://thingsboard.io/docs/getting-started-guides/what-is-thingsboard/"
+                        target="_blank">thingsboard</a> 開源軟體施作。
+
+                    </p>
+                    <p class="pic">
+                      <img src="./assets/project4/i-lolly-flow.png" alt="i-lolly架構流程" />
+                      <span>流程架構</span>
+                    </p>
+                    <div style="display: flex; justify-content: center;">
+                      <a href="https://play.google.com/store/apps/details?id=com.shoesconn.fultter_ims" target="_blank">
+                        <img src="./assets/project4/android_download.jpg" width="200" height="100" alt="android" />
+                      </a>
+                      <a href="https://apps.apple.com/tw/app/i-lolly/id1526973956" target="_blank">
+                        <img src="./assets/project4/apple_download.jpg" width="200" height="100" alt="ios" />
+                      </a>
+                    </div>
+                  </div>
+
+                </div>
+                <!--AreaDrop-->
+                <div class="item active">
+                  <div class="banner product_h1">
+                    <div class="logo"
+                      style="font-size: x-large;text-align: center;vertical-align: middle;opacity: 1;top: 50%;color: aliceblue;">
+                      <h1>AreaDrop</h1>
+                    </div>
+                    <div class="banner_bg"></div>
+                  </div>
+                  <div class="descprition">
+                    <h3><i aria-hidden="true" data-icon="&#xe0e6;"></i>AreaDrop</h3>
+                    <p>主要是練習Java和Android並模仿Apple MAC的AirDrop，所以功能名稱命名為AreaDrop</p>
+                    <p>通常設定裝置IOT網路都非常麻煩，所以使用手機去設定！另外使用Ｗebstock來做傳輸。</p>
+                    <p class="pic">
+                      <img src="./assets/project5/pic_lw_login.jpg" width="400" height="400" alt="概念架構" />
+                      <span>概念架構</span>
+                    </p>
+                    <p>下列展示手機設定伺服器網路</p>
+                    <p class="pic">
+                      <video id="movie" preload controls loop poster="poster.png" width="640" height="360">
+                        <source src="./assets/project5/bindmodel.mp4" type="video/mp4" />
+                        您的瀏覽器不支援HTML 5影片播放標籤<video>格式。
+                          Your browser doesn't support the <video> tag.
+                          </video>
+                    </p>
+                    <p>下列展示跨平台傳輸檔案（手機、電腦）。</p>
+                    <p class="pic">
+                      <video id="movie" preload controls loop poster="poster.png" width="640" height="360">
+                        <source src="./assets/project5/sendmodel.mov" type="video/mp4" />
+                        您的瀏覽器不支援HTML 5影片播放標籤<video>格式。
+                          Your browser doesn't support the <video> tag.
+                          </video>
+                    </p>
+                  </div>
+                </div>
+                <!--CrazyG-->
+                <div class="item">
+                  <div class="banner product_h4">
+                    <div class="logo" style="
+                          font-size: x-large;
+                          text-align: center;
+                          vertical-align: middle;
+                          opacity: 1;
+                          top: 50%;
+                          color: aliceblue;">
+                      <h1>瘋 G 點</h1>
+                    </div>
+                    <div class="banner_bg"></div>
+                  </div>
+                  <div class="descprition">
+                    <h3><i aria-hidden="true" data-icon="&#xe013;"></i>瘋 G 點(電商 APP)</h3>
+                    <div style="display: flex; flex-wrap: wrap;justify-content: center;">
+                      <p>
+                        <img class="p6" src="./assets/project6/index-1.jpeg" width="200" height="400" alt="android" />
+                      </p>
+                      <p>
+                        <img class="p6" src="./assets/project6/index-2.jpeg" width="200" height="400" alt="android" />
+                      </p>
+                      <p>
+                        <img class="p6" src="./assets/project6/index-3.jpeg" width="200" height="400" alt="android" />
+                      </p>
+                      <p>
+                        <img class="p6" src="./assets/project6/index-4.jpeg" width="200" height="400" alt="android" />
+                      </p>
+                      <p>
+                        <img class="p6" src="./assets/project6/index-5.jpeg" width="200" height="400" alt="android" />
+                      </p>
+
+                    </div>
+                    <p class="pic">
+                      <span>呈現畫面</span>
+                    </p>
+                    <p class="pic">
+                      <video id="movie" preload controls loop poster="poster.png" width="640" height="360">
+                        <source src="./assets/project6/demo.mp4" type="video/mp4" />
+                        您的瀏覽器不支援HTML 5影片播放標籤<video>格式。
+                          Your browser doesn't support the <video> tag.
+                          </video>
+                    </p>
+                    <p class="pic">
+                      <span>點數兌換</span>
+                    </p>
+                    <div style="display: flex; justify-content: center;">
+                      <a href="https://play.google.com/store/apps/details?id=io.uniapp.crazyg" target="_blank">
+                        <img src="./assets/project4/android_download.jpg" width="200" height="100" alt="android" />
+                      </a>
+                    </div>
+                  </div>
+
+                </div>
+                <!-- airweb-->
+                <div class="item">
+                  <div class="banner product_h5">
+                    <div class="logo" style="
+                                          font-size: x-large;
+                                          text-align: center;
+                                          vertical-align: middle;
+                                          opacity: 1;
+                                          top: 50%;
+                                          color: aliceblue;">
+                      <h1>空氣網(後台)</h1>
+                    </div>
+                    <div class="banner_bg"></div>
+                  </div>
+                  <div class="descprition">
+                    <h3><i aria-hidden="true" data-icon="&#xe108;"></i>空氣網(後台)<a href="https://wot.epa.gov.tw/"
+                        target="_blank" class="btn_green r5">網站</a></h3>
+                    <p>主要是串接中華電信IoT智慧聯網大平台之感測資料於環保署做呈現</p>
+                    <p class="quote">
+                      2018年10月有機會合作串接IOT設備在做空氣污染資料介接。<br />
+                      主要使用Python 為後端開發語言，使用django來作為後端開發框架。<br />
+                      網頁伺服器使用:NGINX，與其串接使用uWSGI，另外ＡＰＩ建立框架使用REST framework。<br>
+                      管理服務及排層工具:supervisor、Crontab<br>
+                      因每天資料量非常大3G~10G，故使用監控軟體(ZABBIX)來監控伺服器狀況及ＤＢ容量，呈現則使用(Grfana)。
+                    </p>
+                    <p class="pic">
+                      <img src="./assets/project7/Air_Postflow.png" width="500" height="300" alt="系統架構圖" />
+                      <span>系統架構</span>
+                    </p>
+                    <div class="time">
+                      <em>2018</em>年<em>10</em>月<b>-</b><em>2019</em>年<em>03</em>月
+                    </div>
+                  </div>
+
+                </div>
+                <!--Blood-->
+                <div class="item">
+                  <div class="banner product_h6">
+                    <div class="logo" style="
+                                          font-size: x-large;
+                                          text-align: center;
+                                          vertical-align: middle;
+                                          opacity: 1;
+                                          top: 50%;
+                                          color: aliceblue;">
+                      <h1>血庫核對系統</h1>
+                    </div>
+                    <div class="banner_bg"></div>
+                  </div>
+                  <div class="descprition">
+                    <h3><i aria-hidden="true" data-icon="&#xe013;"></i>血庫核對系統</h3>
+                    <p>血袋核對手機化，血袋都是有時效性的，透過手機做血液傳送時關卡的確認，病服員使用『識別證』＋血袋條碼，確定寫待領取。</p>
+                    <p class="quote">
+                      主要使用Cordova將網頁包成App<br />
+                      前端使用：AngularJS 1.5<br />
+                      後端使用：ASP.Net MVC 5、Linq、Dapper、C# 6.0 <br />
+                    </p>
+                    <p class="pic">
+                      <img src="./assets/project8/bol_system.png" width="500" height="300" alt="架構流程" />
+                      <span>流程架構</span>
+                    </p>
+                    <p class="pic">
+                      <img src="./assets/project8/bol_login.PNG" alt="登入畫面" />
+                      <span>登入畫面</span>
+                    </p>
+                    <p class="pic">
+                      <img src="./assets/project8/bol_step1.PNG" alt="合血單資訊" />
+                      <span>合血單資訊畫面</span>
+                    </p>
+                    <p class="pic">
+                      <img src="./assets/project8/bol_step2.PNG" alt="合血單確認" />
+                      <span>合血單確認畫面</span>
+                    </p>
+                    <div class="time">
+                      <em>2017</em>年<em>5</em>月<b>-</b><em>2017</em>年<em>6</em>月
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <ul class="project-list">
+            <!-- Plocker -->
+            <li class="project-item  active" data-filter-item data-category="Website">
+              <a href="https://plancker.org/" target="_blank">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/project1/p1.png" alt="plocker.org" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Plocker.org</h3>
+
+                <p class="project-category">Websites</p>
+              </a>
+              <div class="project-skill-item">
+                <img src="https://img.shields.io/badge/-Vue-000?&amp;logo=Vuedotjs&amp;labelColor=000" alt="Vue">
+                <img src="https://img.shields.io/badge/-Tailwind%20CSS-000?&amp;logo=Tailwind%20CSS&amp;labelColor=000"
+                  alt="Tailwind CSS">
+              </div>
+            </li>
+            <!-- SeeDao -->
+            <li class="project-item  active" data-filter-item data-category="Website">
+              <a href="https://seedao.xyz/" target="_blank">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/project2/seedao.png" alt="seedao" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">SeeDao</h3>
+
+                <p class="project-category">Websites</p>
+              </a>
+              <div class="project-skill-item">
+                <img src="https://img.shields.io/badge/-Vue-000?&amp;logo=Vuedotjs&amp;labelColor=000" alt="Vue">
+                <img src="https://img.shields.io/badge/-bootstrap-000?&amp;logo=bootstrap&amp;labelColor=000"
+                  alt="Bootstrap">
+              </div>
+            </li>
+            <!-- CSBS -->
+            <li class="project-item  active" data-filter-item data-category="Website">
+              <a href="javascript:;" class="btn_go btn_green product_1 r5">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/project3/p3.png" alt="CSBS" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">CSBS</h3>
+
+                <p class="project-category">Websites</p>
+              </a>
+              <div class="project-skill-item">
+                <img src="https://img.shields.io/badge/React-000?&amp;logo=React&amp;labelColor=000" alt="React">
+                <img src="https://img.shields.io/badge/-Tailwind%20CSS-000?&amp;logo=Tailwind%20CSS&amp;labelColor=000"
+                  alt="Tailwind CSS">
+              </div>
+            </li>
+            <!-- i-lolly -->
+            <li class="project-item  active" data-filter-item data-category="APP">
+              <a href="javascript:;" class="btn_go btn_green product_2 r5">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/project4/p4.jpeg" alt="i-lolly" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">i-lolly</h3>
+
+                <p class="project-category">App</p>
+              </a>
+              <div class="project-skill-item">
+                <img src="https://img.shields.io/badge/Php-000?&amp;logo=Php&amp;labelColor=000" alt="Php">
+                <img src="https://img.shields.io/badge/Vue-000?&amp;logo=Vuedotjs&amp;labelColor=000" alt="Vue">
+                <img src="https://img.shields.io/badge/-Flutter-000?&amp;logo=Flutter&amp;labelColor=000" alt="Flutter">
+                <img src="https://img.shields.io/badge/Linux-000?&amp;logo=Linux&amp;labelColor=000" alt="Linux">
+              </div>
+            </li>
+            <!-- AreaDrop -->
+            <li class="project-item  active" data-filter-item data-category="Applications">
+              <a href="javascript:;" class="btn_go btn_green product_3 r5">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/project5/p5.jpg" alt="finance" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">AreaDrop</h3>
+
+                <p class="project-category">App</p>
+              </a>
+              <div class="project-skill-item">
+                <img src="https://img.shields.io/badge/Android-000?&amp;logo=Android&amp;labelColor=000" alt="Android">
+                <img src="https://img.shields.io/badge/RaspberryPi -000?&amp;logo=RaspberryPi&amp;labelColor=000"
+                  alt="RaspberryPi">
+                <img src="https://img.shields.io/badge/-Html-000?&amp;logo=Html&amp;labelColor=000" alt="Html">
+              </div>
+            </li>
+            <!-- CrazyG -->
+            <li class="project-item  active" data-filter-item data-category="APP">
+              <a href="javascript:;" class="btn_go btn_green product_4 r5">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/project6/p6.jpg" alt="metaspark" loading="lazy">
+                </figure>
+                <h3 class="project-title">CrazyG</h3>
+                <p class="project-category">APP</p>
+              </a>
+              <div class="project-skill-item">
+                <img src="https://img.shields.io/badge/Php-000?&amp;logo=Php&amp;labelColor=000" alt="Php">
+                <img src="https://img.shields.io/badge/Vue-000?&amp;logo=Vuedotjs&amp;labelColor=000" alt="Vue">
+                <img src="https://img.shields.io/badge/Uniapp-000?&amp;logo=Uniapp&amp;labelColor=000" alt="Uniapp">
+              </div>
+            </li>
+            <!-- AirWeb -->
+            <li class="project-item  active" data-filter-item data-category="Website">
+              <a href="javascript:;" class="btn_go btn_green product_5 r5">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/project7/product_7_bg.jpg" alt="summary" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">AirWeb</h3>
+
+                <p class="project-category">Website</p>
+              </a>
+              <div class="project-skill-item">
+                <img src="https://img.shields.io/badge/Django-000?&amp;logo=Django&amp;labelColor=000" alt="Django">
+                <img src="https://img.shields.io/badge/Linux-000?&amp;logo=Linux&amp;labelColor=000" alt="Linux">
+              </div>
+            </li>
+            <!-- Blood -->
+            <li class="project-item  active" data-filter-item data-category="Applications">
+              <a href="javascript:;" class="btn_go btn_green product_6 r5">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/project8/w644.jpeg" alt="task manager" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">血庫核對e化系統</h3>
+
+                <p class="project-category">Applications</p>
+
+              </a>
+            </li>
+
+
+
+          </ul>
+
+        </section>
+
+      </article>
+
+
+
+
+
+      <!--
+        - #BLOG
+      -->
+
+      <article class="blog" data-page="blog">
+
+        <header>
+          <h2 class="h2 article-title">Blog</h2>
+        </header>
+
+        <section class="blog-posts">
+
+          <ul class="blog-posts-list">
+
+            <li class="blog-post-item">
+              <a href="https://juniper-pecorino-0ba.notion.site/Solidity-Learning-Plan-4a02ea1aaa8d4edd9b9a8bff109ac26e"
+                target="_blank">
+
+                <figure class="blog-banner-box">
+                  <img src="./assets/images/blog-1.jpg" loading="lazy">
+                </figure>
+
+                <div class="blog-content">
+
+
+                  <h3 class="h3 blog-item-title">Solidity Learning Plan</h3>
+
+
+                </div>
+
+              </a>
+            </li>
+
+
+
+          </ul>
+
+        </section>
+
+      </article>
+
+
+
+
+
+      <!--
+        - #CONTACT
+      -->
+
+      <article class="contact" data-page="contact">
+
+        <header>
+          <h2 class="h2 article-title">Contact</h2>
+        </header>
+
+
+
+        <section class="contact-form">
+
+          <h3 class="h3 form-title">Contact Form</h3>
+
+          <form action="#" class="form" data-form>
+
+            <div class="input-wrapper">
+              <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
+
+              <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
+            </div>
+
+            <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
+
+            <button class="form-btn" type="submit" disabled data-form-btn>
+              <ion-icon name="paper-plane"></ion-icon>
+              <span>Send Message</span>
+            </button>
+
+          </form>
+
+        </section>
+
+      </article>
+
+    </div>
+
+  </main>
+
+
+
+
+
+
+  <!--
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+
+  <!--
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script type="text/javascript" src="./assets/js/jquery-2.1.1.min.js"></script>
+  <script type="text/javascript" src="./assets/js/jquery.transit.min.js"></script>
+  <script type="text/javascript" src="./assets/js/carousel.min.js"></script>
+  <script type="text/javascript" src="./assets/js/common.js"></script>
+
+</body>
+
+</html>

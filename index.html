@@ -871,7 +871,7 @@
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
 
-                  <img src="./assets/project1/p1.png" alt="plocker.org" loading="lazy">
+                  <img data-src="./assets/project1/p1.png" class="lazy" alt="plocker.org" loading="lazy">
                 </figure>
 
                 <h3 class="project-title">Plocker.org</h3>
@@ -893,7 +893,7 @@
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
 
-                  <img src="./assets/project2/seedao.png" alt="seedao" loading="lazy">
+                  <img data-src="./assets/project2/seedao.png" class="lazy" alt="seedao" loading="lazy">
                 </figure>
 
                 <h3 class="project-title">SeeDao</h3>
@@ -915,7 +915,7 @@
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
 
-                  <img src="./assets/project3/p3.png" alt="CSBS" loading="lazy">
+                  <img data-src="./assets/project3/p3.png" class="lazy" alt="CSBS" loading="lazy">
                 </figure>
 
                 <h3 class="project-title">CSBS</h3>
@@ -937,7 +937,7 @@
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
 
-                  <img src="./assets/project4/p4.jpeg" alt="i-lolly" loading="lazy">
+                  <img data-src="./assets/project4/p4.jpeg" class="lazy" alt="i-lolly" loading="lazy">
                 </figure>
 
                 <h3 class="project-title">i-lolly</h3>
@@ -960,7 +960,7 @@
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
 
-                  <img src="./assets/project5/p5.jpg" alt="finance" loading="lazy">
+                  <img data-src="./assets/project5/p5.jpg" class="lazy" alt="finance" loading="lazy">
                 </figure>
 
                 <h3 class="project-title">AreaDrop</h3>
@@ -983,7 +983,7 @@
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
 
-                  <img src="./assets/project6/p6.jpg" alt="metaspark" loading="lazy">
+                  <img data-src="./assets/project6/p6.jpg" class="lazy" alt="metaspark" loading="lazy">
                 </figure>
                 <h3 class="project-title">CrazyG</h3>
                 <p class="project-category">APP</p>
@@ -1003,7 +1003,7 @@
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
 
-                  <img src="./assets/project7/product_7_bg.jpg" alt="summary" loading="lazy">
+                  <img data-src="./assets/project7/product_7_bg.jpg" class="lazy" alt="summary" loading="lazy">
                 </figure>
 
                 <h3 class="project-title">AirWeb</h3>
@@ -1024,14 +1024,19 @@
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
 
-                  <img src="./assets/project8/w644.jpeg" alt="task manager" loading="lazy">
+                  <img data-src="./assets/project8/w644.jpeg" class="lazy" alt="task manager" loading="lazy">
                 </figure>
 
                 <h3 class="project-title">血庫核對e化系統</h3>
 
                 <p class="project-category">Applications</p>
-
               </a>
+              <div class="project-skill-item">
+                <img src="https://img.shields.io/badge/C sharp-000?&amp;logo=C sharp&amp;labelColor=000" alt="C#">
+                <img src="https://img.shields.io/badge/-bootstrap-000?&amp;logo=bootstrap&amp;labelColor=000"
+                  alt="Bootstrap">
+                <img src="https://img.shields.io/badge/Cordova-000?&amp;logo=Cordova&amp;labelColor=000" alt="Cordova">
+              </div>
             </li>
 
 
@@ -1059,7 +1064,23 @@
         <section class="blog-posts">
 
           <ul class="blog-posts-list">
+            <li class="blog-post-item">
+              <a href="https://github.com/0xRory/web2-to-web3-note" target="_blank">
 
+                <figure class="blog-banner-box">
+                  <img src="./assets/images/blog-2.png" loading="lazy">
+                </figure>
+
+                <div class="blog-content">
+
+
+                  <h3 class="h3 blog-item-title">Web2 to Web3 學習筆記</h3>
+
+
+                </div>
+
+              </a>
+            </li>
             <li class="blog-post-item">
               <a href="https://juniper-pecorino-0ba.notion.site/Solidity-Learning-Plan-4a02ea1aaa8d4edd9b9a8bff109ac26e"
                 target="_blank">
@@ -1151,7 +1172,32 @@
   <script type="text/javascript" src="./assets/js/jquery.transit.min.js"></script>
   <script type="text/javascript" src="./assets/js/carousel.min.js"></script>
   <script type="text/javascript" src="./assets/js/common.js"></script>
+  <script>
+    // 創建 IntersectionObserver 實例
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        // 如果目標元素進入可見區域
+        if (entry.isIntersecting) {
+          const img = entry.target;
+          const src = img.getAttribute('data-src');
 
+          // 設置圖片的 src 屬性，載入圖片
+          img.setAttribute('src', src);
+
+          // 停止觀察該圖片
+          observer.unobserve(img);
+        }
+      });
+    });
+
+    // 選擇所有帶有 "lazy" 類別的圖片元素
+    const lazyImages = document.querySelectorAll('.lazy');
+
+    // 開始觀察每個圖片元素
+    lazyImages.forEach(image => {
+      observer.observe(image);
+    });
+  </script>
 </body>
 
 </html>

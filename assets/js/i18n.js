@@ -199,6 +199,11 @@ const DICT = {
     en: "Later work focused on reliability and cost. Long report jobs used to hit Cloud Run's 15-minute wall and retry-storm; I moved generation onto an async Cloud Tasks worker queue with atomic progress reporting, per-subtask failure isolation, and cooperative cancellation, then extended the worker timeout to 30 minutes with a matching dispatch deadline. On cost, I found the system prompt's per-second timestamp was defeating provider-side prompt caching, fixed it to date-level granularity, and instrumented real cache-hit-rate logging across OpenAI, Anthropic and Gemini. I also evaluated self-hosted vision-language OCR models for document extraction &mdash; migrating from qwen3-vl-32b to chandra &mdash; and added per-page field extraction to cut data loss on long documents.",
     zh: '後期工作聚焦於穩定性與成本。長報告任務原本會撞上 Cloud Run 15 分鐘的執行上限而觸發重試風暴，我將報告產出改為非同步 Cloud Tasks worker 佇列，加入原子式進度回報、子任務失敗隔離與可取消機制，並將 worker timeout 延長至 30 分鐘並對齊 dispatch deadline。成本方面，我發現系統提示詞中的秒級時間戳會讓各家 LLM 供應商的 prompt caching 完全失效，改為日期級粒度後修正，並為 OpenAI、Anthropic、Gemini 加上實際快取命中率的記錄。我也評估了地端視覺語言 OCR 模型的文件擷取效果——將模型從 qwen3-vl-32b 遷移至 chandra，並加入逐頁欄位抽取以降低長文件的資料遺失。',
   },
+  'case.maxo.p4': {
+    en: 'Below: the AI advisor pipeline running a full health-check end-to-end &mdash; the async worker queue from above, live.',
+    zh: '以下：AI 顧問團隊完整跑一次企業健檢報告產出流程——也就是上述非同步 worker 佇列的實際運作畫面。',
+  },
+  'case.maxo.fig1': { en: 'AI health-check report, in progress', zh: 'AI 企業健檢報告產出中' },
   'case.liveAt': { en: 'Live at:', zh: '官方網站：' },
 
   'case.unphishable.spec': {

@@ -147,6 +147,7 @@
           <button class="work__filter-btn is-active" data-filter-btn="all" type="button">All</button>
           <button class="work__filter-btn" data-filter-btn="Website" type="button">Website</button>
           <button class="work__filter-btn" data-filter-btn="AI App" type="button">AI App</button>
+          <button class="work__filter-btn" data-filter-btn="Security" type="button">Security</button>
           <button class="work__filter-btn" data-filter-btn="Web3 / DApp" type="button">Web3 / DApp</button>
           <button class="work__filter-btn" data-filter-btn="App / IoT" type="button">App / IoT</button>
           <button class="work__filter-btn" data-filter-btn="Commerce App" type="button">Commerce App</button>
@@ -259,6 +260,18 @@
               <span class="card__title">MAXO</span>
               <span class="card__meta">AI App <span class="card__year">2026</span></span>
               <span class="stack-tags"><span class="tag">Django</span><span class="tag">React</span><span class="tag">OpenAI</span><span class="tag">GCP</span></span>
+            </span>
+            <span class="card__cta">view case &rarr;</span>
+          </button>
+        </li>
+        <li class="work__item" data-reveal data-category="Security">
+          <button class="card" type="button" data-case="unphishable" aria-haspopup="dialog">
+            <span class="card__index" data-count-to="10">[10]</span>
+            <span class="card__media" data-flip-id="unphishable"><picture><source srcset="./assets/project10/unphishable.avif" type="image/avif"><source srcset="./assets/project10/unphishable.webp" type="image/webp"><img src="./assets/project10/unphishable.png" alt="Unphishable" width="1600" height="1000" loading="lazy" decoding="async"></picture></span>
+            <span class="card__body">
+              <span class="card__title">Unphishable</span>
+              <span class="card__meta">Security <span class="card__year">2025</span></span>
+              <span class="stack-tags"><span class="tag">Next.js</span><span class="tag">TypeScript</span><span class="tag">Web3</span></span>
             </span>
             <span class="card__cta">view case &rarr;</span>
           </button>
@@ -388,6 +401,12 @@
         </header>
 
         <ul class="writing">
+          <li class="writing__item" data-reveal>
+            <a class="writing__link" href="https://www.youtube.com/watch?v=qgztO4qw8yQ" target="_blank" rel="noopener">
+              <span class="writing__title" lang="zh-Hant-TW">釣魚體驗平台 Unphishable：識破 Web3 詐騙陷阱！</span>
+              <span class="writing__meta">COSCUP <span class="writing__year">2025</span> <span aria-hidden="true">&nearr;</span></span>
+            </a>
+          </li>
           <li class="writing__item" data-reveal>
             <a class="writing__link" href="https://github.com/DeFiHackLabs/Solidity-Intensive-CoLearning" target="_blank" rel="noopener">
               <span class="writing__title">DeFiHackLabs x WTF Academy — Solidity 21-day co-learning</span>
@@ -733,6 +752,44 @@
           <span>maxoai.ai</span>
         </p>
         <p>Live at: <a href="https://maxoai.ai/" target="_blank" rel="noopener">https://maxoai.ai/</a></p>
+      </div>
+    </article>
+  </dialog>
+
+  <dialog class="case" id="case-unphishable" aria-labelledby="case-unphishable-title">
+    <form method="dialog" class="case__close-form">
+      <button class="case__close" aria-label="Close">
+        <svg class="icon" aria-hidden="true" focusable="false"><use href="./assets/icons/sprite.svg#close-outline"></use></svg>
+      </button>
+    </form>
+    <article class="case__inner" data-flip-target="unphishable">
+      <header class="case__head">
+        <p class="t-label">[10] &middot; Security &middot; 2025</p>
+        <h2 class="case__title" id="case-unphishable-title">Unphishable</h2>
+        <p class="stack-tags"><span class="tag">Next.js</span><span class="tag">TypeScript</span><span class="tag">Web3</span></p>
+      </header>
+      <div class="case__body">
+        <p class="case__spec">
+          Unphishable is an interactive Web3 anti-phishing training
+          platform &mdash; 30+ gamified challenges covering seed-phrase
+          scams, malicious token approvals, fake airdrops, clipboard
+          hijacking, and punycode look-alike domains, in English and
+          Traditional/Simplified Chinese. Built as a public good: free for
+          anyone to use.
+        </p>
+        <p>
+          Core team: <a href="https://github.com/DeFiHackLabs" target="_blank" rel="noopener">DeFiHackLabs</a>,
+          ScamSniffer, and SlowMist, with support from the Ethereum
+          Ecosystem Support Program. I contribute through DeFiHackLabs,
+          the same Web3 security co-learning community behind the
+          Solidity 21-day program listed under Writing.
+        </p>
+        <p class="case__figure">
+          <picture><source srcset="./assets/project10/unphishable.avif" type="image/avif"><source srcset="./assets/project10/unphishable.webp" type="image/webp"><img src="./assets/project10/unphishable.png" alt="Unphishable landing page" width="1600" height="1000" loading="lazy" decoding="async"></picture>
+          <span>unphishable.io</span>
+        </p>
+        <p>Live at: <a href="https://unphishable.io/" target="_blank" rel="noopener">https://unphishable.io/</a></p>
+        <p>Talk: <a href="https://www.youtube.com/watch?v=qgztO4qw8yQ" target="_blank" rel="noopener" lang="zh-Hant-TW">COSCUP 2025 &mdash; 識破 Web3 詐騙陷阱</a></p>
       </div>
     </article>
   </dialog>

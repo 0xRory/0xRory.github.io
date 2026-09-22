@@ -76,7 +76,7 @@ ok(filtered.shown === 2 && filtered.ok, `filter Website -> ${filtered.shown} ite
 
 await $(`document.querySelector('[data-filter-btn="all"]').click()`);
 await sleep(900);
-ok(await $('[...document.querySelectorAll(".work__item")].filter(li=>!li.hidden).length === 9'), 'filter all -> 9 items');
+ok(await $('[...document.querySelectorAll(".work__item")].filter(li=>!li.hidden).length === 10'), 'filter all -> 10 items');
 
 // ── dialog + Flip ─────────────────────────────────────────────────
 await $(`document.querySelector('[data-case="csbs"]').click()`);

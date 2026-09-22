@@ -66,8 +66,8 @@ const DICT = {
   'resume.educationHeading': { en: 'Education', zh: '學歷' },
   'resume.present': { en: 'Present', zh: '至今' },
   'resume.dandelion.text': {
-    en: 'Full-stack engineer on MAXO, an AI business &amp; marketing platform — Django/DRF backend, React frontend and admin, multi-model LLM orchestration (OpenAI, Gemini) on GCP.',
-    zh: '負責 MAXO（AI 商業與行銷平台）的全端開發——Django/DRF 後端、React 前端與後台管理，並在 GCP 上進行多模型 LLM 調度（OpenAI、Gemini）。',
+    en: 'Full-stack engineer on MAXO, an AI business &amp; marketing platform — redesigned AI report generation into an async Cloud Tasks worker queue (cooperative cancellation, failure isolation), evaluated and shipped local OCR vision models, and improved LLM prompt-cache hit rates across OpenAI, Anthropic and Gemini.',
+    zh: '負責 MAXO（AI 商業與行銷平台）的全端開發——將 AI 報告產出重構為非同步 Cloud Tasks worker 佇列（可取消、失敗隔離），評估並上線地端 OCR 視覺模型，並改善 OpenAI、Anthropic、Gemini 的 LLM prompt 快取命中率。',
   },
   'resume.acemeta.text': {
     en: 'RPC backend services, CI/CD, and scaling concurrency from 100 to 1000.',
@@ -194,6 +194,10 @@ const DICT = {
   'case.maxo.p2': {
     en: 'Built and shipped the Django/DRF backend and the React frontend and admin console over nine months at Dandelion (<span lang="zh-Hant-TW">蒲公英</span>). The platform routes requests across multiple LLM providers (OpenAI, Gemini) for cost and reliability, stores content and media on PostgreSQL and Google Cloud Storage, and deploys to GCP Cloud Run via Docker.',
     zh: '在蒲公英（<span lang="zh-Hant-TW">Dandelion</span>）任職的九個月間，負責開發並上線 Django/DRF 後端，以及 React 前端與後台管理介面。平台會依成本與穩定性將請求分派至多個 LLM 供應商（OpenAI、Gemini），內容與媒體儲存於 PostgreSQL 與 Google Cloud Storage，並透過 Docker 部署至 GCP Cloud Run。',
+  },
+  'case.maxo.p3': {
+    en: "Later work focused on reliability and cost. Long report jobs used to hit Cloud Run's 15-minute wall and retry-storm; I moved generation onto an async Cloud Tasks worker queue with atomic progress reporting, per-subtask failure isolation, and cooperative cancellation, then extended the worker timeout to 30 minutes with a matching dispatch deadline. On cost, I found the system prompt's per-second timestamp was defeating provider-side prompt caching, fixed it to date-level granularity, and instrumented real cache-hit-rate logging across OpenAI, Anthropic and Gemini. I also evaluated self-hosted vision-language OCR models for document extraction &mdash; migrating from qwen3-vl-32b to chandra &mdash; and added per-page field extraction to cut data loss on long documents.",
+    zh: '後期工作聚焦於穩定性與成本。長報告任務原本會撞上 Cloud Run 15 分鐘的執行上限而觸發重試風暴，我將報告產出改為非同步 Cloud Tasks worker 佇列，加入原子式進度回報、子任務失敗隔離與可取消機制，並將 worker timeout 延長至 30 分鐘並對齊 dispatch deadline。成本方面，我發現系統提示詞中的秒級時間戳會讓各家 LLM 供應商的 prompt caching 完全失效，改為日期級粒度後修正，並為 OpenAI、Anthropic、Gemini 加上實際快取命中率的記錄。我也評估了地端視覺語言 OCR 模型的文件擷取效果——將模型從 qwen3-vl-32b 遷移至 chandra，並加入逐頁欄位抽取以降低長文件的資料遺失。',
   },
   'case.liveAt': { en: 'Live at:', zh: '官方網站：' },
 

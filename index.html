@@ -352,7 +352,7 @@
               <li class="timeline__item" data-reveal>
                 <span class="timeline__when">2026.01 — 2026.09</span>
                 <h4 class="timeline__what">Dandelion</h4>
-                <p class="timeline__text" data-i18n="resume.dandelion.text">Full-stack engineer on MAXO, an AI business &amp; marketing platform — Django/DRF backend, React frontend and admin, multi-model LLM orchestration (OpenAI, Gemini) on GCP.</p>
+                <p class="timeline__text" data-i18n="resume.dandelion.text">Full-stack engineer on MAXO, an AI business &amp; marketing platform — redesigned AI report generation into an async Cloud Tasks worker queue (cooperative cancellation, failure isolation), evaluated and shipped local OCR vision models, and improved LLM prompt-cache hit rates across OpenAI, Anthropic and Gemini.</p>
               </li>
               <li class="timeline__item" data-reveal>
                 <span class="timeline__when">2023.10 — <span data-i18n="resume.present">Present</span></span>
@@ -732,6 +732,21 @@
           requests across multiple LLM providers (OpenAI, Gemini) for cost
           and reliability, stores content and media on PostgreSQL and Google
           Cloud Storage, and deploys to GCP Cloud Run via Docker.
+        </p>
+        <p data-i18n="case.maxo.p3">
+          Later work focused on reliability and cost. Long report jobs used
+          to hit Cloud Run's 15-minute wall and retry-storm; I moved
+          generation onto an async Cloud Tasks worker queue with atomic
+          progress reporting, per-subtask failure isolation, and cooperative
+          cancellation, then extended the worker timeout to 30 minutes with
+          a matching dispatch deadline. On cost, I found the system prompt's
+          per-second timestamp was defeating provider-side prompt caching,
+          fixed it to date-level granularity, and instrumented real
+          cache-hit-rate logging across OpenAI, Anthropic and Gemini. I also
+          evaluated self-hosted vision-language OCR models for document
+          extraction &mdash; migrating from qwen3-vl-32b to chandra &mdash;
+          and added per-page field extraction to cut data loss on long
+          documents.
         </p>
         <p class="case__figure">
           <picture><source srcset="./assets/project9/maxo.avif" type="image/avif"><source srcset="./assets/project9/maxo.webp" type="image/webp"><img src="./assets/project9/maxo.png" alt="MAXO landing page" width="1600" height="1000" loading="lazy" decoding="async"></picture>

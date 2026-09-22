@@ -3,14 +3,36 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rory - Personal Portfolio</title>
+
+  <title>Rory — Full-Stack &amp; Web3 Engineer</title>
+  <meta name="description"
+    content="Rory (0xRory) — full-stack and Web3 engineer in Taichung, Taiwan. Smart-contract security, blockchain backends, and phishing research. Selected work, writing and contact.">
+  <link rel="canonical" href="https://0xrory.github.io/">
+  <meta name="author" content="Rory">
+  <meta name="theme-color" content="#0a0a0a">
 
   <!--
     - favicon
   -->
   <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
+
+  <!--
+    - open graph / twitter
+    - TODO(phase 3): replace og:image with a 1200x630 wordmark and switch the
+      twitter card to summary_large_image. Using the square avatar until then.
+  -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://0xrory.github.io/">
+  <meta property="og:title" content="Rory — Full-Stack &amp; Web3 Engineer">
+  <meta property="og:description"
+    content="Full-stack and Web3 engineer in Taichung, Taiwan. Smart-contract security, blockchain backends, and phishing research.">
+  <meta property="og:image" content="https://0xrory.github.io/assets/images/my-avatar.jpg">
+  <meta property="og:image:width" content="400">
+  <meta property="og:image:height" content="400">
+  <meta property="og:locale" content="en">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:creator" content="@0x_Rory">
 
   <!--
     - custom css link
@@ -23,6 +45,39 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Rory",
+    "alternateName": "0xRory",
+    "url": "https://0xrory.github.io/",
+    "image": "https://0xrory.github.io/assets/images/my-avatar.jpg",
+    "jobTitle": "Full-Stack Engineer",
+    "email": "mailto:0x1rory@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Taichung",
+      "addressCountry": "TW"
+    },
+    "worksFor": { "@type": "Organization", "name": "AceMeta Lab" },
+    "knowsAbout": [
+      "Smart Contract Security",
+      "Solidity",
+      "Web3",
+      "Blockchain",
+      "Full-Stack Development",
+      "Go",
+      "TypeScript"
+    ],
+    "sameAs": [
+      "https://github.com/0xRory",
+      "https://twitter.com/0x_Rory",
+      "https://ithelp.ithome.com.tw/users/20162055"
+    ]
+  }
+  </script>
 </head>
 
 <body>
@@ -42,7 +97,7 @@
       <div class="sidebar-info">
 
         <figure class="avatar-box">
-          <img src="./assets/images/my-avatar.jpg" alt="Rory" width="80">
+          <picture><source srcset="./assets/images/my-avatar.avif" type="image/avif"><source srcset="./assets/images/my-avatar.webp" type="image/webp"><img src="./assets/images/my-avatar.jpg" alt="Rory" width="80" loading="lazy" decoding="async"></picture>
         </figure>
 
         <div class="info-content">
@@ -74,7 +129,7 @@
             <div class="contact-info">
               <p class="contact-title">Email</p>
 
-              <a href="mailto:richard@example.com" class="contact-link">0x1rory@gmail.com</a>
+              <a href="mailto:0x1rory@gmail.com" class="contact-link">0x1rory@gmail.com</a>
             </div>
 
           </li>
@@ -176,90 +231,62 @@
 
         <section class="about-text">
           <h1 id="hi-my-name-is-0xrory">Hi, My name is Rory</h1>
-          <p><strong>簡介</strong>
-            <img src="https://img.shields.io/badge/About%20me-000?&amp;logo=About.me&amp;labelColor=000"
-              alt="About me"><br />
+
+          <p>
             👨‍💻 Jack of all trades, a versatile engineer. Besides daily focus on front-end and back-end technologies,
             mobile and desktop development, I am also deeply interested in emerging technologies like Web 3, blockchain,
             AI, and more.
           </p>
-          <p><strong>語言</strong></p>
 
-          <img src="https://img.shields.io/badge/日常:-blue" alt="">
-          <div class="about-skill-item">
-            <img src="https://img.shields.io/badge/HTML-000?&amp;logo=HTML5&amp;labelColor=000" alt="HTML">
-            <img src="https://img.shields.io/badge/CSS-000?&amp;logo=CSS3&amp;labelColor=000" alt="CSS">
-            <img src="https://img.shields.io/badge/JavaScript-000?&amp;logo=JavaScript&amp;labelColor=000"
-              alt="JavaScript">
-            <img src="https://img.shields.io/badge/TypeScript-000?&amp;logo=TypeScript&amp;labelColor=000"
-              alt="TypeScript">
-            <img src="https://img.shields.io/badge/Go-000?&amp;logo=GO&amp;labelColor=000" alt="GO">
-          </div>
+          <h3 class="h4 stack-heading" lang="zh-Hant-TW">語言</h3>
 
-          <img src="https://img.shields.io/badge/偶爾:-yellow" alt="">
-          <div class="about-skill-item">
-            <img src="https://img.shields.io/badge/Docker-000?&amp;logo=Docker&amp;labelColor=000" alt="Docker">
-            <img src="https://img.shields.io/badge/Linux-000?&amp;logo=Linux&amp;labelColor=000" alt="Linux">
-          </div>
+          <dl class="stack">
+            <dt class="stack-label" lang="zh-Hant-TW">日常</dt>
+            <dd class="stack-tags">
+              <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">TypeScript</span><span class="tag">Go</span>
+            </dd>
 
-          <img src="https://img.shields.io/badge/關注:-green" alt="">
-          <div class="about-skill-item">
-            <img src="https://img.shields.io/badge/Solidity-000?&amp;logo=Solidity&amp;labelColor=000" alt="Solidity">
-            <img src="https://img.shields.io/badge/Dart-000?&amp;logo=Dart&amp;labelColor=000" alt="Dart">
-            <img src="https://img.shields.io/badge/Python-000?&amp;logo=Python&amp;labelColor=000" alt="Python">
-          </div>
-          <p><strong>框架</strong></p>
-          <img src="https://img.shields.io/badge/FE:-deepskyblue" alt="">
-          <div class="about-skill-item">
-            <img src="https://img.shields.io/badge/React-000?&amp;logo=React&amp;labelColor=000" alt="React">
-            <img src="https://img.shields.io/badge/-Vue-000?&amp;logo=Vuedotjs&amp;labelColor=000" alt="Vue">
-            <img src="https://img.shields.io/badge/-Flutter-000?&amp;logo=Flutter&amp;labelColor=000" alt="Flutter">
-            <img
-              src="https://img.shields.io/badge/-ReactNative-000?&amp;logo=data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSItMTEuNSAtMTAuMjMxNzQgMjMgMjAuNDYzNDgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBmaWxsPSIjNjFkYWZiIiByPSIyLjA1Ii8+PGcgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNjFkYWZiIj48ZWxsaXBzZSByeD0iMTEiIHJ5PSI0LjIiLz48ZWxsaXBzZSByeD0iMTEiIHJ5PSI0LjIiIHRyYW5zZm9ybT0ibWF0cml4KC41IC44NjYwMjU0IC0uODY2MDI1NCAuNSAwIDApIi8+PGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIiB0cmFuc2Zvcm09Im1hdHJpeCgtLjUgLjg2NjAyNTQgLS44NjYwMjU0IC0uNSAwIDApIi8+PC9nPjwvc3ZnPg==&amp;labelColor=000"
-              alt="ReactNative">
-            <img src="https://img.shields.io/badge/-Webpack-000?&amp;logo=Webpack&amp;labelColor=000" alt="Webpack">
-            <img src="https://img.shields.io/badge/-Less-000?&amp;logo=Less&amp;labelColor=000" alt="Less">
-            <img src="https://img.shields.io/badge/-Sass-000?&amp;logo=Sass&amp;labelColor=000" alt="Sass">
-            <img src="https://img.shields.io/badge/-Tailwind%20CSS-000?&amp;logo=Tailwind%20CSS&amp;labelColor=000"
-              alt="Tailwind CSS">
-            <img src="https://img.shields.io/badge/-Ant%20Design-000?&amp;logo=Ant%20Design&amp;labelColor=000"
-              alt="Ant Design">
-          </div>
+            <dt class="stack-label" lang="zh-Hant-TW">偶爾</dt>
+            <dd class="stack-tags">
+              <span class="tag">Docker</span><span class="tag">Linux</span>
+            </dd>
 
-          <img src="https://img.shields.io/badge/BE:-cadetblue" alt="">
-          <div class="about-skill-item">
-            <img src="https://img.shields.io/badge/Next.js-000?&amp;logo=NextdotJS&amp;labelColor=000" alt="NextJS">
-            <img src="https://img.shields.io/badge/Nest.js-000?&amp;logo=NestJS&amp;labelColor=000" alt="NestJS">
-            <img src="https://img.shields.io/badge/Express-000?&amp;logo=Express&amp;labelColor=000" alt="Express">
-            <img src="https://img.shields.io/badge/Django-000?&amp;logo=Django&amp;labelColor=000" alt="Django">
-            <img src="https://img.shields.io/badge/Fiber-000" alt="Fiber">
+            <dt class="stack-label" lang="zh-Hant-TW">關注</dt>
+            <dd class="stack-tags">
+              <span class="tag">Solidity</span><span class="tag">Dart</span><span class="tag">Python</span>
+            </dd>
+          </dl>
 
-          </div>
+          <h3 class="h4 stack-heading" lang="zh-Hant-TW">框架</h3>
 
-          <img src="https://img.shields.io/badge/Database:-sandybrown" alt="">
-          <div class="about-skill-item">
-            <img src="https://img.shields.io/badge/MySQL-000?&amp;logo=MySQL&amp;labelColor=000" alt="MySQL">
-            <img src="https://img.shields.io/badge/PostgreSQL-000?&amp;logo=PostgreSQL&amp;labelColor=000"
-              alt="PostgreSQL">
-            <img src="https://img.shields.io/badge/MongoDB-000?&amp;logo=MongoDB&amp;labelColor=000" alt="MongoDB">
-            <img src="https://img.shields.io/badge/Redis-000?&amp;logo=Redis&amp;labelColor=000" alt="Redis">
-          </div>
-          <img src="https://img.shields.io/badge/Web3:-yellowgreen" alt="">
-          <div class="about-skill-item">
-            <img src="https://img.shields.io/badge/Solidity-000?&amp;logo=Solidity&amp;labelColor=000" alt="Solidity">
-            <img src="https://img.shields.io/badge/web3.js-000?&amp;logo=web3dotjs&amp;labelColor=000" alt="web3.js">
-            <img src="https://img.shields.io/badge/ethers.js-000?&amp;logo=ethereum&amp;labelColor=000" alt="ethers.js">
+          <dl class="stack">
+            <dt class="stack-label">Frontend</dt>
+            <dd class="stack-tags">
+              <span class="tag">React</span><span class="tag">Vue</span><span class="tag">Flutter</span><span class="tag">React Native</span><span class="tag">Webpack</span><span class="tag">Less</span><span class="tag">Sass</span><span class="tag">Tailwind CSS</span><span class="tag">Ant Design</span>
+            </dd>
 
-          </div>
+            <dt class="stack-label">Backend</dt>
+            <dd class="stack-tags">
+              <span class="tag">Next.js</span><span class="tag">Nest.js</span><span class="tag">Express</span><span class="tag">Django</span><span class="tag">Fiber</span>
+            </dd>
 
+            <dt class="stack-label">Database</dt>
+            <dd class="stack-tags">
+              <span class="tag">MySQL</span><span class="tag">PostgreSQL</span><span class="tag">MongoDB</span><span class="tag">Redis</span>
+            </dd>
 
-          <p><strong>社交</strong></p>
-          <div class="about-skill-item">
-            <a href="https://github.com/0xRory"><img src="https://img.shields.io/badge/-GitHub-000?logo=GitHub"
-                alt="GitHub"></a>
-            <a href="https://twitter.com/0x_Rory"><img src="https://img.shields.io/badge/-Twitter-000?logo=Twitter"
-                alt="twitter"></a>
-          </div>
+            <dt class="stack-label">Web3</dt>
+            <dd class="stack-tags">
+              <span class="tag">Solidity</span><span class="tag">web3.js</span><span class="tag">ethers.js</span>
+            </dd>
+          </dl>
+
+          <h3 class="h4 stack-heading" lang="zh-Hant-TW">社交</h3>
+
+          <ul class="stack-links">
+            <li><a href="https://github.com/0xRory" target="_blank" rel="noopener">GitHub ↗</a></li>
+            <li><a href="https://twitter.com/0x_Rory" target="_blank" rel="noopener">Twitter ↗</a></li>
+          </ul>
 
         </section>
 
@@ -331,49 +358,7 @@
 
 
 
-        <!--
-          - testimonials modal
-        -->
 
-        <div class="modal-container" data-modal-container>
-
-          <div class="overlay" data-overlay></div>
-
-          <section class="testimonials-modal">
-
-            <button class="modal-close-btn" data-modal-close-btn>
-              <ion-icon name="close-outline"></ion-icon>
-            </button>
-
-            <div class="modal-img-wrapper">
-              <figure class="modal-avatar-box">
-                <img src="./assets/images/avatar-1.png" alt="Daniel lewis" width="80" data-modal-img>
-              </figure>
-
-              <img src="./assets/images/icon-quote.svg" alt="quote icon">
-            </div>
-
-            <div class="modal-content">
-
-              <h4 class="h3 modal-title" data-modal-title>Daniel lewis</h4>
-
-              <time datetime="2021-06-14">14 June, 2021</time>
-
-              <div data-modal-text>
-                <p>
-                  Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
-                  lot of experience
-                  and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
-                  consectetur adipiscing
-                  elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
-                </p>
-              </div>
-
-            </div>
-
-          </section>
-
-        </div>
 
 
 
@@ -444,7 +429,7 @@
 
             <li class="timeline-item">
 
-              <h4 class="h4 timeline-item-title">Cat Island</h4>
+              <h4 class="h4 timeline-item-title">AceMeta Lab</h4>
 
               <span>2023.10 — Present</span>
 
@@ -648,7 +633,7 @@
                     </div>
                     <div class="banner_bg"></div>
                   </div>
-                  <div class="descprition">
+                  <div class="descprition" lang="zh-Hant-TW">
                     <h3><i aria-hidden="true" data-icon="&#xe013;"></i>Community SBT Basket and Seal</h3>
                     <p class="quote">
                       Community SBT Basket and Seal：一款免費開源的SBT DApp，幫助社區和多重身份的個體來發行和管理分散於各個社區Event、Activity的時光碎片。<br />
@@ -657,11 +642,11 @@
                       主要實作：批次發放 SBT , 以及社區活動的管理。
                     </p>
                     <p class="pic">
-                      <video id="movie" preload controls loop poster="./assets/images/play.png">
+                      <video id="project-video-1" preload="none" controls loop playsinline poster="./assets/images/play.png">
                         <source src="./assets/project3/demo.mp4" type="video/mp4" />
-                        您的瀏覽器不支援HTML 5影片播放標籤<video>格式。
-                          Your browser doesn't support the <video> tag.
-                          </video>
+                        <span lang="zh-Hant-TW">您的瀏覽器不支援 HTML5 影片播放。</span>
+                        Your browser doesn't support the &lt;video&gt; tag.
+                      </video>
                     </p>
                     <p> 可以參考： <a href="https://github.com/PlanckerLabs/CSBS"
                         target="_blank">https://github.com/PlanckerLabs/CSBS</a></p>
@@ -682,7 +667,7 @@
                     </div>
                     <div class="banner_bg"></div>
                   </div>
-                  <div class="descprition">
+                  <div class="descprition" lang="zh-Hant-TW">
                     <h3><i aria-hidden="true" data-icon="&#xe013;"></i>i-lolly</h3>
                     <p class="quote">
                       利用 IOT 人臉溫度機＋溫濕度傳感器整合在校園裡面。<br />
@@ -695,15 +680,15 @@
                         target="_blank">thingsboard</a> 開源軟體施作。
                     </p>
                     <p class="pic">
-                      <img class="p4" src="./assets/project4/i-lolly-flow.png" alt="i-lolly架構流程" />
+                      <picture><source srcset="./assets/project4/i-lolly-flow.avif" type="image/avif"><source srcset="./assets/project4/i-lolly-flow.webp" type="image/webp"><img class="p4" src="./assets/project4/i-lolly-flow.png" alt="i-lolly架構流程" / width="1173" height="718" loading="lazy" decoding="async"></picture>
                       <span>流程架構</span>
                     </p>
                     <div style="display: flex; justify-content: center;">
                       <a href="https://play.google.com/store/apps/details?id=com.shoesconn.fultter_ims" target="_blank">
-                        <img src="./assets/project4/android_download.jpg" width="200" height="100" alt="android" />
+                        <picture><source srcset="./assets/project4/android_download.webp" type="image/webp"><img src="./assets/project4/android_download.jpg" width="200" height="100" alt="android" / loading="lazy" decoding="async"></picture>
                       </a>
                       <a href="https://apps.apple.com/tw/app/i-lolly/id1526973956" target="_blank">
-                        <img src="./assets/project4/apple_download.jpg" width="200" height="100" alt="ios" />
+                        <picture><source srcset="./assets/project4/apple_download.webp" type="image/webp"><img src="./assets/project4/apple_download.jpg" width="200" height="100" alt="ios" / loading="lazy" decoding="async"></picture>
                       </a>
                     </div>
                   </div>
@@ -718,29 +703,29 @@
                     </div>
                     <div class="banner_bg"></div>
                   </div>
-                  <div class="descprition">
+                  <div class="descprition" lang="zh-Hant-TW">
                     <h3><i aria-hidden="true" data-icon="&#xe0e6;"></i>AreaDrop</h3>
                     <p>主要是練習Java和Android並模仿Apple MAC的AirDrop，所以功能名稱命名為AreaDrop</p>
                     <p>通常設定裝置IOT網路都非常麻煩，所以使用手機去設定！另外使用Ｗebstock來做傳輸。</p>
                     <p class="pic">
-                      <img src="./assets/project5/pic_lw_login.jpg" width="400" height="400" alt="概念架構" />
+                      <picture><source srcset="./assets/project5/pic_lw_login.webp" type="image/webp"><img src="./assets/project5/pic_lw_login.jpg" width="400" height="400" alt="概念架構" / loading="lazy" decoding="async"></picture>
                       <span>概念架構</span>
                     </p>
                     <p>下列展示手機設定伺服器網路</p>
                     <p class="pic">
-                      <video id="movie" preload controls loop poster="./assets/images/play.png">
+                      <video id="project-video-2" preload="none" controls loop playsinline poster="./assets/images/play.png">
                         <source src="./assets/project5/bindmodel.mp4" type="video/mp4" />
-                        您的瀏覽器不支援HTML 5影片播放標籤<video>格式。
-                          Your browser doesn't support the <video> tag.
-                          </video>
+                        <span lang="zh-Hant-TW">您的瀏覽器不支援 HTML5 影片播放。</span>
+                        Your browser doesn't support the &lt;video&gt; tag.
+                      </video>
                     </p>
                     <p>下列展示跨平台傳輸檔案（手機、電腦）。</p>
                     <p class="pic">
-                      <video id="movie" preload controls loop poster="./assets/images/play.png">
-                        <source src="./assets/project5/sendmodel.mov" type="video/mp4" />
-                        您的瀏覽器不支援HTML 5影片播放標籤<video>格式。
-                          Your browser doesn't support the <video> tag.
-                          </video>
+                      <video id="project-video-3" preload="none" controls loop playsinline poster="./assets/images/play.png">
+                        <source src="./assets/project5/sendmodel.mp4" type="video/mp4" />
+                        <span lang="zh-Hant-TW">您的瀏覽器不支援 HTML5 影片播放。</span>
+                        Your browser doesn't support the &lt;video&gt; tag.
+                      </video>
                     </p>
                   </div>
                 </div>
@@ -754,27 +739,27 @@
                           opacity: 1;
                           top: 50%;
                           color: aliceblue;">
-                      <h1>瘋 G 點</h1>
+                      <h1 lang="zh-Hant-TW">瘋 G 點</h1>
                     </div>
                     <div class="banner_bg"></div>
                   </div>
-                  <div class="descprition">
-                    <h3><i aria-hidden="true" data-icon="&#xe013;"></i>瘋 G 點(電商 APP)</h3>
+                  <div class="descprition" lang="zh-Hant-TW">
+                    <h3 lang="zh-Hant-TW"><i aria-hidden="true" data-icon="&#xe013;"></i>瘋 G 點(電商 APP)</h3>
                     <div style="display: flex; flex-wrap: wrap;justify-content: center;">
                       <p style="text-align: -webkit-center;">
-                        <img class="p6" src="./assets/project6/index-1.jpeg" width="200" height="400" alt="android" />
+                        <picture><source srcset="./assets/project6/index-1.avif" type="image/avif"><source srcset="./assets/project6/index-1.webp" type="image/webp"><img class="p6" src="./assets/project6/index-1.jpeg" width="200" height="400" alt="android" / loading="lazy" decoding="async"></picture>
                       </p>
                       <p style="text-align: -webkit-center;">
-                        <img class="p6" src="./assets/project6/index-2.jpeg" width="200" height="400" alt="android" />
+                        <picture><source srcset="./assets/project6/index-2.avif" type="image/avif"><source srcset="./assets/project6/index-2.webp" type="image/webp"><img class="p6" src="./assets/project6/index-2.jpeg" width="200" height="400" alt="android" / loading="lazy" decoding="async"></picture>
                       </p>
                       <p style="text-align: -webkit-center;">
-                        <img class="p6" src="./assets/project6/index-3.jpeg" width="200" height="400" alt="android" />
+                        <picture><source srcset="./assets/project6/index-3.avif" type="image/avif"><source srcset="./assets/project6/index-3.webp" type="image/webp"><img class="p6" src="./assets/project6/index-3.jpeg" width="200" height="400" alt="android" / loading="lazy" decoding="async"></picture>
                       </p>
                       <p style="text-align: -webkit-center;">
-                        <img class="p6" src="./assets/project6/index-4.jpeg" width="200" height="400" alt="android" />
+                        <picture><source srcset="./assets/project6/index-4.avif" type="image/avif"><source srcset="./assets/project6/index-4.webp" type="image/webp"><img class="p6" src="./assets/project6/index-4.jpeg" width="200" height="400" alt="android" / loading="lazy" decoding="async"></picture>
                       </p>
                       <p style="text-align: -webkit-center;">
-                        <img class="p6" src="./assets/project6/index-5.jpeg" width="200" height="400" alt="android" />
+                        <picture><source srcset="./assets/project6/index-5.avif" type="image/avif"><source srcset="./assets/project6/index-5.webp" type="image/webp"><img class="p6" src="./assets/project6/index-5.jpeg" width="200" height="400" alt="android" / loading="lazy" decoding="async"></picture>
                       </p>
 
                     </div>
@@ -782,18 +767,18 @@
                       <span>呈現畫面</span>
                     </p>
                     <p class="pic">
-                      <video id="movie" preload controls loop poster="./assets/images/play.png">
+                      <video id="project-video-4" preload="none" controls loop playsinline poster="./assets/images/play.png">
                         <source src="./assets/project6/demo.mp4" type="video/mp4" />
-                        您的瀏覽器不支援HTML 5影片播放標籤<video>格式。
-                          Your browser doesn't support the <video> tag.
-                          </video>
+                        <span lang="zh-Hant-TW">您的瀏覽器不支援 HTML5 影片播放。</span>
+                        Your browser doesn't support the &lt;video&gt; tag.
+                      </video>
                     </p>
                     <p class="pic">
                       <span>點數兌換</span>
                     </p>
                     <div style="display: flex; justify-content: center;">
                       <a href="https://play.google.com/store/apps/details?id=io.uniapp.crazyg" target="_blank">
-                        <img src="./assets/project4/android_download.jpg" width="200" height="100" alt="android" />
+                        <picture><source srcset="./assets/project4/android_download.webp" type="image/webp"><img src="./assets/project4/android_download.jpg" width="200" height="100" alt="android" / loading="lazy" decoding="async"></picture>
                       </a>
                     </div>
                   </div>
@@ -809,12 +794,12 @@
                                           opacity: 1;
                                           top: 50%;
                                           color: aliceblue;">
-                      <h1>空氣網(後台)</h1>
+                      <h1 lang="zh-Hant-TW">空氣網(後台)</h1>
                     </div>
                     <div class="banner_bg"></div>
                   </div>
-                  <div class="descprition">
-                    <h3><i aria-hidden="true" data-icon="&#xe108;"></i>空氣網(後台)<a href="https://wot.epa.gov.tw/"
+                  <div class="descprition" lang="zh-Hant-TW">
+                    <h3 lang="zh-Hant-TW"><i aria-hidden="true" data-icon="&#xe108;"></i>空氣網(後台)<a href="https://wot.epa.gov.tw/"
                         target="_blank" class="btn_green r5">網站</a></h3>
                     <p>主要是串接中華電信IoT智慧聯網大平台之感測資料於環保署做呈現</p>
                     <p class="quote">
@@ -825,7 +810,7 @@
                       因每天資料量非常大3G~10G，故使用監控軟體(ZABBIX)來監控伺服器狀況及ＤＢ容量，呈現則使用(Grfana)。
                     </p>
                     <p class="pic">
-                      <img src="./assets/project7/Air_Postflow.png" width="500" height="300" alt="系統架構圖" />
+                      <picture><source srcset="./assets/project7/Air_Postflow.avif" type="image/avif"><source srcset="./assets/project7/Air_Postflow.webp" type="image/webp"><img src="./assets/project7/Air_Postflow.png" width="500" height="300" alt="系統架構圖" / loading="lazy" decoding="async"></picture>
                       <span>系統架構</span>
                     </p>
                     <div class="time">
@@ -844,12 +829,12 @@
                                           opacity: 1;
                                           top: 50%;
                                           color: aliceblue;">
-                      <h1>血庫核對系統</h1>
+                      <h1 lang="zh-Hant-TW">血庫核對系統</h1>
                     </div>
                     <div class="banner_bg"></div>
                   </div>
-                  <div class="descprition">
-                    <h3><i aria-hidden="true" data-icon="&#xe013;"></i>血庫核對系統</h3>
+                  <div class="descprition" lang="zh-Hant-TW">
+                    <h3 lang="zh-Hant-TW"><i aria-hidden="true" data-icon="&#xe013;"></i>血庫核對系統</h3>
                     <p>血袋核對手機化，血袋都是有時效性的，透過手機做血液傳送時關卡的確認，病服員使用『識別證』＋血袋條碼，確定寫待領取。</p>
                     <p class="quote">
                       主要使用Cordova將網頁包成App<br />
@@ -857,19 +842,19 @@
                       後端使用：ASP.Net MVC 5、Linq、Dapper、C# 6.0 <br />
                     </p>
                     <p class="pic">
-                      <img src="./assets/project8/bol_system.png" width="500" height="300" alt="架構流程" />
+                      <picture><source srcset="./assets/project8/bol_system.avif" type="image/avif"><source srcset="./assets/project8/bol_system.webp" type="image/webp"><img src="./assets/project8/bol_system.png" width="500" height="300" alt="架構流程" / loading="lazy" decoding="async"></picture>
                       <span>流程架構</span>
                     </p>
                     <p class="pic">
-                      <img src="./assets/project8/bol_login.PNG" alt="登入畫面" />
+                      <picture><source srcset="./assets/project8/bol_login.avif" type="image/avif"><source srcset="./assets/project8/bol_login.webp" type="image/webp"><img src="./assets/project8/bol_login.PNG" alt="登入畫面" / width="511" height="858" loading="lazy" decoding="async"></picture>
                       <span>登入畫面</span>
                     </p>
                     <p class="pic">
-                      <img src="./assets/project8/bol_step1.PNG" alt="合血單資訊" />
+                      <picture><source srcset="./assets/project8/bol_step1.avif" type="image/avif"><source srcset="./assets/project8/bol_step1.webp" type="image/webp"><img src="./assets/project8/bol_step1.PNG" alt="合血單資訊" / width="391" height="699" loading="lazy" decoding="async"></picture>
                       <span>合血單資訊畫面</span>
                     </p>
                     <p class="pic">
-                      <img src="./assets/project8/bol_step2.PNG" alt="合血單確認" />
+                      <picture><source srcset="./assets/project8/bol_step2.avif" type="image/avif"><source srcset="./assets/project8/bol_step2.webp" type="image/webp"><img src="./assets/project8/bol_step2.PNG" alt="合血單確認" / width="415" height="708" loading="lazy" decoding="async"></picture>
                       <span>合血單確認畫面</span>
                     </p>
                     <div class="time">
@@ -892,17 +877,16 @@
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
 
-                  <img data-src="./assets/project1/p1.png" class="lazy" alt="plocker.org" loading="lazy">
+                  <picture><source srcset="./assets/project1/p1.avif" type="image/avif"><source srcset="./assets/project1/p1.webp" type="image/webp"><img src="./assets/project1/p1.png" alt="plocker.org" loading="lazy" width="2640" height="1180" decoding="async"></picture>
                 </figure>
 
                 <h3 class="project-title">Plocker.org</h3>
 
                 <p class="project-category">Websites</p>
               </a>
-              <div class="project-skill-item">
-                <img src="https://img.shields.io/badge/-Vue-000?&amp;logo=Vuedotjs&amp;labelColor=000" alt="Vue">
-                <img src="https://img.shields.io/badge/-Tailwind%20CSS-000?&amp;logo=Tailwind%20CSS&amp;labelColor=000"
-                  alt="Tailwind CSS">
+              <div class="stack-tags project-tags">
+                <span class="tag">Vue</span>
+                <span class="tag">Tailwind CSS</span>
               </div>
             </li>
             <!-- SeeDao -->
@@ -914,17 +898,16 @@
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
 
-                  <img data-src="./assets/project2/seedao.png" class="lazy" alt="seedao" loading="lazy">
+                  <picture><source srcset="./assets/project2/seedao.avif" type="image/avif"><source srcset="./assets/project2/seedao.webp" type="image/webp"><img src="./assets/project2/seedao.png" alt="seedao" loading="lazy" width="2666" height="1406" decoding="async"></picture>
                 </figure>
 
                 <h3 class="project-title">SeeDao</h3>
 
                 <p class="project-category">Websites</p>
               </a>
-              <div class="project-skill-item">
-                <img src="https://img.shields.io/badge/-Vue-000?&amp;logo=Vuedotjs&amp;labelColor=000" alt="Vue">
-                <img src="https://img.shields.io/badge/-bootstrap-000?&amp;logo=bootstrap&amp;labelColor=000"
-                  alt="Bootstrap">
+              <div class="stack-tags project-tags">
+                <span class="tag">Vue</span>
+                <span class="tag">Bootstrap</span>
               </div>
             </li>
             <!-- CSBS -->
@@ -936,17 +919,16 @@
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
 
-                  <img data-src="./assets/project3/p3.png" class="lazy" alt="CSBS" loading="lazy">
+                  <picture><source srcset="./assets/project3/p3.avif" type="image/avif"><source srcset="./assets/project3/p3.webp" type="image/webp"><img src="./assets/project3/p3.png" alt="CSBS" loading="lazy" width="2530" height="1410" decoding="async"></picture>
                 </figure>
 
                 <h3 class="project-title">CSBS</h3>
 
                 <p class="project-category">Websites</p>
               </a>
-              <div class="project-skill-item">
-                <img src="https://img.shields.io/badge/React-000?&amp;logo=React&amp;labelColor=000" alt="React">
-                <img src="https://img.shields.io/badge/-Tailwind%20CSS-000?&amp;logo=Tailwind%20CSS&amp;labelColor=000"
-                  alt="Tailwind CSS">
+              <div class="stack-tags project-tags">
+                <span class="tag">React</span>
+                <span class="tag">Tailwind CSS</span>
               </div>
             </li>
             <!-- i-lolly -->
@@ -958,18 +940,18 @@
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
 
-                  <img data-src="./assets/project4/p4.jpeg" class="lazy" alt="i-lolly" loading="lazy">
+                  <picture><source srcset="./assets/project4/p4.avif" type="image/avif"><source srcset="./assets/project4/p4.webp" type="image/webp"><img src="./assets/project4/p4.jpeg" alt="i-lolly" loading="lazy" width="422" height="303" decoding="async"></picture>
                 </figure>
 
                 <h3 class="project-title">i-lolly</h3>
 
                 <p class="project-category">App</p>
               </a>
-              <div class="project-skill-item">
-                <img src="https://img.shields.io/badge/Php-000?&amp;logo=Php&amp;labelColor=000" alt="Php">
-                <img src="https://img.shields.io/badge/Vue-000?&amp;logo=Vuedotjs&amp;labelColor=000" alt="Vue">
-                <img src="https://img.shields.io/badge/-Flutter-000?&amp;logo=Flutter&amp;labelColor=000" alt="Flutter">
-                <img src="https://img.shields.io/badge/Linux-000?&amp;logo=Linux&amp;labelColor=000" alt="Linux">
+              <div class="stack-tags project-tags">
+                <span class="tag">Php</span>
+                <span class="tag">Vue</span>
+                <span class="tag">Flutter</span>
+                <span class="tag">Linux</span>
               </div>
             </li>
             <!-- AreaDrop -->
@@ -981,18 +963,17 @@
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
 
-                  <img data-src="./assets/project5/p5.jpg" class="lazy" alt="finance" loading="lazy">
+                  <picture><source srcset="./assets/project5/p5.avif" type="image/avif"><source srcset="./assets/project5/p5.webp" type="image/webp"><img src="./assets/project5/p5.jpg" alt="finance" loading="lazy" width="1280" height="915" decoding="async"></picture>
                 </figure>
 
                 <h3 class="project-title">AreaDrop</h3>
 
                 <p class="project-category">App</p>
               </a>
-              <div class="project-skill-item">
-                <img src="https://img.shields.io/badge/Android-000?&amp;logo=Android&amp;labelColor=000" alt="Android">
-                <img src="https://img.shields.io/badge/RaspberryPi -000?&amp;logo=RaspberryPi&amp;labelColor=000"
-                  alt="RaspberryPi">
-                <img src="https://img.shields.io/badge/-Html-000?&amp;logo=Html&amp;labelColor=000" alt="Html">
+              <div class="stack-tags project-tags">
+                <span class="tag">Android</span>
+                <span class="tag">RaspberryPi</span>
+                <span class="tag">Html</span>
               </div>
             </li>
             <!-- CrazyG -->
@@ -1004,15 +985,15 @@
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
 
-                  <img data-src="./assets/project6/p6.jpg" class="lazy" alt="metaspark" loading="lazy">
+                  <picture><source srcset="./assets/project6/p6.avif" type="image/avif"><source srcset="./assets/project6/p6.webp" type="image/webp"><img src="./assets/project6/p6.jpg" alt="metaspark" loading="lazy" width="254" height="182" decoding="async"></picture>
                 </figure>
                 <h3 class="project-title">CrazyG</h3>
                 <p class="project-category">APP</p>
               </a>
-              <div class="project-skill-item">
-                <img src="https://img.shields.io/badge/Php-000?&amp;logo=Php&amp;labelColor=000" alt="Php">
-                <img src="https://img.shields.io/badge/Vue-000?&amp;logo=Vuedotjs&amp;labelColor=000" alt="Vue">
-                <img src="https://img.shields.io/badge/Uniapp-000?&amp;logo=Uniapp&amp;labelColor=000" alt="Uniapp">
+              <div class="stack-tags project-tags">
+                <span class="tag">Php</span>
+                <span class="tag">Vue</span>
+                <span class="tag">Uniapp</span>
               </div>
             </li>
             <!-- AirWeb -->
@@ -1024,16 +1005,16 @@
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
 
-                  <img data-src="./assets/project7/product_7_bg.jpg" class="lazy" alt="summary" loading="lazy">
+                  <picture><source srcset="./assets/project7/product_7_bg.avif" type="image/avif"><source srcset="./assets/project7/product_7_bg.webp" type="image/webp"><img src="./assets/project7/product_7_bg.jpg" alt="summary" loading="lazy" width="2550" height="1336" decoding="async"></picture>
                 </figure>
 
                 <h3 class="project-title">AirWeb</h3>
 
                 <p class="project-category">Website</p>
               </a>
-              <div class="project-skill-item">
-                <img src="https://img.shields.io/badge/Django-000?&amp;logo=Django&amp;labelColor=000" alt="Django">
-                <img src="https://img.shields.io/badge/Linux-000?&amp;logo=Linux&amp;labelColor=000" alt="Linux">
+              <div class="stack-tags project-tags">
+                <span class="tag">Django</span>
+                <span class="tag">Linux</span>
               </div>
             </li>
             <!-- Blood -->
@@ -1045,18 +1026,17 @@
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
 
-                  <img data-src="./assets/project8/w644.jpeg" class="lazy" alt="task manager" loading="lazy">
+                  <picture><source srcset="./assets/project8/w644.webp" type="image/webp"><img src="./assets/project8/w644.jpeg" alt="task manager" loading="lazy" width="644" height="429" decoding="async"></picture>
                 </figure>
 
-                <h3 class="project-title">血庫核對e化系統</h3>
+                <h3 class="project-title" lang="zh-Hant-TW">血庫核對e化系統</h3>
 
                 <p class="project-category">Applications</p>
               </a>
-              <div class="project-skill-item">
-                <img src="https://img.shields.io/badge/C sharp-000?&amp;logo=C sharp&amp;labelColor=000" alt="C#">
-                <img src="https://img.shields.io/badge/-bootstrap-000?&amp;logo=bootstrap&amp;labelColor=000"
-                  alt="Bootstrap">
-                <img src="https://img.shields.io/badge/Cordova-000?&amp;logo=Cordova&amp;labelColor=000" alt="Cordova">
+              <div class="stack-tags project-tags">
+                <span class="tag">C#</span>
+                <span class="tag">Bootstrap</span>
+                <span class="tag">Cordova</span>
               </div>
             </li>
 
@@ -1086,13 +1066,13 @@
               <a href="https://github.com/DeFiHackLabs/Solidity-Intensive-CoLearning" target="_blank">
 
                 <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-5.png" loading="lazy">
+                  <picture><source srcset="./assets/images/blog-5.webp" type="image/webp"><img src="./assets/images/blog-5.png" loading="lazy" width="460" height="114" decoding="async" alt=""></picture>
                 </figure>
 
                 <div class="blog-content">
 
 
-                  <h3 class="h3 blog-item-title">DeFiHackLabs x WTF Academy
+                  <h3 class="h3 blog-item-title" lang="zh-Hant-TW">DeFiHackLabs x WTF Academy
                     Solidity 21天共學計畫(ing)</h3>
 
 
@@ -1104,13 +1084,13 @@
               <a href="https://github.com/0xRory/Phishing" target="_blank">
 
                 <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-4.png" loading="lazy">
+                  <picture><source srcset="./assets/images/blog-4.avif" type="image/avif"><source srcset="./assets/images/blog-4.webp" type="image/webp"><img src="./assets/images/blog-4.png" loading="lazy" width="300" height="168" decoding="async" alt=""></picture>
                 </figure>
 
                 <div class="blog-content">
 
 
-                  <h3 class="h3 blog-item-title">🎣 探索釣魚攻擊的演變：從 Web2 到 Web3 🎣</h3>
+                  <h3 class="h3 blog-item-title" lang="zh-Hant-TW">🎣 探索釣魚攻擊的演變：從 Web2 到 Web3 🎣</h3>
 
 
                 </div>
@@ -1121,13 +1101,13 @@
               <a href="https://ithelp.ithome.com.tw/users/20162055/ironman/6239" target="_blank">
 
                 <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-3.png" loading="lazy">
+                  <picture><source srcset="./assets/images/blog-3.avif" type="image/avif"><source srcset="./assets/images/blog-3.webp" type="image/webp"><img src="./assets/images/blog-3.png" loading="lazy" width="1158" height="796" decoding="async" alt=""></picture>
                 </figure>
 
                 <div class="blog-content">
 
 
-                  <h3 class="h3 blog-item-title">Viem 介紹</h3>
+                  <h3 class="h3 blog-item-title" lang="zh-Hant-TW">Viem 介紹</h3>
 
 
                 </div>
@@ -1138,13 +1118,13 @@
               <a href="https://github.com/0xRory/web2-to-web3-note" target="_blank">
 
                 <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-2.png" loading="lazy">
+                  <picture><source srcset="./assets/images/blog-2.avif" type="image/avif"><source srcset="./assets/images/blog-2.webp" type="image/webp"><img src="./assets/images/blog-2.png" loading="lazy" width="1280" height="720" decoding="async" alt=""></picture>
                 </figure>
 
                 <div class="blog-content">
 
 
-                  <h3 class="h3 blog-item-title">Web2 to Web3 學習筆記(keep..)</h3>
+                  <h3 class="h3 blog-item-title" lang="zh-Hant-TW">Web2 to Web3 學習筆記(keep..)</h3>
 
 
                 </div>
@@ -1156,7 +1136,7 @@
                 target="_blank">
 
                 <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-1.jpg" loading="lazy">
+                  <picture><source srcset="./assets/images/blog-1.avif" type="image/avif"><source srcset="./assets/images/blog-1.webp" type="image/webp"><img src="./assets/images/blog-1.jpg" loading="lazy" width="1024" height="683" decoding="async" alt=""></picture>
                 </figure>
 
                 <div class="blog-content">
@@ -1172,36 +1152,17 @@
 
 
 
-          </ul>
-
-        </section>
-
-      </article>
-
-      <!--
-        - #ITHelp
-      -->
-
-      <article class="ithelp" data-page="ithelp">
-
-        <header>
-          <h2 class="h2 article-title">ITHelp</h2>
-        </header>
-
-        <section class="blog-posts">
-
-          <ul class="blog-posts-list">
-            <li class="blog-post-item">
+                      <li class="blog-post-item">
               <a href="https://ithelp.ithome.com.tw/users/20162055/ironman/6239" target="_blank">
 
                 <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-3.png" loading="lazy">
+                  <picture><source srcset="./assets/images/blog-3.avif" type="image/avif"><source srcset="./assets/images/blog-3.webp" type="image/webp"><img src="./assets/images/blog-3.png" loading="lazy" width="1158" height="796" decoding="async" alt=""></picture>
                 </figure>
 
                 <div class="blog-content">
 
 
-                  <h3 class="h3 blog-item-title">Viem 介紹(ing)</h3>
+                  <h3 class="h3 blog-item-title" lang="zh-Hant-TW">Viem 介紹(ing)</h3>
 
 
                 </div>
@@ -1213,7 +1174,7 @@
                 target="_blank">
 
                 <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-1.jpg" loading="lazy">
+                  <picture><source srcset="./assets/images/blog-1.avif" type="image/avif"><source srcset="./assets/images/blog-1.webp" type="image/webp"><img src="./assets/images/blog-1.jpg" loading="lazy" width="1024" height="683" decoding="async" alt=""></picture>
                 </figure>
 
                 <div class="blog-content">
@@ -1227,13 +1188,12 @@
               </a>
             </li>
 
-
-
           </ul>
 
         </section>
 
       </article>
+
 
 
 
@@ -1297,32 +1257,6 @@
   <script type="text/javascript" src="./assets/js/jquery.transit.min.js"></script>
   <script type="text/javascript" src="./assets/js/carousel.min.js"></script>
   <script type="text/javascript" src="./assets/js/common.js"></script>
-  <script>
-    // 創建 IntersectionObserver 實例
-    const observer = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        // 如果目標元素進入可見區域
-        if (entry.isIntersecting) {
-          const img = entry.target;
-          const src = img.getAttribute('data-src');
-
-          // 設置圖片的 src 屬性，載入圖片
-          img.setAttribute('src', src);
-
-          // 停止觀察該圖片
-          observer.unobserve(img);
-        }
-      });
-    });
-
-    // 選擇所有帶有 "lazy" 類別的圖片元素
-    const lazyImages = document.querySelectorAll('.lazy');
-
-    // 開始觀察每個圖片元素
-    lazyImages.forEach(image => {
-      observer.observe(image);
-    });
-  </script>
 </body>
 
 </html>

@@ -1,0 +1,12 @@
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Claude Code local overrides
+.claude/settings.local.json
+
+# large source media — transcoded .mp4 is what ships
+*.mov
+
+# never used here; this site has no build step
+node_modules/

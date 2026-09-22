@@ -39,10 +39,8 @@
     - Noto Sans TC is not preloaded; its unicode-range fetches it only when
       Traditional Chinese actually renders.
   -->
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="./assets/fonts/pixelify-sans-subset.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="./assets/fonts/jetbrains-mono-var.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="./assets/fonts/pixelify-sans-subset.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="./assets/fonts/jetbrains-mono-var.woff2">
 
   <!--
     - css. Separate <link>s fetch in parallel; @import would serialise them.
@@ -102,8 +100,8 @@
         <a href="#writing" data-nav-link data-i18n="nav.writing">Writing</a>
         <a href="#contact" data-nav-link data-i18n="nav.contact">Contact</a>
       </nav>
-      <button class="nav__theme" data-theme-toggle type="button"
-              aria-label="Switch colour theme" aria-pressed="false" data-i18n-aria="nav.theme">
+      <button class="nav__theme" data-theme-toggle type="button" aria-label="Switch colour theme" aria-pressed="false"
+        data-i18n-aria="nav.theme">
         <span class="nav__theme-dot" aria-hidden="true"></span>
       </button>
       <button class="nav__lang" data-lang-toggle type="button" aria-label="Switch to Chinese">&#20013;</button>
@@ -130,8 +128,8 @@
           <picture>
             <source srcset="./assets/images/avatar.avif" type="image/avif">
             <source srcset="./assets/images/avatar.webp" type="image/webp">
-            <img class="hero__fallback" src="./assets/images/avatar.png"
-                 width="460" height="460" alt="Rory" fetchpriority="high" decoding="async">
+            <img class="hero__fallback" src="./assets/images/avatar.png" width="460" height="460" alt="Rory"
+              fetchpriority="high" decoding="async">
           </picture>
           <canvas class="hero__canvas" data-hero-canvas aria-hidden="true"></canvas>
         </div>
@@ -145,150 +143,245 @@
         </header>
 
         <div class="work__filter" data-filter role="group" aria-label="Filter work">
-          <button class="work__filter-btn is-active" data-filter-btn="all" type="button" data-i18n="cat.all">All</button>
-          <button class="work__filter-btn" data-filter-btn="Website" type="button" data-i18n="cat.website">Website</button>
+          <button class="work__filter-btn is-active" data-filter-btn="all" type="button"
+            data-i18n="cat.all">All</button>
+          <button class="work__filter-btn" data-filter-btn="Website" type="button"
+            data-i18n="cat.website">Website</button>
           <button class="work__filter-btn" data-filter-btn="AI App" type="button" data-i18n="cat.aiApp">AI App</button>
-          <button class="work__filter-btn" data-filter-btn="Security" type="button" data-i18n="cat.security">Security</button>
-          <button class="work__filter-btn" data-filter-btn="Web3 / DApp" type="button" data-i18n="cat.web3Dapp">Web3 / DApp</button>
-          <button class="work__filter-btn" data-filter-btn="App / IoT" type="button" data-i18n="cat.appIot">App / IoT</button>
-          <button class="work__filter-btn" data-filter-btn="Commerce App" type="button" data-i18n="cat.commerceApp">Commerce App</button>
-          <button class="work__filter-btn" data-filter-btn="Backend" type="button" data-i18n="cat.backend">Backend</button>
-          <button class="work__filter-btn" data-filter-btn="Enterprise" type="button" data-i18n="cat.enterprise">Enterprise</button>
+          <button class="work__filter-btn" data-filter-btn="Security" type="button"
+            data-i18n="cat.security">Security</button>
+          <button class="work__filter-btn" data-filter-btn="Web3 / DApp" type="button" data-i18n="cat.web3Dapp">Web3 /
+            DApp</button>
+          <button class="work__filter-btn" data-filter-btn="App / IoT" type="button" data-i18n="cat.appIot">App /
+            IoT</button>
+          <button class="work__filter-btn" data-filter-btn="Commerce App" type="button"
+            data-i18n="cat.commerceApp">Commerce App</button>
+          <button class="work__filter-btn" data-filter-btn="Backend" type="button"
+            data-i18n="cat.backend">Backend</button>
+          <button class="work__filter-btn" data-filter-btn="Enterprise" type="button"
+            data-i18n="cat.enterprise">Enterprise</button>
         </div>
 
         <ul class="work__grid" data-work-grid>
-        <li class="work__item" data-reveal data-category="Website">
-          <a class="card" href="https://plancker.org/" target="_blank" rel="noopener">
-            <span class="card__index" data-count-to="1">[01]</span>
-            <span class="card__media" data-flip-id="plocker"><picture><source srcset="./assets/project1/p1.avif" type="image/avif"><source srcset="./assets/project1/p1.webp" type="image/webp"><img src="./assets/project1/p1.png" alt="Plocker.org" width="2640" height="1180" loading="lazy" decoding="async"></picture></span>
-            <span class="card__body">
-              <span class="card__title">Plocker.org</span>
-              <span class="card__meta"><span data-i18n="cat.website">Website</span> <span class="card__year">2023</span></span>
-              <span class="stack-tags"><span class="tag">Vue</span><span class="tag">Tailwind CSS</span></span>
-            </span>
-            <span class="card__cta" data-i18n="work.cta.visitSite">visit site &nearr;</span>
-          </a>
-        </li>
-        <li class="work__item" data-reveal data-category="Website">
-          <a class="card" href="https://seedao.xyz/" target="_blank" rel="noopener">
-            <span class="card__index" data-count-to="2">[02]</span>
-            <span class="card__media" data-flip-id="seedao"><picture><source srcset="./assets/project2/seedao.avif" type="image/avif"><source srcset="./assets/project2/seedao.webp" type="image/webp"><img src="./assets/project2/seedao.png" alt="SeeDao" width="2666" height="1406" loading="lazy" decoding="async"></picture></span>
-            <span class="card__body">
-              <span class="card__title">SeeDao</span>
-              <span class="card__meta"><span data-i18n="cat.website">Website</span> <span class="card__year">2023</span></span>
-              <span class="stack-tags"><span class="tag">Vue</span><span class="tag">Bootstrap</span></span>
-            </span>
-            <span class="card__cta" data-i18n="work.cta.visitSite">visit site &nearr;</span>
-          </a>
-        </li>
-        <li class="work__item" data-reveal data-category="Web3 / DApp">
-          <button class="card" type="button" data-case="csbs" aria-haspopup="dialog">
-            <span class="card__index" data-count-to="3">[03]</span>
-            <span class="card__media" data-flip-id="csbs"><picture><source srcset="./assets/project3/p3.avif" type="image/avif"><source srcset="./assets/project3/p3.webp" type="image/webp"><img src="./assets/project3/p3.png" alt="CSBS" width="2530" height="1410" loading="lazy" decoding="async"></picture></span>
-            <span class="card__body">
-              <span class="card__title">CSBS</span>
-              <span class="card__meta"><span data-i18n="cat.web3Dapp">Web3 / DApp</span> <span class="card__year">2023</span></span>
-              <span class="stack-tags"><span class="tag">React</span><span class="tag">Tailwind CSS</span></span>
-            </span>
-            <span class="card__cta" data-i18n="work.cta.viewCase">view case &rarr;</span>
-          </button>
-        </li>
-        <li class="work__item" data-reveal data-category="App / IoT">
-          <button class="card" type="button" data-case="ilolly" aria-haspopup="dialog">
-            <span class="card__index" data-count-to="4">[04]</span>
-            <span class="card__media" data-flip-id="ilolly"><picture><source srcset="./assets/project4/p4.avif" type="image/avif"><source srcset="./assets/project4/p4.webp" type="image/webp"><img src="./assets/project4/p4.jpeg" alt="i-lolly" width="422" height="303" loading="lazy" decoding="async"></picture></span>
-            <span class="card__body">
-              <span class="card__title">i-lolly</span>
-              <span class="card__meta"><span data-i18n="cat.appIot">App / IoT</span> <span class="card__year">2021</span></span>
-              <span class="stack-tags"><span class="tag">Php</span><span class="tag">Vue</span><span class="tag">Flutter</span><span class="tag">Linux</span></span>
-            </span>
-            <span class="card__cta" data-i18n="work.cta.viewCase">view case &rarr;</span>
-          </button>
-        </li>
-        <li class="work__item" data-reveal data-category="App / IoT">
-          <button class="card" type="button" data-case="areadrop" aria-haspopup="dialog">
-            <span class="card__index" data-count-to="5">[05]</span>
-            <span class="card__media" data-flip-id="areadrop"><picture><source srcset="./assets/project5/p5.avif" type="image/avif"><source srcset="./assets/project5/p5.webp" type="image/webp"><img src="./assets/project5/p5.jpg" alt="AreaDrop" width="1280" height="915" loading="lazy" decoding="async"></picture></span>
-            <span class="card__body">
-              <span class="card__title">AreaDrop</span>
-              <span class="card__meta"><span data-i18n="cat.appIot">App / IoT</span> <span class="card__year">2020</span></span>
-              <span class="stack-tags"><span class="tag">Android</span><span class="tag">RaspberryPi</span><span class="tag">Html</span></span>
-            </span>
-            <span class="card__cta" data-i18n="work.cta.viewCase">view case &rarr;</span>
-          </button>
-        </li>
-        <li class="work__item" data-reveal data-category="Commerce App">
-          <button class="card" type="button" data-case="crazyg" aria-haspopup="dialog">
-            <span class="card__index" data-count-to="6">[06]</span>
-            <span class="card__media" data-flip-id="crazyg"><picture><source srcset="./assets/project6/p6.avif" type="image/avif"><source srcset="./assets/project6/p6.webp" type="image/webp"><img src="./assets/project6/p6.jpg" alt="CrazyG" width="254" height="182" loading="lazy" decoding="async"></picture></span>
-            <span class="card__body">
-              <span class="card__title">CrazyG</span>
-              <span class="card__meta"><span data-i18n="cat.commerceApp">Commerce App</span> <span class="card__year">2020</span></span>
-              <span class="stack-tags"><span class="tag">Php</span><span class="tag">Vue</span><span class="tag">Uniapp</span></span>
-            </span>
-            <span class="card__cta" data-i18n="work.cta.viewCase">view case &rarr;</span>
-          </button>
-        </li>
-        <li class="work__item" data-reveal data-category="Backend">
-          <button class="card" type="button" data-case="airweb" aria-haspopup="dialog">
-            <span class="card__index" data-count-to="7">[07]</span>
-            <span class="card__media" data-flip-id="airweb"><picture><source srcset="./assets/project7/product_7_bg.avif" type="image/avif"><source srcset="./assets/project7/product_7_bg.webp" type="image/webp"><img src="./assets/project7/product_7_bg.jpg" alt="AirWeb" width="2550" height="1336" loading="lazy" decoding="async"></picture></span>
-            <span class="card__body">
-              <span class="card__title">AirWeb</span>
-              <span class="card__meta"><span data-i18n="cat.backend">Backend</span> <span class="card__year">2018</span></span>
-              <span class="stack-tags"><span class="tag">Django</span><span class="tag">Linux</span></span>
-            </span>
-            <span class="card__cta" data-i18n="work.cta.viewCase">view case &rarr;</span>
-          </button>
-        </li>
-        <li class="work__item" data-reveal data-category="Enterprise">
-          <button class="card" type="button" data-case="bloodbank" aria-haspopup="dialog">
-            <span class="card__index" data-count-to="8">[08]</span>
-            <span class="card__media" data-flip-id="bloodbank"><picture><source srcset="./assets/project8/w644.webp" type="image/webp"><img src="./assets/project8/w644.jpeg" alt="Blood Bank" width="644" height="429" loading="lazy" decoding="async"></picture></span>
-            <span class="card__body">
-              <span class="card__title">Blood Bank</span>
-              <span class="card__meta"><span data-i18n="cat.enterprise">Enterprise</span> <span class="card__year">2017</span></span>
-              <span class="stack-tags"><span class="tag">C#</span><span class="tag">Bootstrap</span><span class="tag">Cordova</span></span>
-            </span>
-            <span class="card__cta" data-i18n="work.cta.viewCase">view case &rarr;</span>
-          </button>
-        </li>
-        <li class="work__item" data-reveal data-category="AI App">
-          <button class="card" type="button" data-case="maxo" aria-haspopup="dialog">
-            <span class="card__index" data-count-to="9">[09]</span>
-            <span class="card__media" data-flip-id="maxo"><picture><source srcset="./assets/project9/maxo.avif" type="image/avif"><source srcset="./assets/project9/maxo.webp" type="image/webp"><img src="./assets/project9/maxo.png" alt="MAXO" width="1600" height="1000" loading="lazy" decoding="async"></picture></span>
-            <span class="card__body">
-              <span class="card__title">MAXO</span>
-              <span class="card__meta"><span data-i18n="cat.aiApp">AI App</span> <span class="card__year">2026</span></span>
-              <span class="stack-tags"><span class="tag">Django</span><span class="tag">React</span><span class="tag">OpenAI</span><span class="tag">GCP</span></span>
-            </span>
-            <span class="card__cta" data-i18n="work.cta.viewCase">view case &rarr;</span>
-          </button>
-        </li>
-        <li class="work__item" data-reveal data-category="Security">
-          <button class="card" type="button" data-case="unphishable" aria-haspopup="dialog">
-            <span class="card__index" data-count-to="10">[10]</span>
-            <span class="card__media" data-flip-id="unphishable"><picture><source srcset="./assets/project10/unphishable.avif" type="image/avif"><source srcset="./assets/project10/unphishable.webp" type="image/webp"><img src="./assets/project10/unphishable.png" alt="Unphishable" width="1600" height="1000" loading="lazy" decoding="async"></picture></span>
-            <span class="card__body">
-              <span class="card__title">Unphishable</span>
-              <span class="card__meta"><span data-i18n="cat.security">Security</span> <span class="card__year">2025</span></span>
-              <span class="stack-tags"><span class="tag">Next.js</span><span class="tag">TypeScript</span><span class="tag">Web3</span></span>
-            </span>
-            <span class="card__cta" data-i18n="work.cta.viewCase">view case &rarr;</span>
-          </button>
-        </li>
-        <li class="work__item" data-reveal data-category="Backend">
-          <button class="card" type="button" data-case="offgrid" aria-haspopup="dialog">
-            <span class="card__index" data-count-to="11">[11]</span>
-            <span class="card__media" data-flip-id="offgrid"><picture><source srcset="./assets/project11/offgrid.avif" type="image/avif"><source srcset="./assets/project11/offgrid.webp" type="image/webp"><img src="./assets/project11/offgrid.png" alt="OFF GRID" width="2542" height="1506" loading="lazy" decoding="async"></picture></span>
-            <span class="card__body">
-              <span class="card__title">OFF GRID</span>
-              <span class="card__meta"><span data-i18n="cat.backend">Backend</span> <span class="card__year">2025&ndash;2026</span></span>
-              <span class="stack-tags"><span class="tag">Go</span><span class="tag">MySQL</span><span class="tag">Redis</span><span class="tag">Ethereum</span></span>
-            </span>
-            <span class="card__cta" data-i18n="work.cta.viewCase">view case &rarr;</span>
-          </button>
-        </li>
+          <li class="work__item" data-reveal data-category="Website">
+            <a class="card" href="https://plancker.org/" target="_blank" rel="noopener">
+              <span class="card__index" data-count-to="1">[01]</span>
+              <span class="card__media" data-flip-id="plocker">
+                <picture>
+                  <source srcset="./assets/project1/p1.avif" type="image/avif">
+                  <source srcset="./assets/project1/p1.webp" type="image/webp"><img src="./assets/project1/p1.png"
+                    alt="Plocker.org" width="2640" height="1180" loading="lazy" decoding="async">
+                </picture>
+              </span>
+              <span class="card__body">
+                <span class="card__title">Plocker.org</span>
+                <span class="card__meta"><span data-i18n="cat.website">Website</span> <span
+                    class="card__year">2023</span></span>
+                <span class="stack-tags"><span class="tag">Vue</span><span class="tag">Tailwind CSS</span></span>
+              </span>
+              <span class="card__cta" data-i18n="work.cta.visitSite">visit site &nearr;</span>
+            </a>
+          </li>
+          <li class="work__item" data-reveal data-category="Website">
+            <a class="card" href="https://seedao.xyz/" target="_blank" rel="noopener">
+              <span class="card__index" data-count-to="2">[02]</span>
+              <span class="card__media" data-flip-id="seedao">
+                <picture>
+                  <source srcset="./assets/project2/seedao.avif" type="image/avif">
+                  <source srcset="./assets/project2/seedao.webp" type="image/webp"><img
+                    src="./assets/project2/seedao.png" alt="SeeDao" width="2666" height="1406" loading="lazy"
+                    decoding="async">
+                </picture>
+              </span>
+              <span class="card__body">
+                <span class="card__title">SeeDao</span>
+                <span class="card__meta"><span data-i18n="cat.website">Website</span> <span
+                    class="card__year">2023</span></span>
+                <span class="stack-tags"><span class="tag">Vue</span><span class="tag">Bootstrap</span></span>
+              </span>
+              <span class="card__cta" data-i18n="work.cta.visitSite">visit site &nearr;</span>
+            </a>
+          </li>
+          <li class="work__item" data-reveal data-category="Web3 / DApp">
+            <button class="card" type="button" data-case="csbs" aria-haspopup="dialog">
+              <span class="card__index" data-count-to="3">[03]</span>
+              <span class="card__media" data-flip-id="csbs">
+                <picture>
+                  <source srcset="./assets/project3/p3.avif" type="image/avif">
+                  <source srcset="./assets/project3/p3.webp" type="image/webp"><img src="./assets/project3/p3.png"
+                    alt="CSBS" width="2530" height="1410" loading="lazy" decoding="async">
+                </picture>
+              </span>
+              <span class="card__body">
+                <span class="card__title">CSBS</span>
+                <span class="card__meta"><span data-i18n="cat.web3Dapp">Web3 / DApp</span> <span
+                    class="card__year">2023</span></span>
+                <span class="stack-tags"><span class="tag">React</span><span class="tag">Tailwind CSS</span></span>
+              </span>
+              <span class="card__cta" data-i18n="work.cta.viewCase">view case &rarr;</span>
+            </button>
+          </li>
+          <li class="work__item" data-reveal data-category="App / IoT">
+            <button class="card" type="button" data-case="ilolly" aria-haspopup="dialog">
+              <span class="card__index" data-count-to="4">[04]</span>
+              <span class="card__media" data-flip-id="ilolly">
+                <picture>
+                  <source srcset="./assets/project4/p4.avif" type="image/avif">
+                  <source srcset="./assets/project4/p4.webp" type="image/webp"><img src="./assets/project4/p4.jpeg"
+                    alt="i-lolly" width="422" height="303" loading="lazy" decoding="async">
+                </picture>
+              </span>
+              <span class="card__body">
+                <span class="card__title">i-lolly</span>
+                <span class="card__meta"><span data-i18n="cat.appIot">App / IoT</span> <span
+                    class="card__year">2021</span></span>
+                <span class="stack-tags"><span class="tag">Php</span><span class="tag">Vue</span><span
+                    class="tag">Flutter</span><span class="tag">Linux</span></span>
+              </span>
+              <span class="card__cta" data-i18n="work.cta.viewCase">view case &rarr;</span>
+            </button>
+          </li>
+          <li class="work__item" data-reveal data-category="App / IoT">
+            <button class="card" type="button" data-case="areadrop" aria-haspopup="dialog">
+              <span class="card__index" data-count-to="5">[05]</span>
+              <span class="card__media" data-flip-id="areadrop">
+                <picture>
+                  <source srcset="./assets/project5/p5.avif" type="image/avif">
+                  <source srcset="./assets/project5/p5.webp" type="image/webp"><img src="./assets/project5/p5.jpg"
+                    alt="AreaDrop" width="1280" height="915" loading="lazy" decoding="async">
+                </picture>
+              </span>
+              <span class="card__body">
+                <span class="card__title">AreaDrop</span>
+                <span class="card__meta"><span data-i18n="cat.appIot">App / IoT</span> <span
+                    class="card__year">2020</span></span>
+                <span class="stack-tags"><span class="tag">Android</span><span class="tag">RaspberryPi</span><span
+                    class="tag">Html</span></span>
+              </span>
+              <span class="card__cta" data-i18n="work.cta.viewCase">view case &rarr;</span>
+            </button>
+          </li>
+          <li class="work__item" data-reveal data-category="Commerce App">
+            <button class="card" type="button" data-case="crazyg" aria-haspopup="dialog">
+              <span class="card__index" data-count-to="6">[06]</span>
+              <span class="card__media" data-flip-id="crazyg">
+                <picture>
+                  <source srcset="./assets/project6/p6.avif" type="image/avif">
+                  <source srcset="./assets/project6/p6.webp" type="image/webp"><img src="./assets/project6/p6.jpg"
+                    alt="CrazyG" width="254" height="182" loading="lazy" decoding="async">
+                </picture>
+              </span>
+              <span class="card__body">
+                <span class="card__title">CrazyG</span>
+                <span class="card__meta"><span data-i18n="cat.commerceApp">Commerce App</span> <span
+                    class="card__year">2020</span></span>
+                <span class="stack-tags"><span class="tag">Php</span><span class="tag">Vue</span><span
+                    class="tag">Uniapp</span></span>
+              </span>
+              <span class="card__cta" data-i18n="work.cta.viewCase">view case &rarr;</span>
+            </button>
+          </li>
+          <li class="work__item" data-reveal data-category="Backend">
+            <button class="card" type="button" data-case="airweb" aria-haspopup="dialog">
+              <span class="card__index" data-count-to="7">[07]</span>
+              <span class="card__media" data-flip-id="airweb">
+                <picture>
+                  <source srcset="./assets/project7/product_7_bg.avif" type="image/avif">
+                  <source srcset="./assets/project7/product_7_bg.webp" type="image/webp"><img
+                    src="./assets/project7/product_7_bg.jpg" alt="AirWeb" width="2550" height="1336" loading="lazy"
+                    decoding="async">
+                </picture>
+              </span>
+              <span class="card__body">
+                <span class="card__title">AirWeb</span>
+                <span class="card__meta"><span data-i18n="cat.backend">Backend</span> <span
+                    class="card__year">2018</span></span>
+                <span class="stack-tags"><span class="tag">Django</span><span class="tag">Linux</span></span>
+              </span>
+              <span class="card__cta" data-i18n="work.cta.viewCase">view case &rarr;</span>
+            </button>
+          </li>
+          <li class="work__item" data-reveal data-category="Enterprise">
+            <button class="card" type="button" data-case="bloodbank" aria-haspopup="dialog">
+              <span class="card__index" data-count-to="8">[08]</span>
+              <span class="card__media" data-flip-id="bloodbank">
+                <picture>
+                  <source srcset="./assets/project8/w644.webp" type="image/webp"><img src="./assets/project8/w644.jpeg"
+                    alt="Blood Bank" width="644" height="429" loading="lazy" decoding="async">
+                </picture>
+              </span>
+              <span class="card__body">
+                <span class="card__title">Blood Bank</span>
+                <span class="card__meta"><span data-i18n="cat.enterprise">Enterprise</span> <span
+                    class="card__year">2017</span></span>
+                <span class="stack-tags"><span class="tag">C#</span><span class="tag">Bootstrap</span><span
+                    class="tag">Cordova</span></span>
+              </span>
+              <span class="card__cta" data-i18n="work.cta.viewCase">view case &rarr;</span>
+            </button>
+          </li>
+          <li class="work__item" data-reveal data-category="AI App">
+            <button class="card" type="button" data-case="maxo" aria-haspopup="dialog">
+              <span class="card__index" data-count-to="9">[09]</span>
+              <span class="card__media" data-flip-id="maxo">
+                <picture>
+                  <source srcset="./assets/project9/maxo.avif" type="image/avif">
+                  <source srcset="./assets/project9/maxo.webp" type="image/webp"><img src="./assets/project9/maxo.png"
+                    alt="MAXO" width="1600" height="1000" loading="lazy" decoding="async">
+                </picture>
+              </span>
+              <span class="card__body">
+                <span class="card__title">MAXO</span>
+                <span class="card__meta"><span data-i18n="cat.aiApp">AI App</span> <span
+                    class="card__year">2026</span></span>
+                <span class="stack-tags"><span class="tag">Django</span><span class="tag">React</span><span
+                    class="tag">OpenAI</span><span class="tag">GCP</span></span>
+              </span>
+              <span class="card__cta" data-i18n="work.cta.viewCase">view case &rarr;</span>
+            </button>
+          </li>
+          <li class="work__item" data-reveal data-category="Security">
+            <button class="card" type="button" data-case="unphishable" aria-haspopup="dialog">
+              <span class="card__index" data-count-to="10">[10]</span>
+              <span class="card__media" data-flip-id="unphishable">
+                <picture>
+                  <source srcset="./assets/project10/unphishable.avif" type="image/avif">
+                  <source srcset="./assets/project10/unphishable.webp" type="image/webp"><img
+                    src="./assets/project10/unphishable.png" alt="Unphishable" width="1600" height="1000" loading="lazy"
+                    decoding="async">
+                </picture>
+              </span>
+              <span class="card__body">
+                <span class="card__title">Unphishable</span>
+                <span class="card__meta"><span data-i18n="cat.security">Security</span> <span
+                    class="card__year">2025</span></span>
+                <span class="stack-tags"><span class="tag">Next.js</span><span class="tag">TypeScript</span><span
+                    class="tag">Web3</span></span>
+              </span>
+              <span class="card__cta" data-i18n="work.cta.viewCase">view case &rarr;</span>
+            </button>
+          </li>
+          <li class="work__item" data-reveal data-category="Backend">
+            <button class="card" type="button" data-case="offgrid" aria-haspopup="dialog">
+              <span class="card__index" data-count-to="11">[11]</span>
+              <span class="card__media" data-flip-id="offgrid">
+                <picture>
+                  <source srcset="./assets/project11/offgrid.avif" type="image/avif">
+                  <source srcset="./assets/project11/offgrid.webp" type="image/webp"><img
+                    src="./assets/project11/offgrid.png" alt="OFF GRID" width="2542" height="1506" loading="lazy"
+                    decoding="async">
+                </picture>
+              </span>
+              <span class="card__body">
+                <span class="card__title">OFF GRID</span>
+                <span class="card__meta"><span data-i18n="cat.backend">Backend</span> <span
+                    class="card__year">2025&ndash;2026</span></span>
+                <span class="stack-tags"><span class="tag">Go</span><span class="tag">MySQL</span><span
+                    class="tag">Redis</span><span class="tag">Ethereum</span></span>
+              </span>
+              <span class="card__cta" data-i18n="work.cta.viewCase">view case &rarr;</span>
+            </button>
+          </li>
         </ul>
       </section>
 
@@ -318,33 +411,46 @@
             <h3 class="t-label" data-i18n="about.languagesHeading">Languages</h3>
             <dl class="stack">
               <dt class="stack-label" lang="zh-Hant-TW">日常</dt>
-              <dd class="stack-tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">TypeScript</span><span class="tag">Go</span></dd>
-              <dt class="stack-label" lang="zh-Hant-TW">偶爾</dt>
+              <dd class="stack-tags"><span class="tag">HTML</span><span class="tag">CSS</span><span
+                  class="tag">JavaScript</span><span class="tag">TypeScript</span><span class="tag">Golang</span></dd>
+              <dt class="stack-label" lang="zh-Hant-TW">經常</dt>
               <dd class="stack-tags"><span class="tag">Docker</span><span class="tag">Linux</span></dd>
               <dt class="stack-label" lang="zh-Hant-TW">關注</dt>
-              <dd class="stack-tags"><span class="tag">Solidity</span><span class="tag">Dart</span><span class="tag">Python</span></dd>
+              <dd class="stack-tags">
+                <span class="tag">AI tools</span><span class="tag">Solidity</span><span class="tag">Dart</span><span
+                  class="tag">Python</span>
+              </dd>
             </dl>
 
             <h3 class="t-label" data-i18n="about.frameworksHeading">Frameworks</h3>
             <dl class="stack">
               <dt class="stack-label">Frontend</dt>
-              <dd class="stack-tags"><span class="tag">React</span><span class="tag">Vue</span><span class="tag">Flutter</span><span class="tag">React Native</span><span class="tag">Webpack</span><span class="tag">Less</span><span class="tag">Sass</span><span class="tag">Tailwind CSS</span><span class="tag">Ant Design</span></dd>
+              <dd class="stack-tags"><span class="tag">React</span><span class="tag">Vue</span><span
+                  class="tag">Flutter</span><span class="tag">React Native</span><span class="tag">Webpack</span><span
+                  class="tag">Less</span><span class="tag">Sass</span><span class="tag">Tailwind CSS</span><span
+                  class="tag">Ant Design</span></dd>
               <dt class="stack-label">Backend</dt>
-              <dd class="stack-tags"><span class="tag">Golang</span><span class="tag">Next.js</span><span class="tag">Nest.js</span><span class="tag">Express</span><span class="tag">Django</span><span class="tag">Fiber</span></dd>
+              <dd class="stack-tags"><span class="tag">Golang</span><span class="tag">Next.js</span><span
+                  class="tag">Nest.js</span><span class="tag">Express</span><span class="tag">Django</span><span
+                  class="tag">Fiber</span></dd>
               <dt class="stack-label">Database</dt>
-              <dd class="stack-tags"><span class="tag">MySQL</span><span class="tag">PostgreSQL</span><span class="tag">MongoDB</span><span class="tag">Redis</span></dd>
+              <dd class="stack-tags"><span class="tag">MySQL</span><span class="tag">PostgreSQL</span><span
+                  class="tag">MongoDB</span><span class="tag">Redis</span></dd>
               <dt class="stack-label">Web3</dt>
-              <dd class="stack-tags"><span class="tag">Solidity</span><span class="tag">web3.js</span><span class="tag">ethers.js</span></dd>
+              <dd class="stack-tags"><span class="tag">Solidity</span><span class="tag">web3.js</span><span
+                  class="tag">ethers.js</span></dd>
               <dt class="stack-label">AI</dt>
-              <dd class="stack-tags"><span class="tag">OpenAI</span><span class="tag">Gemini</span><span class="tag">LiteLLM</span></dd>
+              <dd class="stack-tags"><span class="tag">OpenAI</span><span class="tag">Gemini</span><span
+                  class="tag">LiteLLM</span></dd>
               <dt class="stack-label">Cloud</dt>
-              <dd class="stack-tags"><span class="tag">GCP</span></dd>
+              <dd class="stack-tags"><span class="tag">GCP</span><span class="tag">Aliyun</span></dd>
             </dl>
 
             <h3 class="t-label" data-i18n="about.aiToolsHeading">AI Tools</h3>
             <dl class="stack">
               <dt class="stack-label" data-i18n="about.agentsLabel">Agents</dt>
-              <dd class="stack-tags"><span class="tag">Claude Code</span><span class="tag">Codex</span><span class="tag">OpenCode</span><span class="tag">Open Design</span></dd>
+              <dd class="stack-tags"><span class="tag">Claude Code</span><span class="tag">Codex</span><span
+                  class="tag">OpenCode</span><span class="tag">Open Design</span></dd>
             </dl>
           </div>
         </div>
@@ -364,32 +470,40 @@
               <li class="timeline__item" data-reveal>
                 <span class="timeline__when">2026.01 — 2026.09</span>
                 <h4 class="timeline__what">Dandelion</h4>
-                <p class="timeline__text" data-i18n="resume.dandelion.text">Full-stack engineer on MAXO, an AI business &amp; marketing platform — redesigned AI report generation into an async Cloud Tasks worker queue (cooperative cancellation, failure isolation), evaluated and shipped local OCR vision models, and improved LLM prompt-cache hit rates across OpenAI, Anthropic and Gemini.</p>
+                <p class="timeline__text" data-i18n="resume.dandelion.text">Full-stack engineer on MAXO, an AI business
+                  &amp; marketing platform — redesigned AI report generation into an async Cloud Tasks worker queue
+                  (cooperative cancellation, failure isolation), evaluated and shipped local OCR vision models, and
+                  improved LLM prompt-cache hit rates across OpenAI, Anthropic and Gemini.</p>
               </li>
               <li class="timeline__item" data-reveal>
                 <span class="timeline__when">2023.10 — <span data-i18n="resume.present">Present</span></span>
                 <h4 class="timeline__what">AceMeta Lab</h4>
-                <p class="timeline__text" data-i18n="resume.acemeta.text">RPC backend services, CI/CD, and scaling concurrency from 100 to 1000.</p>
+                <p class="timeline__text" data-i18n="resume.acemeta.text">RPC backend services, CI/CD, and scaling
+                  concurrency from 100 to 1000.</p>
               </li>
               <li class="timeline__item" data-reveal>
                 <span class="timeline__when">2021.11 — 2023.10</span>
                 <h4 class="timeline__what">YILE TECHNOLOGY</h4>
-                <p class="timeline__text" data-i18n="resume.yile.text">Web3 and game backends. ETH / Polygon / Tron USDT payment rails.</p>
+                <p class="timeline__text" data-i18n="resume.yile.text">Web3 and game backends. ETH / Polygon / Tron USDT
+                  payment rails.</p>
               </li>
               <li class="timeline__item" data-reveal>
                 <span class="timeline__when">2020.4 — 2021.7</span>
                 <h4 class="timeline__what">SHOESCONN TECHNOLOGY</h4>
-                <p class="timeline__text" data-i18n="resume.shoesconn.text">Led a team of five building IoT web and mobile applications.</p>
+                <p class="timeline__text" data-i18n="resume.shoesconn.text">Led a team of five building IoT web and
+                  mobile applications.</p>
               </li>
               <li class="timeline__item" data-reveal>
                 <span class="timeline__when">2019.4 — 2020.3</span>
                 <h4 class="timeline__what">SMART ECARE INC</h4>
-                <p class="timeline__text" data-i18n="resume.smartecare.text">Research and system architecture for connected-care products.</p>
+                <p class="timeline__text" data-i18n="resume.smartecare.text">Research and system architecture for
+                  connected-care products.</p>
               </li>
               <li class="timeline__item" data-reveal>
                 <span class="timeline__when">2011.9 — 2018.9</span>
                 <h4 class="timeline__what">Kuang Tien General Hospital</h4>
-                <p class="timeline__text" data-i18n="resume.kuangtien.text">Hospital information systems, integration and in-house tooling.</p>
+                <p class="timeline__text" data-i18n="resume.kuangtien.text">Hospital information systems, integration
+                  and in-house tooling.</p>
               </li>
             </ol>
           </div>
@@ -422,38 +536,53 @@
         <ul class="writing">
           <li class="writing__item" data-reveal>
             <a class="writing__link" href="https://www.youtube.com/watch?v=qgztO4qw8yQ" target="_blank" rel="noopener">
-              <span class="writing__title" lang="zh-Hant-TW" data-i18n="writing.unphishable.title">釣魚體驗平台 Unphishable：識破 Web3 詐騙陷阱！</span>
-              <span class="writing__meta">COSCUP <span class="writing__year">2025</span> <span aria-hidden="true">&nearr;</span></span>
+              <span class="writing__title" lang="zh-Hant-TW" data-i18n="writing.unphishable.title">釣魚體驗平台 Unphishable：識破
+                Web3 詐騙陷阱！</span>
+              <span class="writing__meta">COSCUP <span class="writing__year">2025</span> <span
+                  aria-hidden="true">&nearr;</span></span>
             </a>
           </li>
           <li class="writing__item" data-reveal>
-            <a class="writing__link" href="https://github.com/DeFiHackLabs/Solidity-Intensive-CoLearning" target="_blank" rel="noopener">
-              <span class="writing__title" data-i18n="writing.solidityCoLearning.title">DeFiHackLabs x WTF Academy — Solidity 21-day co-learning</span>
-              <span class="writing__meta">GitHub <span class="writing__year">2024</span> <span aria-hidden="true">&nearr;</span></span>
+            <a class="writing__link" href="https://github.com/DeFiHackLabs/Solidity-Intensive-CoLearning"
+              target="_blank" rel="noopener">
+              <span class="writing__title" data-i18n="writing.solidityCoLearning.title">DeFiHackLabs x WTF Academy —
+                Solidity 21-day co-learning</span>
+              <span class="writing__meta">GitHub <span class="writing__year">2024</span> <span
+                  aria-hidden="true">&nearr;</span></span>
             </a>
           </li>
           <li class="writing__item" data-reveal>
             <a class="writing__link" href="https://github.com/0xRory/Phishing" target="_blank" rel="noopener">
-              <span class="writing__title" lang="zh-Hant-TW" data-i18n="writing.phishingEvolution.title">探索釣魚攻擊的演變：從 Web2 到 Web3</span>
-              <span class="writing__meta">GitHub <span class="writing__year">2024</span> <span aria-hidden="true">&nearr;</span></span>
+              <span class="writing__title" lang="zh-Hant-TW" data-i18n="writing.phishingEvolution.title">探索釣魚攻擊的演變：從
+                Web2 到 Web3</span>
+              <span class="writing__meta">GitHub <span class="writing__year">2024</span> <span
+                  aria-hidden="true">&nearr;</span></span>
             </a>
           </li>
           <li class="writing__item" data-reveal>
-            <a class="writing__link" href="https://ithelp.ithome.com.tw/users/20162055/ironman/6239" target="_blank" rel="noopener">
+            <a class="writing__link" href="https://ithelp.ithome.com.tw/users/20162055/ironman/6239" target="_blank"
+              rel="noopener">
               <span class="writing__title" lang="zh-Hant-TW" data-i18n="writing.viem.title">Viem 介紹</span>
-              <span class="writing__meta"><span data-i18n="writing.viem.source">iThome <span lang="zh-Hant-TW">鐵人賽</span></span> <span class="writing__year">2023</span> <span aria-hidden="true">&nearr;</span></span>
+              <span class="writing__meta"><span data-i18n="writing.viem.source">iThome <span
+                    lang="zh-Hant-TW">鐵人賽</span></span> <span class="writing__year">2023</span> <span
+                  aria-hidden="true">&nearr;</span></span>
             </a>
           </li>
           <li class="writing__item" data-reveal>
             <a class="writing__link" href="https://github.com/0xRory/web2-to-web3-note" target="_blank" rel="noopener">
-              <span class="writing__title" lang="zh-Hant-TW" data-i18n="writing.web2to3notes.title">Web2 to Web3 學習筆記</span>
-              <span class="writing__meta">GitHub <span class="writing__year">2023</span> <span aria-hidden="true">&nearr;</span></span>
+              <span class="writing__title" lang="zh-Hant-TW" data-i18n="writing.web2to3notes.title">Web2 to Web3
+                學習筆記</span>
+              <span class="writing__meta">GitHub <span class="writing__year">2023</span> <span
+                  aria-hidden="true">&nearr;</span></span>
             </a>
           </li>
           <li class="writing__item" data-reveal>
-            <a class="writing__link" href="https://juniper-pecorino-0ba.notion.site/Solidity-Learning-Plan-0ac4b7f4a6d94b0b93ee1b3d3f7a27d5" target="_blank" rel="noopener">
+            <a class="writing__link"
+              href="https://juniper-pecorino-0ba.notion.site/Solidity-Learning-Plan-0ac4b7f4a6d94b0b93ee1b3d3f7a27d5"
+              target="_blank" rel="noopener">
               <span class="writing__title" data-i18n="writing.solidityPlan.title">Solidity Learning Plan</span>
-              <span class="writing__meta">Notion <span class="writing__year">2023</span> <span aria-hidden="true">&nearr;</span></span>
+              <span class="writing__meta">Notion <span class="writing__year">2023</span> <span
+                  aria-hidden="true">&nearr;</span></span>
             </a>
           </li>
         </ul>
@@ -471,11 +600,17 @@
           <address class="contact__where" data-i18n="contact.where">Taichung, Taiwan</address>
           <ul class="contact__social">
             <li><a href="https://github.com/0xRory" target="_blank" rel="noopener">
-              <svg class="icon is-solid" aria-hidden="true" focusable="false"><use href="./assets/icons/sprite.svg#logo-github"></use></svg>GitHub</a></li>
+                <svg class="icon is-solid" aria-hidden="true" focusable="false">
+                  <use href="./assets/icons/sprite.svg#logo-github"></use>
+                </svg>GitHub</a></li>
             <li><a href="https://twitter.com/0x_Rory" target="_blank" rel="noopener">
-              <svg class="icon is-solid" aria-hidden="true" focusable="false"><use href="./assets/icons/sprite.svg#logo-twitter"></use></svg>Twitter</a></li>
+                <svg class="icon is-solid" aria-hidden="true" focusable="false">
+                  <use href="./assets/icons/sprite.svg#logo-twitter"></use>
+                </svg>Twitter</a></li>
             <li><a href="https://ithelp.ithome.com.tw/users/20162055" target="_blank" rel="noopener">
-              <svg class="icon" aria-hidden="true" focusable="false"><use href="./assets/icons/sprite.svg#book-outline"></use></svg>iThome</a></li>
+                <svg class="icon" aria-hidden="true" focusable="false">
+                  <use href="./assets/icons/sprite.svg#book-outline"></use>
+                </svg>iThome</a></li>
           </ul>
         </div>
       </section>
@@ -493,7 +628,9 @@
   <dialog class="case" id="case-csbs" aria-labelledby="case-csbs-title">
     <form method="dialog" class="case__close-form">
       <button class="case__close" aria-label="Close">
-        <svg class="icon" aria-hidden="true" focusable="false"><use href="./assets/icons/sprite.svg#close-outline"></use></svg>
+        <svg class="icon" aria-hidden="true" focusable="false">
+          <use href="./assets/icons/sprite.svg#close-outline"></use>
+        </svg>
       </button>
     </form>
     <article class="case__inner" data-flip-target="csbs">
@@ -512,26 +649,34 @@
           Core feature: batch-issuing SBTs and managing community-event participation.
         </p>
         <p class="case__figure">
-          <span class="video-frame"><video id="project-video-1" controls loop playsinline preload="none" data-src="./assets/project3/demo.mp4" data-poster="./assets/project3/poster.webp">
-            <span lang="zh-Hant-TW">您的瀏覽器不支援 HTML5 影片播放。</span>
-            Your browser doesn't support the &lt;video&gt; tag.
-          </video><button class="video-play" type="button" data-video-play aria-label="Play video"><svg class="icon is-solid" aria-hidden="true" focusable="false"><use href="./assets/icons/sprite.svg#play"></use></svg></button></span>
+          <span class="video-frame"><video id="project-video-1" controls loop playsinline preload="none"
+              data-src="./assets/project3/demo.mp4" data-poster="./assets/project3/poster.webp">
+              <span lang="zh-Hant-TW">您的瀏覽器不支援 HTML5 影片播放。</span>
+              Your browser doesn't support the &lt;video&gt; tag.
+            </video><button class="video-play" type="button" data-video-play aria-label="Play video"><svg
+                class="icon is-solid" aria-hidden="true" focusable="false">
+                <use href="./assets/icons/sprite.svg#play"></use>
+              </svg></button></span>
         </p>
-        <p><span data-i18n="case.csbs.ref">Reference:</span> <a href="https://github.com/PlanckerLabs/CSBS" target="_blank">https://github.com/PlanckerLabs/CSBS</a></p>
+        <p><span data-i18n="case.csbs.ref">Reference:</span> <a href="https://github.com/PlanckerLabs/CSBS"
+            target="_blank">https://github.com/PlanckerLabs/CSBS</a></p>
       </div>
     </article>
   </dialog>
   <dialog class="case" id="case-ilolly" aria-labelledby="case-ilolly-title">
     <form method="dialog" class="case__close-form">
       <button class="case__close" aria-label="Close">
-        <svg class="icon" aria-hidden="true" focusable="false"><use href="./assets/icons/sprite.svg#close-outline"></use></svg>
+        <svg class="icon" aria-hidden="true" focusable="false">
+          <use href="./assets/icons/sprite.svg#close-outline"></use>
+        </svg>
       </button>
     </form>
     <article class="case__inner" data-flip-target="ilolly">
       <header class="case__head">
         <p class="t-label">[04] &middot; <span data-i18n="cat.appIot">App / IoT</span> &middot; 2021</p>
         <h2 class="case__title" id="case-ilolly-title">i-lolly</h2>
-        <p class="stack-tags"><span class="tag">Php</span><span class="tag">Vue</span><span class="tag">Flutter</span><span class="tag">Linux</span></p>
+        <p class="stack-tags"><span class="tag">Php</span><span class="tag">Vue</span><span
+            class="tag">Flutter</span><span class="tag">Linux</span></p>
       </header>
       <div class="case__body">
         <p class="case__spec" data-i18n="case.ilolly.spec">
@@ -543,18 +688,33 @@
           database, IoT devices, and a mobile app with push notifications.
         </p>
         <p style="display: flex; justify-content: center;" data-i18n="case.ilolly.p3">
-          The IoT middleware is built on the open-source <a href="https://thingsboard.io/docs/getting-started-guides/what-is-thingsboard/" target="_blank">thingsboard</a> platform.
+          The IoT middleware is built on the open-source <a
+            href="https://thingsboard.io/docs/getting-started-guides/what-is-thingsboard/"
+            target="_blank">thingsboard</a> platform.
         </p>
         <p class="case__figure">
-          <picture><source srcset="./assets/project4/i-lolly-flow.avif" type="image/avif"><source srcset="./assets/project4/i-lolly-flow.webp" type="image/webp"><img class="p4" src="./assets/project4/i-lolly-flow.png" alt="i-lolly architecture flow" width="1173" height="718" loading="lazy" decoding="async"></picture>
+          <picture>
+            <source srcset="./assets/project4/i-lolly-flow.avif" type="image/avif">
+            <source srcset="./assets/project4/i-lolly-flow.webp" type="image/webp"><img class="p4"
+              src="./assets/project4/i-lolly-flow.png" alt="i-lolly architecture flow" width="1173" height="718"
+              loading="lazy" decoding="async">
+          </picture>
           <span data-i18n="case.ilolly.fig1">Flow architecture</span>
         </p>
         <div style="display: flex; justify-content: center;">
-          <a href="https://play.google.com/store/apps/details?id=com.shoesconn.fultter_ims" target="_blank">
-            <picture><source srcset="./assets/project4/android_download.webp" type="image/webp"><img src="./assets/project4/android_download.jpg" width="200" height="100" alt="android" loading="lazy" decoding="async"></picture>
+          <a href="https://play.google.com/store/apps/details?id=com.shoesconn.fultter_ims" target="_blank" rel="noopener">
+            <picture>
+              <source srcset="./assets/project4/android_download.webp" type="image/webp"><img
+                src="./assets/project4/android_download.jpg" width="200" height="100" alt="android" loading="lazy"
+                decoding="async">
+            </picture>
           </a>
-          <a href="https://apps.apple.com/tw/app/i-lolly/id1526973956" target="_blank">
-            <picture><source srcset="./assets/project4/apple_download.webp" type="image/webp"><img src="./assets/project4/apple_download.jpg" width="200" height="100" alt="ios" loading="lazy" decoding="async"></picture>
+          <a href="https://apps.apple.com/tw/app/i-lolly/id1526973956" target="_blank" rel="noopener">
+            <picture>
+              <source srcset="./assets/project4/apple_download.webp" type="image/webp"><img
+                src="./assets/project4/apple_download.jpg" width="200" height="100" alt="ios" loading="lazy"
+                decoding="async">
+            </picture>
           </a>
         </div>
       </div>
@@ -563,35 +723,52 @@
   <dialog class="case" id="case-areadrop" aria-labelledby="case-areadrop-title">
     <form method="dialog" class="case__close-form">
       <button class="case__close" aria-label="Close">
-        <svg class="icon" aria-hidden="true" focusable="false"><use href="./assets/icons/sprite.svg#close-outline"></use></svg>
+        <svg class="icon" aria-hidden="true" focusable="false">
+          <use href="./assets/icons/sprite.svg#close-outline"></use>
+        </svg>
       </button>
     </form>
     <article class="case__inner" data-flip-target="areadrop">
       <header class="case__head">
         <p class="t-label">[05] &middot; <span data-i18n="cat.appIot">App / IoT</span> &middot; 2020</p>
         <h2 class="case__title" id="case-areadrop-title">AreaDrop</h2>
-        <p class="stack-tags"><span class="tag">Android</span><span class="tag">RaspberryPi</span><span class="tag">Html</span></p>
+        <p class="stack-tags"><span class="tag">Android</span><span class="tag">RaspberryPi</span><span
+            class="tag">Html</span></p>
       </header>
       <div class="case__body">
-        <p data-i18n="case.areadrop.p1">A Java/Android practice project modelled on Apple's AirDrop &mdash; hence the name AreaDrop.</p>
-        <p data-i18n="case.areadrop.p2">Configuring a device's IoT network is usually a hassle, so this sets it up straight from the phone, using WebSocket for transfer.</p>
+        <p data-i18n="case.areadrop.p1">A Java/Android practice project modelled on Apple's AirDrop &mdash; hence the
+          name AreaDrop.</p>
+        <p data-i18n="case.areadrop.p2">Configuring a device's IoT network is usually a hassle, so this sets it up
+          straight from the phone, using WebSocket for transfer.</p>
         <p class="case__figure">
-          <picture><source srcset="./assets/project5/pic_lw_login.webp" type="image/webp"><img src="./assets/project5/pic_lw_login.jpg" width="400" height="400" alt="concept architecture" loading="lazy" decoding="async"></picture>
+          <picture>
+            <source srcset="./assets/project5/pic_lw_login.webp" type="image/webp"><img
+              src="./assets/project5/pic_lw_login.jpg" width="400" height="400" alt="concept architecture"
+              loading="lazy" decoding="async">
+          </picture>
           <span data-i18n="case.areadrop.fig1">Concept architecture</span>
         </p>
         <p data-i18n="case.areadrop.p3">Below: configuring the server network from the phone.</p>
         <p class="case__figure">
-          <span class="video-frame"><video id="project-video-2" controls loop playsinline preload="none" data-src="./assets/project5/bindmodel.mp4" data-poster="./assets/project5/bindmodel-poster.webp">
-            <span lang="zh-Hant-TW">您的瀏覽器不支援 HTML5 影片播放。</span>
-            Your browser doesn't support the &lt;video&gt; tag.
-          </video><button class="video-play" type="button" data-video-play aria-label="Play video"><svg class="icon is-solid" aria-hidden="true" focusable="false"><use href="./assets/icons/sprite.svg#play"></use></svg></button></span>
+          <span class="video-frame"><video id="project-video-2" controls loop playsinline preload="none"
+              data-src="./assets/project5/bindmodel.mp4" data-poster="./assets/project5/bindmodel-poster.webp">
+              <span lang="zh-Hant-TW">您的瀏覽器不支援 HTML5 影片播放。</span>
+              Your browser doesn't support the &lt;video&gt; tag.
+            </video><button class="video-play" type="button" data-video-play aria-label="Play video"><svg
+                class="icon is-solid" aria-hidden="true" focusable="false">
+                <use href="./assets/icons/sprite.svg#play"></use>
+              </svg></button></span>
         </p>
         <p data-i18n="case.areadrop.p4">Below: cross-platform file transfer (phone &harr; computer).</p>
         <p class="case__figure">
-          <span class="video-frame"><video id="project-video-3" controls loop playsinline preload="none" data-src="./assets/project5/sendmodel.mp4" data-poster="./assets/project5/sendmodel-poster.webp">
-            <span lang="zh-Hant-TW">您的瀏覽器不支援 HTML5 影片播放。</span>
-            Your browser doesn't support the &lt;video&gt; tag.
-          </video><button class="video-play" type="button" data-video-play aria-label="Play video"><svg class="icon is-solid" aria-hidden="true" focusable="false"><use href="./assets/icons/sprite.svg#play"></use></svg></button></span>
+          <span class="video-frame"><video id="project-video-3" controls loop playsinline preload="none"
+              data-src="./assets/project5/sendmodel.mp4" data-poster="./assets/project5/sendmodel-poster.webp">
+              <span lang="zh-Hant-TW">您的瀏覽器不支援 HTML5 影片播放。</span>
+              Your browser doesn't support the &lt;video&gt; tag.
+            </video><button class="video-play" type="button" data-video-play aria-label="Play video"><svg
+                class="icon is-solid" aria-hidden="true" focusable="false">
+                <use href="./assets/icons/sprite.svg#play"></use>
+              </svg></button></span>
         </p>
       </div>
     </article>
@@ -599,48 +776,84 @@
   <dialog class="case" id="case-crazyg" aria-labelledby="case-crazyg-title">
     <form method="dialog" class="case__close-form">
       <button class="case__close" aria-label="Close">
-        <svg class="icon" aria-hidden="true" focusable="false"><use href="./assets/icons/sprite.svg#close-outline"></use></svg>
+        <svg class="icon" aria-hidden="true" focusable="false">
+          <use href="./assets/icons/sprite.svg#close-outline"></use>
+        </svg>
       </button>
     </form>
     <article class="case__inner" data-flip-target="crazyg">
       <header class="case__head">
         <p class="t-label">[06] &middot; <span data-i18n="cat.commerceApp">Commerce App</span> &middot; 2020</p>
         <h2 class="case__title" id="case-crazyg-title">CrazyG</h2>
-        <p class="stack-tags"><span class="tag">Php</span><span class="tag">Vue</span><span class="tag">Uniapp</span></p>
+        <p class="stack-tags"><span class="tag">Php</span><span class="tag">Vue</span><span class="tag">Uniapp</span>
+        </p>
       </header>
       <div class="case__body">
         <div style="display: flex; flex-wrap: wrap;justify-content: center;">
           <p style="text-align: -webkit-center;">
-            <picture><source srcset="./assets/project6/index-1.avif" type="image/avif"><source srcset="./assets/project6/index-1.webp" type="image/webp"><img class="p6" src="./assets/project6/index-1.jpeg" width="200" height="400" alt="app screen" loading="lazy" decoding="async"></picture>
+            <picture>
+              <source srcset="./assets/project6/index-1.avif" type="image/avif">
+              <source srcset="./assets/project6/index-1.webp" type="image/webp"><img class="p6"
+                src="./assets/project6/index-1.jpeg" width="200" height="400" alt="app screen" loading="lazy"
+                decoding="async">
+            </picture>
           </p>
           <p style="text-align: -webkit-center;">
-            <picture><source srcset="./assets/project6/index-2.avif" type="image/avif"><source srcset="./assets/project6/index-2.webp" type="image/webp"><img class="p6" src="./assets/project6/index-2.jpeg" width="200" height="400" alt="app screen" loading="lazy" decoding="async"></picture>
+            <picture>
+              <source srcset="./assets/project6/index-2.avif" type="image/avif">
+              <source srcset="./assets/project6/index-2.webp" type="image/webp"><img class="p6"
+                src="./assets/project6/index-2.jpeg" width="200" height="400" alt="app screen" loading="lazy"
+                decoding="async">
+            </picture>
           </p>
           <p style="text-align: -webkit-center;">
-            <picture><source srcset="./assets/project6/index-3.avif" type="image/avif"><source srcset="./assets/project6/index-3.webp" type="image/webp"><img class="p6" src="./assets/project6/index-3.jpeg" width="200" height="400" alt="app screen" loading="lazy" decoding="async"></picture>
+            <picture>
+              <source srcset="./assets/project6/index-3.avif" type="image/avif">
+              <source srcset="./assets/project6/index-3.webp" type="image/webp"><img class="p6"
+                src="./assets/project6/index-3.jpeg" width="200" height="400" alt="app screen" loading="lazy"
+                decoding="async">
+            </picture>
           </p>
           <p style="text-align: -webkit-center;">
-            <picture><source srcset="./assets/project6/index-4.avif" type="image/avif"><source srcset="./assets/project6/index-4.webp" type="image/webp"><img class="p6" src="./assets/project6/index-4.jpeg" width="200" height="400" alt="app screen" loading="lazy" decoding="async"></picture>
+            <picture>
+              <source srcset="./assets/project6/index-4.avif" type="image/avif">
+              <source srcset="./assets/project6/index-4.webp" type="image/webp"><img class="p6"
+                src="./assets/project6/index-4.jpeg" width="200" height="400" alt="app screen" loading="lazy"
+                decoding="async">
+            </picture>
           </p>
           <p style="text-align: -webkit-center;">
-            <picture><source srcset="./assets/project6/index-5.avif" type="image/avif"><source srcset="./assets/project6/index-5.webp" type="image/webp"><img class="p6" src="./assets/project6/index-5.jpeg" width="200" height="400" alt="app screen" loading="lazy" decoding="async"></picture>
+            <picture>
+              <source srcset="./assets/project6/index-5.avif" type="image/avif">
+              <source srcset="./assets/project6/index-5.webp" type="image/webp"><img class="p6"
+                src="./assets/project6/index-5.jpeg" width="200" height="400" alt="app screen" loading="lazy"
+                decoding="async">
+            </picture>
           </p>
         </div>
         <p class="case__figure">
           <span data-i18n="case.crazyg.fig1">Screens</span>
         </p>
         <p class="case__figure">
-          <span class="video-frame"><video id="project-video-4" controls loop playsinline preload="none" data-src="./assets/project6/demo.mp4" data-poster="./assets/project6/poster.webp">
-            <span lang="zh-Hant-TW">您的瀏覽器不支援 HTML5 影片播放。</span>
-            Your browser doesn't support the &lt;video&gt; tag.
-          </video><button class="video-play" type="button" data-video-play aria-label="Play video"><svg class="icon is-solid" aria-hidden="true" focusable="false"><use href="./assets/icons/sprite.svg#play"></use></svg></button></span>
+          <span class="video-frame"><video id="project-video-4" controls loop playsinline preload="none"
+              data-src="./assets/project6/demo.mp4" data-poster="./assets/project6/poster.webp">
+              <span lang="zh-Hant-TW">您的瀏覽器不支援 HTML5 影片播放。</span>
+              Your browser doesn't support the &lt;video&gt; tag.
+            </video><button class="video-play" type="button" data-video-play aria-label="Play video"><svg
+                class="icon is-solid" aria-hidden="true" focusable="false">
+                <use href="./assets/icons/sprite.svg#play"></use>
+              </svg></button></span>
         </p>
         <p class="case__figure">
           <span data-i18n="case.crazyg.fig2">Points redemption</span>
         </p>
         <div style="display: flex; justify-content: center;">
-          <a href="https://play.google.com/store/apps/details?id=io.uniapp.crazyg" target="_blank">
-            <picture><source srcset="./assets/project4/android_download.webp" type="image/webp"><img src="./assets/project4/android_download.jpg" width="200" height="100" alt="android" loading="lazy" decoding="async"></picture>
+          <a href="https://play.google.com/store/apps/details?id=io.uniapp.crazyg" target="_blank" rel="noopener">
+            <picture>
+              <source srcset="./assets/project4/android_download.webp" type="image/webp"><img
+                src="./assets/project4/android_download.jpg" width="200" height="100" alt="android" loading="lazy"
+                decoding="async">
+            </picture>
           </a>
         </div>
       </div>
@@ -649,7 +862,9 @@
   <dialog class="case" id="case-airweb" aria-labelledby="case-airweb-title">
     <form method="dialog" class="case__close-form">
       <button class="case__close" aria-label="Close">
-        <svg class="icon" aria-hidden="true" focusable="false"><use href="./assets/icons/sprite.svg#close-outline"></use></svg>
+        <svg class="icon" aria-hidden="true" focusable="false">
+          <use href="./assets/icons/sprite.svg#close-outline"></use>
+        </svg>
       </button>
     </form>
     <article class="case__inner" data-flip-target="airweb">
@@ -659,16 +874,23 @@
         <p class="stack-tags"><span class="tag">Django</span><span class="tag">Linux</span></p>
       </header>
       <div class="case__body">
-        <p data-i18n="case.airweb.p1">Visualised sensor data from Chunghwa Telecom's IoT smart-network platform for Taiwan's Environmental Protection Administration.</p>
+        <p data-i18n="case.airweb.p1">Visualised sensor data from Chunghwa Telecom's IoT smart-network platform for
+          Taiwan's Environmental Protection Administration.</p>
         <p class="case__spec" data-i18n="case.airweb.spec">
           Joined the project in October 2018 to integrate IoT air-quality sensors.<br>
           Backend in Python with the Django framework.<br>
           NGINX serving the app via uWSGI, with a REST framework API layer.<br>
           Ops tooling: supervisor and Crontab.<br>
-          Given the heavy daily data volume (3&ndash;10 GB), monitored server health and DB capacity with Zabbix, visualised in Grafana.
+          Given the heavy daily data volume (3&ndash;10 GB), monitored server health and DB capacity with Zabbix,
+          visualised in Grafana.
         </p>
         <p class="case__figure">
-          <picture><source srcset="./assets/project7/Air_Postflow.avif" type="image/avif"><source srcset="./assets/project7/Air_Postflow.webp" type="image/webp"><img src="./assets/project7/Air_Postflow.png" width="500" height="300" alt="system architecture diagram" loading="lazy" decoding="async"></picture>
+          <picture>
+            <source srcset="./assets/project7/Air_Postflow.avif" type="image/avif">
+            <source srcset="./assets/project7/Air_Postflow.webp" type="image/webp"><img
+              src="./assets/project7/Air_Postflow.png" width="500" height="300" alt="system architecture diagram"
+              loading="lazy" decoding="async">
+          </picture>
           <span data-i18n="case.airweb.fig1">System architecture</span>
         </p>
         <div class="case__time" data-i18n="case.airweb.time">Oct 2018 &ndash; Mar 2019</div>
@@ -678,36 +900,61 @@
   <dialog class="case" id="case-bloodbank" aria-labelledby="case-bloodbank-title">
     <form method="dialog" class="case__close-form">
       <button class="case__close" aria-label="Close">
-        <svg class="icon" aria-hidden="true" focusable="false"><use href="./assets/icons/sprite.svg#close-outline"></use></svg>
+        <svg class="icon" aria-hidden="true" focusable="false">
+          <use href="./assets/icons/sprite.svg#close-outline"></use>
+        </svg>
       </button>
     </form>
     <article class="case__inner" data-flip-target="bloodbank">
       <header class="case__head">
         <p class="t-label">[08] &middot; <span data-i18n="cat.enterprise">Enterprise</span> &middot; 2017</p>
         <h2 class="case__title" id="case-bloodbank-title">Blood Bank</h2>
-        <p class="stack-tags"><span class="tag">C#</span><span class="tag">Bootstrap</span><span class="tag">Cordova</span></p>
+        <p class="stack-tags"><span class="tag">C#</span><span class="tag">Bootstrap</span><span
+            class="tag">Cordova</span></p>
       </header>
       <div class="case__body">
-        <p data-i18n="case.bloodbank.p1">Moved blood-bag verification onto mobile. Blood bags are time-sensitive, so this confirms each hand-off checkpoint during transport by phone &mdash; ward staff scan an ID badge plus the bag&rsquo;s barcode to confirm pickup.</p>
+        <p data-i18n="case.bloodbank.p1">Moved blood-bag verification onto mobile. Blood bags are time-sensitive, so
+          this confirms each hand-off checkpoint during transport by phone &mdash; ward staff scan an ID badge plus the
+          bag&rsquo;s barcode to confirm pickup.</p>
         <p class="case__spec" data-i18n="case.bloodbank.spec">
           Packaged as a mobile app with Cordova.<br>
           Frontend: AngularJS 1.5.<br>
           Backend: ASP.NET MVC 5, LINQ, Dapper, C# 6.0.
         </p>
         <p class="case__figure">
-          <picture><source srcset="./assets/project8/bol_system.avif" type="image/avif"><source srcset="./assets/project8/bol_system.webp" type="image/webp"><img src="./assets/project8/bol_system.png" width="500" height="300" alt="flow architecture" loading="lazy" decoding="async"></picture>
+          <picture>
+            <source srcset="./assets/project8/bol_system.avif" type="image/avif">
+            <source srcset="./assets/project8/bol_system.webp" type="image/webp"><img
+              src="./assets/project8/bol_system.png" width="500" height="300" alt="flow architecture" loading="lazy"
+              decoding="async">
+          </picture>
           <span data-i18n="case.bloodbank.fig1">Flow architecture</span>
         </p>
         <p class="case__figure">
-          <picture><source srcset="./assets/project8/bol_login.avif" type="image/avif"><source srcset="./assets/project8/bol_login.webp" type="image/webp"><img src="./assets/project8/bol_login.PNG" alt="login screen" width="511" height="858" loading="lazy" decoding="async"></picture>
+          <picture>
+            <source srcset="./assets/project8/bol_login.avif" type="image/avif">
+            <source srcset="./assets/project8/bol_login.webp" type="image/webp"><img
+              src="./assets/project8/bol_login.PNG" alt="login screen" width="511" height="858" loading="lazy"
+              decoding="async">
+          </picture>
           <span data-i18n="case.bloodbank.fig2">Login screen</span>
         </p>
         <p class="case__figure">
-          <picture><source srcset="./assets/project8/bol_step1.avif" type="image/avif"><source srcset="./assets/project8/bol_step1.webp" type="image/webp"><img src="./assets/project8/bol_step1.PNG" alt="cross-match form" width="391" height="699" loading="lazy" decoding="async"></picture>
+          <picture>
+            <source srcset="./assets/project8/bol_step1.avif" type="image/avif">
+            <source srcset="./assets/project8/bol_step1.webp" type="image/webp"><img
+              src="./assets/project8/bol_step1.PNG" alt="cross-match form" width="391" height="699" loading="lazy"
+              decoding="async">
+          </picture>
           <span data-i18n="case.bloodbank.fig3">Cross-match form screen</span>
         </p>
         <p class="case__figure">
-          <picture><source srcset="./assets/project8/bol_step2.avif" type="image/avif"><source srcset="./assets/project8/bol_step2.webp" type="image/webp"><img src="./assets/project8/bol_step2.PNG" alt="cross-match confirmation" width="415" height="708" loading="lazy" decoding="async"></picture>
+          <picture>
+            <source srcset="./assets/project8/bol_step2.avif" type="image/avif">
+            <source srcset="./assets/project8/bol_step2.webp" type="image/webp"><img
+              src="./assets/project8/bol_step2.PNG" alt="cross-match confirmation" width="415" height="708"
+              loading="lazy" decoding="async">
+          </picture>
           <span data-i18n="case.bloodbank.fig4">Cross-match confirmation screen</span>
         </p>
         <div class="case__time" data-i18n="case.bloodbank.time">May 2017 &ndash; Jun 2017</div>
@@ -718,14 +965,17 @@
   <dialog class="case" id="case-maxo" aria-labelledby="case-maxo-title">
     <form method="dialog" class="case__close-form">
       <button class="case__close" aria-label="Close">
-        <svg class="icon" aria-hidden="true" focusable="false"><use href="./assets/icons/sprite.svg#close-outline"></use></svg>
+        <svg class="icon" aria-hidden="true" focusable="false">
+          <use href="./assets/icons/sprite.svg#close-outline"></use>
+        </svg>
       </button>
     </form>
     <article class="case__inner" data-flip-target="maxo">
       <header class="case__head">
         <p class="t-label">[09] &middot; <span data-i18n="cat.aiApp">AI App</span> &middot; 2026</p>
         <h2 class="case__title" id="case-maxo-title">MAXO</h2>
-        <p class="stack-tags"><span class="tag">Django</span><span class="tag">React</span><span class="tag">OpenAI</span><span class="tag">Gemini</span><span class="tag">GCP</span></p>
+        <p class="stack-tags"><span class="tag">Django</span><span class="tag">React</span><span
+            class="tag">OpenAI</span><span class="tag">Gemini</span><span class="tag">GCP</span></p>
       </header>
       <div class="case__body">
         <p class="case__spec" data-i18n="case.maxo.spec">
@@ -761,20 +1011,30 @@
           documents.
         </p>
         <p data-i18n="case.maxo.p4">
-          Below: the AI advisor pipeline running a full health-check end-to-end &mdash; the async worker queue from above, live.
+          Below: the AI advisor pipeline running a full health-check end-to-end &mdash; the async worker queue from
+          above, live.
         </p>
         <p class="case__figure">
-          <span class="video-frame"><video id="project-video-5" controls loop playsinline preload="none" data-src="./assets/project9/maxo-demo.mp4" data-poster="./assets/project9/maxo-demo-poster.webp">
-            <span lang="zh-Hant-TW">您的瀏覽器不支援 HTML5 影片播放。</span>
-            Your browser doesn't support the &lt;video&gt; tag.
-          </video><button class="video-play" type="button" data-video-play aria-label="Play video"><svg class="icon is-solid" aria-hidden="true" focusable="false"><use href="./assets/icons/sprite.svg#play"></use></svg></button></span>
+          <span class="video-frame"><video id="project-video-5" controls loop playsinline preload="none"
+              data-src="./assets/project9/maxo-demo.mp4" data-poster="./assets/project9/maxo-demo-poster.webp">
+              <span lang="zh-Hant-TW">您的瀏覽器不支援 HTML5 影片播放。</span>
+              Your browser doesn't support the &lt;video&gt; tag.
+            </video><button class="video-play" type="button" data-video-play aria-label="Play video"><svg
+                class="icon is-solid" aria-hidden="true" focusable="false">
+                <use href="./assets/icons/sprite.svg#play"></use>
+              </svg></button></span>
           <span data-i18n="case.maxo.fig1">AI health-check report, in progress</span>
         </p>
         <p class="case__figure">
-          <picture><source srcset="./assets/project9/maxo.avif" type="image/avif"><source srcset="./assets/project9/maxo.webp" type="image/webp"><img src="./assets/project9/maxo.png" alt="MAXO landing page" width="1600" height="1000" loading="lazy" decoding="async"></picture>
+          <picture>
+            <source srcset="./assets/project9/maxo.avif" type="image/avif">
+            <source srcset="./assets/project9/maxo.webp" type="image/webp"><img src="./assets/project9/maxo.png"
+              alt="MAXO landing page" width="1600" height="1000" loading="lazy" decoding="async">
+          </picture>
           <span>maxoai.ai</span>
         </p>
-        <p><span data-i18n="case.liveAt">Live at:</span> <a href="https://maxoai.ai/" target="_blank" rel="noopener">https://maxoai.ai/</a></p>
+        <p><span data-i18n="case.liveAt">Live at:</span> <a href="https://maxoai.ai/" target="_blank"
+            rel="noopener">https://maxoai.ai/</a></p>
       </div>
     </article>
   </dialog>
@@ -782,14 +1042,17 @@
   <dialog class="case" id="case-unphishable" aria-labelledby="case-unphishable-title">
     <form method="dialog" class="case__close-form">
       <button class="case__close" aria-label="Close">
-        <svg class="icon" aria-hidden="true" focusable="false"><use href="./assets/icons/sprite.svg#close-outline"></use></svg>
+        <svg class="icon" aria-hidden="true" focusable="false">
+          <use href="./assets/icons/sprite.svg#close-outline"></use>
+        </svg>
       </button>
     </form>
     <article class="case__inner" data-flip-target="unphishable">
       <header class="case__head">
         <p class="t-label">[10] &middot; <span data-i18n="cat.security">Security</span> &middot; 2025</p>
         <h2 class="case__title" id="case-unphishable-title">Unphishable</h2>
-        <p class="stack-tags"><span class="tag">Next.js</span><span class="tag">TypeScript</span><span class="tag">Web3</span></p>
+        <p class="stack-tags"><span class="tag">Next.js</span><span class="tag">TypeScript</span><span
+            class="tag">Web3</span></p>
       </header>
       <div class="case__body">
         <p class="case__spec" data-i18n="case.unphishable.spec">
@@ -808,11 +1071,18 @@
           Solidity 21-day program listed under Writing.
         </p>
         <p class="case__figure">
-          <picture><source srcset="./assets/project10/unphishable.avif" type="image/avif"><source srcset="./assets/project10/unphishable.webp" type="image/webp"><img src="./assets/project10/unphishable.png" alt="Unphishable landing page" width="1600" height="1000" loading="lazy" decoding="async"></picture>
+          <picture>
+            <source srcset="./assets/project10/unphishable.avif" type="image/avif">
+            <source srcset="./assets/project10/unphishable.webp" type="image/webp"><img
+              src="./assets/project10/unphishable.png" alt="Unphishable landing page" width="1600" height="1000"
+              loading="lazy" decoding="async">
+          </picture>
           <span>unphishable.io</span>
         </p>
-        <p><span data-i18n="case.liveAt">Live at:</span> <a href="https://unphishable.io/" target="_blank" rel="noopener">https://unphishable.io/</a></p>
-        <p><span data-i18n="case.talk">Talk:</span> <a href="https://www.youtube.com/watch?v=qgztO4qw8yQ" target="_blank" rel="noopener" lang="zh-Hant-TW">COSCUP 2025 &mdash; 識破 Web3 詐騙陷阱</a></p>
+        <p><span data-i18n="case.liveAt">Live at:</span> <a href="https://unphishable.io/" target="_blank"
+            rel="noopener">https://unphishable.io/</a></p>
+        <p><span data-i18n="case.talk">Talk:</span> <a href="https://www.youtube.com/watch?v=qgztO4qw8yQ"
+            target="_blank" rel="noopener" lang="zh-Hant-TW">COSCUP 2025 &mdash; 識破 Web3 詐騙陷阱</a></p>
       </div>
     </article>
   </dialog>
@@ -820,14 +1090,17 @@
   <dialog class="case" id="case-offgrid" aria-labelledby="case-offgrid-title">
     <form method="dialog" class="case__close-form">
       <button class="case__close" aria-label="Close">
-        <svg class="icon" aria-hidden="true" focusable="false"><use href="./assets/icons/sprite.svg#close-outline"></use></svg>
+        <svg class="icon" aria-hidden="true" focusable="false">
+          <use href="./assets/icons/sprite.svg#close-outline"></use>
+        </svg>
       </button>
     </form>
     <article class="case__inner" data-flip-target="offgrid">
       <header class="case__head">
         <p class="t-label">[11] &middot; <span data-i18n="cat.backend">Backend</span> &middot; 2025&ndash;2026</p>
         <h2 class="case__title" id="case-offgrid-title">OFF GRID</h2>
-        <p class="stack-tags"><span class="tag">Go</span><span class="tag">MySQL</span><span class="tag">Redis</span><span class="tag">Ethereum</span></p>
+        <p class="stack-tags"><span class="tag">Go</span><span class="tag">MySQL</span><span
+            class="tag">Redis</span><span class="tag">Ethereum</span></p>
       </header>
       <div class="case__body">
         <p class="case__spec" data-i18n="case.offgrid.spec">
@@ -847,12 +1120,19 @@
           and China-market storefronts.
         </p>
         <p class="case__figure">
-          <picture><source srcset="./assets/project11/offgrid.avif" type="image/avif"><source srcset="./assets/project11/offgrid.webp" type="image/webp"><img src="./assets/project11/offgrid.png" alt="OFF GRID event listing" width="2542" height="1506" loading="lazy" decoding="async"></picture>
+          <picture>
+            <source srcset="./assets/project11/offgrid.avif" type="image/avif">
+            <source srcset="./assets/project11/offgrid.webp" type="image/webp"><img src="./assets/project11/offgrid.png"
+              alt="OFF GRID event listing" width="2542" height="1506" loading="lazy" decoding="async">
+          </picture>
           <span>offgrid.day</span>
         </p>
-        <p><span data-i18n="case.liveAt">Live at:</span> <a href="https://www.offgrid.day/" target="_blank" rel="noopener">https://www.offgrid.day/</a></p>
-        <p><span data-i18n="case.iosApp">iOS app:</span> <a href="https://apps.apple.com/app/id6740687225" target="_blank" rel="noopener">OFF GRID TICKETING on the App Store</a></p>
-        <p><span data-i18n="case.androidApp">Android app:</span> <a href="https://www.offgrid.day/download-app" target="_blank" rel="noopener">https://www.offgrid.day/download-app</a></p>
+        <p><span data-i18n="case.liveAt">Live at:</span> <a href="https://www.offgrid.day/" target="_blank"
+            rel="noopener">https://www.offgrid.day/</a></p>
+        <p><span data-i18n="case.iosApp">iOS app:</span> <a href="https://apps.apple.com/app/id6740687225"
+            target="_blank" rel="noopener">OFF GRID TICKETING on the App Store</a></p>
+        <p><span data-i18n="case.androidApp">Android app:</span> <a href="https://www.offgrid.day/download-app"
+            target="_blank" rel="noopener">https://www.offgrid.day/download-app</a></p>
       </div>
     </article>
   </dialog>

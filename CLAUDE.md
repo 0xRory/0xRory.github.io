@@ -43,13 +43,29 @@ assets/project1..8/        # per-project media
 
 ## Verifying a change
 
-There is no test framework. Run it:
+There is no test framework, but there is a headless smoke test — run it before
+you call anything done:
+
+```sh
+./tools/check.sh
+```
+
+It drives a real Chrome over the DevTools Protocol at three configurations
+(desktop, 390px, reduced-motion) and asserts the things that have actually
+broken here: console output, third-party requests, eager video fetches, scroll
+reveals, the work filter, the case dialog, the theme toggle, anchor scrolling
+and horizontal overflow. Zero dependencies — `tools/cdp.mjs` is a ~90-line
+WebSocket client over node's built-ins.
+
+To look at it yourself:
 
 ```sh
 python3 -m http.server 8000     # import maps and module scripts need http, not file://
 ```
 
-Then: console must be **zero errors**; Network panel must show **zero third-party requests**; walk the page once with the OS "reduce motion" setting on; check 375 / 768 / 1440 px.
+Console must be **zero output** (not just zero errors — Anime.js deprecation
+warnings count); Network must show **zero third-party requests**; walk the page
+once with the OS "reduce motion" setting on; check 375 / 768 / 1440 px.
 
 ## Budgets
 

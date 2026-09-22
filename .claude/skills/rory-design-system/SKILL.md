@@ -19,7 +19,7 @@ metadata:
 
 Monochrome terminal / brutalist-pixel. Off-white paper, black ink, no accent colour, blocky pixel display type against a wide-tracked monospace UI. Light is the default; dark is an **inversion of the same two tokens**, not a second theme.
 
-**One explicit exception:** the hero/avatar portrait (`assets/images/avatar.*`, the GitHub profile image) renders in full colour, approved by the site owner. `hero-scanlines.js` draws it as-is — no grayscale, no dither. Nothing else on the page gets this exception; don't extend it without asking.
+**Photographic/media content is the one exception, approved by the site owner:** the hero/avatar portrait (`assets/images/avatar.*`), project card thumbnails (`.card__media img`), and case-study figures and videos (`.case__figure img`, `.case__body video`) all render in full, real colour — no grayscale filter, no dither. This is scoped to *photos and screenshots*, not UI chrome: type, tags, borders, backgrounds, icons and the frame stay strictly `--ink`/`--paper`. Don't add a hue to any of those without asking.
 
 ## Tokens — `assets/css/tokens.css`
 
@@ -128,14 +128,18 @@ Hard rule: **nothing scroll-triggered and nothing in the canvas loop uses Anime.
 
 ```html
 <div class="hero__canvas-wrap">
-  <img class="hero__fallback" src="./assets/images/hero-portrait-dithered.png" width="…" height="…" alt="">
+  <picture>
+    <source srcset="./assets/images/avatar.avif" type="image/avif">
+    <source srcset="./assets/images/avatar.webp" type="image/webp">
+    <img class="hero__fallback" src="./assets/images/avatar.png" width="…" height="…" alt="Rory">
+  </picture>
   <canvas class="hero__canvas" aria-hidden="true"></canvas>
 </div>
 ```
 
 The `<img>` sits at `--z-base` and is always present; the canvas is absolutely positioned at `--z-hero-canvas` and only gets `opacity: 1` **after a successful first paint**.
 
-Technique: source image → `createImageBitmap()` → grayscale → Bayer 4×4 ordered dither to 1-bit using `--ink`/`--paper` read via `getComputedStyle` → cached as a second `ImageBitmap`. Each frame, `drawImage` N horizontal slices with a per-slice x displacement. `ctx.imageSmoothingEnabled = false`. DPR capped at 2.
+Technique: source image → `createImageBitmap()` (full colour, no grayscale/dither step — see the exception above) → cached as an `ImageBitmap`. Each frame, `drawImage` N horizontal slices with a per-slice x displacement. `ctx.imageSmoothingEnabled = true` with `imageSmoothingQuality: 'high'` (the old 1-bit path disabled smoothing to keep dither edges crisp; a real photo wants the opposite). DPR capped at 2.
 
 ```
 N = mobile ? 24 : 48 ;  h = ceil(H / N)
@@ -146,7 +150,6 @@ dx = (sin(t*0.7 + i*0.31)*2 + sin(t*2.3 + i*1.7)*1 + burst[i]) * amp
 - `burst[]` is filled by a repeating GSAP timeline (`repeatRefresh: true`, `repeatDelay: gsap.utils.random(2.5, 6)`) spiking 4–8 slices for 90 ms. Choreographed glitches read as intent; per-frame randomness reads as broken.
 - Desktop scroll: ScrollTrigger `scrub: 0.6` maps hero exit to `amp: 0 → 180` + fade.
 - `IntersectionObserver` + `visibilitychange` → `gsap.ticker.remove()` when not visible.
-- Theme change → re-dither and redraw.
 
 Degradation: `prefers-reduced-motion` or `saveData` → draw **one** static `amp = 0` frame and never register the ticker callback. `< 768px` → `N = 24`, logical width ≤ 900, no `difference` bursts, half `amp`, no scroll scrub.
 

@@ -224,7 +224,8 @@ const DICT = {
     en: 'I own two of its Go backend services: the ticketing API (Hertz, JWT, Redis, MySQL/GORM) handling orders, seat maps and payments, and the identity service (Gin) covering Apple Sign-In, SMS one-time codes via Alibaba Cloud, and per-user custodial Ethereum wallet provisioning that backs the on-chain performance pass. I also contribute to the Next.js web platform shared by its global and China-market storefronts.',
     zh: '我負責其中兩個 Go 後端服務：票務 API（Hertz、JWT、Redis、MySQL/GORM），處理訂單、選位與金流；以及身分服務（Gin），涵蓋 Apple 登入、透過阿里雲發送的簡訊驗證碼，以及為每位使用者建立代管以太坊錢包，作為鏈上 performance pass 的載體。我也參與 Next.js 網站平台的開發，同時支援其海外與中國兩個市場站點。',
   },
-  'case.mobileApp': { en: 'Mobile app:', zh: '手機 App：' },
+  'case.iosApp': { en: 'iOS app:', zh: 'iOS App：' },
+  'case.androidApp': { en: 'Android app:', zh: 'Android App：' },
 };
 
 export function initI18n() {

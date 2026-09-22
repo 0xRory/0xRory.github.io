@@ -215,6 +215,16 @@ const DICT = {
     zh: '核心團隊：<a href="https://github.com/DeFiHackLabs" target="_blank" rel="noopener">DeFiHackLabs</a>、ScamSniffer、SlowMist，並獲得 Ethereum Ecosystem Support Program 支持。我透過 DeFiHackLabs 參與貢獻——也就是「文章」區塊中 Solidity 21 天共學計畫背後的同一個 Web3 安全社群。',
   },
   'case.talk': { en: 'Talk:', zh: '議程影片：' },
+
+  'case.offgrid.spec': {
+    en: 'OFF GRID is a live-event and fan-club ticketing platform for the Asia-Pacific fan market &mdash; &ldquo;events that connect IRL&rdquo; &mdash; covering seat-map ticket sales, livestream tickets, fan-club membership and voting, and blockchain-recorded &ldquo;performance pass&rdquo; event financing.',
+    zh: 'OFF GRID 是專為亞太粉絲市場打造的實體活動暨後援會售票平台——「events that connect IRL」——涵蓋選位購票、線上直播票、後援會會籍與投票，以及區塊鏈紀錄的「performance pass」活動募資機制。',
+  },
+  'case.offgrid.p2': {
+    en: 'I own two of its Go backend services: the ticketing API (Hertz, JWT, Redis, MySQL/GORM) handling orders, seat maps and payments, and the identity service (Gin) covering Apple Sign-In, SMS one-time codes via Alibaba Cloud, and per-user custodial Ethereum wallet provisioning that backs the on-chain performance pass. I also contribute to the Next.js web platform shared by its global and China-market storefronts.',
+    zh: '我負責其中兩個 Go 後端服務：票務 API（Hertz、JWT、Redis、MySQL/GORM），處理訂單、選位與金流；以及身分服務（Gin），涵蓋 Apple 登入、透過阿里雲發送的簡訊驗證碼，以及為每位使用者建立代管以太坊錢包，作為鏈上 performance pass 的載體。我也參與 Next.js 網站平台的開發，同時支援其海外與中國兩個市場站點。',
+  },
+  'case.mobileApp': { en: 'Mobile app:', zh: '手機 App：' },
 };
 
 export function initI18n() {

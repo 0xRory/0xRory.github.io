@@ -277,6 +277,18 @@
             <span class="card__cta" data-i18n="work.cta.viewCase">view case &rarr;</span>
           </button>
         </li>
+        <li class="work__item" data-reveal data-category="Backend">
+          <button class="card" type="button" data-case="offgrid" aria-haspopup="dialog">
+            <span class="card__index" data-count-to="11">[11]</span>
+            <span class="card__media" data-flip-id="offgrid"><picture><source srcset="./assets/project11/offgrid.avif" type="image/avif"><source srcset="./assets/project11/offgrid.webp" type="image/webp"><img src="./assets/project11/offgrid.png" alt="OFF GRID" width="1600" height="1000" loading="lazy" decoding="async"></picture></span>
+            <span class="card__body">
+              <span class="card__title">OFF GRID</span>
+              <span class="card__meta"><span data-i18n="cat.backend">Backend</span> <span class="card__year">2025&ndash;2026</span></span>
+              <span class="stack-tags"><span class="tag">Go</span><span class="tag">MySQL</span><span class="tag">Redis</span><span class="tag">Ethereum</span></span>
+            </span>
+            <span class="card__cta" data-i18n="work.cta.viewCase">view case &rarr;</span>
+          </button>
+        </li>
         </ul>
       </section>
 
@@ -801,6 +813,45 @@
         </p>
         <p><span data-i18n="case.liveAt">Live at:</span> <a href="https://unphishable.io/" target="_blank" rel="noopener">https://unphishable.io/</a></p>
         <p><span data-i18n="case.talk">Talk:</span> <a href="https://www.youtube.com/watch?v=qgztO4qw8yQ" target="_blank" rel="noopener" lang="zh-Hant-TW">COSCUP 2025 &mdash; 識破 Web3 詐騙陷阱</a></p>
+      </div>
+    </article>
+  </dialog>
+
+  <dialog class="case" id="case-offgrid" aria-labelledby="case-offgrid-title">
+    <form method="dialog" class="case__close-form">
+      <button class="case__close" aria-label="Close">
+        <svg class="icon" aria-hidden="true" focusable="false"><use href="./assets/icons/sprite.svg#close-outline"></use></svg>
+      </button>
+    </form>
+    <article class="case__inner" data-flip-target="offgrid">
+      <header class="case__head">
+        <p class="t-label">[11] &middot; <span data-i18n="cat.backend">Backend</span> &middot; 2025&ndash;2026</p>
+        <h2 class="case__title" id="case-offgrid-title">OFF GRID</h2>
+        <p class="stack-tags"><span class="tag">Go</span><span class="tag">MySQL</span><span class="tag">Redis</span><span class="tag">Ethereum</span></p>
+      </header>
+      <div class="case__body">
+        <p class="case__spec" data-i18n="case.offgrid.spec">
+          OFF GRID is a live-event and fan-club ticketing platform for the
+          Asia-Pacific fan market &mdash; &ldquo;events that connect
+          IRL&rdquo; &mdash; covering seat-map ticket sales, livestream
+          tickets, fan-club membership and voting, and blockchain-recorded
+          &ldquo;performance pass&rdquo; event financing.
+        </p>
+        <p data-i18n="case.offgrid.p2">
+          I own two of its Go backend services: the ticketing API (Hertz,
+          JWT, Redis, MySQL/GORM) handling orders, seat maps and payments,
+          and the identity service (Gin) covering Apple Sign-In, SMS
+          one-time codes via Alibaba Cloud, and per-user custodial Ethereum
+          wallet provisioning that backs the on-chain performance pass. I
+          also contribute to the Next.js web platform shared by its global
+          and China-market storefronts.
+        </p>
+        <p class="case__figure">
+          <picture><source srcset="./assets/project11/offgrid.avif" type="image/avif"><source srcset="./assets/project11/offgrid.webp" type="image/webp"><img src="./assets/project11/offgrid.png" alt="OFF GRID event listing" width="1600" height="1000" loading="lazy" decoding="async"></picture>
+          <span>offgrid.day</span>
+        </p>
+        <p><span data-i18n="case.liveAt">Live at:</span> <a href="https://www.offgrid.day/" target="_blank" rel="noopener">https://www.offgrid.day/</a></p>
+        <p><span data-i18n="case.mobileApp">Mobile app:</span> <a href="https://www.offgrid.day/download-app" target="_blank" rel="noopener">https://www.offgrid.day/download-app</a></p>
       </div>
     </article>
   </dialog>

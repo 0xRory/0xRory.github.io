@@ -1,0 +1,104 @@
+/*-----------------------------------*\
+  #TOKENS
+  The single source of truth. Nothing else in this project may hardcode a
+  colour, font size, spacing step, radius, z-index, duration or easing.
+  Mirrored in .claude/skills/rory-design-system/SKILL.md — keep them in sync.
+\*-----------------------------------*/
+
+:root {
+  color-scheme: light dark;
+
+  /* ── colour: two values and their alphas. No hue. ─────────────── */
+  --paper:        hsl(60 6% 95%);
+  --paper-sunk:   hsl(60 5% 91%);
+  --paper-raised: hsl(60 8% 97%);
+  --ink:          hsl(0 0% 4%);
+  --ink-70:       hsl(0 0% 4% / .70);
+  --ink-40:       hsl(0 0% 4% / .40);
+  --ink-25:       hsl(0 0% 4% / .25);
+  --ink-15:       hsl(0 0% 4% / .15);
+  --ink-08:       hsl(0 0% 4% / .08);
+  --ink-04:       hsl(0 0% 4% / .04);
+
+  --hairline:      1px solid var(--ink);
+  --hairline-soft: 1px solid var(--ink-15);
+
+  /* ── type ─────────────────────────────────────────────────────── */
+  --ff-display: 'Pixelify Sans', 'Silkscreen', ui-monospace, monospace;
+  --ff-mono:    'JetBrains Mono', 'Noto Sans TC', ui-monospace, SFMono-Regular,
+                Menlo, Consolas, 'Liberation Mono', monospace;
+
+  --fs-display: clamp(3.25rem, 13vw, 11rem);
+  --fs-h1:      clamp(2rem, 6.5vw, 4.5rem);
+  --fs-h2:      clamp(1.5rem, 3.5vw, 2.5rem);
+  --fs-h3:      clamp(1.125rem, 1.6vw, 1.5rem);
+  --fs-h4:      clamp(1rem, 1.2vw, 1.125rem);
+  --fs-body:    clamp(.875rem, .82rem + .22vw, 1rem);
+  --fs-sm:      .8125rem;
+  --fs-xs:      .6875rem;
+
+  --lh-display: .82;
+  --lh-tight:   1.05;
+  --lh-body:    1.65;
+
+  --tr-display: -.02em;
+  --tr-ui:       .08em;
+  --tr-label:    .16em;
+
+  --fw-regular: 400;
+  --fw-medium:  500;
+  --fw-bold:    700;
+
+  /* ── spacing: 4px base ────────────────────────────────────────── */
+  --sp-1: .25rem;  --sp-2: .5rem;   --sp-3: .75rem;  --sp-4: 1rem;
+  --sp-6: 1.5rem;  --sp-8: 2rem;    --sp-12: 3rem;   --sp-16: 4rem;
+  --sp-24: 6rem;   --sp-32: 8rem;   --sp-48: 12rem;
+
+  --gutter:  clamp(1rem, 4vw, 3.5rem);
+  --measure: 62ch;
+
+  /* ── radius ───────────────────────────────────────────────────── */
+  --r-0: 0;  --r-sm: 2px;  --r-md: 4px;  --r-frame: 20px;  --r-full: 999px;
+
+  /* ── z-index ──────────────────────────────────────────────────── */
+  --z-base: 0;   --z-hero-canvas: 1;  --z-sticky: 10;   --z-nav: 100;
+  --z-cursor: 900;  --z-scrim: 990;   --z-dialog: 1000;
+
+  /* ── motion ───────────────────────────────────────────────────── */
+  --dur-instant: 120ms;  --dur-fast: 220ms;  --dur-base: 400ms;
+  --dur-slow: 700ms;     --dur-hero: 1200ms;
+
+  --ease-out-expo: cubic-bezier(.16, 1, .3, 1);
+  --ease-in-out-q: cubic-bezier(.76, 0, .24, 1);
+  --ease-out-back: cubic-bezier(.34, 1.56, .64, 1);
+  --ease-step:     steps(6, end);
+}
+
+/* ── dark: the same two tokens, inverted ────────────────────────── */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper:        hsl(0 0% 5%);
+    --paper-sunk:   hsl(0 0% 9%);
+    --paper-raised: hsl(0 0% 11%);
+    --ink:          hsl(60 6% 94%);
+    --ink-70:       hsl(60 6% 94% / .70);
+    --ink-40:       hsl(60 6% 94% / .40);
+    --ink-25:       hsl(60 6% 94% / .25);
+    --ink-15:       hsl(60 6% 94% / .15);
+    --ink-08:       hsl(60 6% 94% / .08);
+    --ink-04:       hsl(60 6% 94% / .04);
+  }
+}
+
+:root[data-theme="dark"] {
+  --paper:        hsl(0 0% 5%);
+  --paper-sunk:   hsl(0 0% 9%);
+  --paper-raised: hsl(0 0% 11%);
+  --ink:          hsl(60 6% 94%);
+  --ink-70:       hsl(60 6% 94% / .70);
+  --ink-40:       hsl(60 6% 94% / .40);
+  --ink-25:       hsl(60 6% 94% / .25);
+  --ink-15:       hsl(60 6% 94% / .15);
+  --ink-08:       hsl(60 6% 94% / .08);
+  --ink-04:       hsl(60 6% 94% / .04);
+}

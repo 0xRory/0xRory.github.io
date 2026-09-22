@@ -18,96 +18,63 @@
 :root {
 
   /**
-   * colors
+   * COMPATIBILITY SHIM
+   * The old vCard palette names now resolve to the monochrome tokens in
+   * tokens.css. This monochromes all ~1900 lines below without touching them.
+   * Phase 4 deletes this file; nothing new should use these names.
    */
 
   /* gradient */
-
-  --bg-gradient-onyx: linear-gradient(
-    to bottom right, 
-    hsl(240, 1%, 25%) 3%, 
-    hsl(0, 0%, 19%) 97%
-  );
-  --bg-gradient-jet: linear-gradient(
-    to bottom right, 
-    hsla(240, 1%, 18%, 0.251) 0%, 
-    hsla(240, 2%, 11%, 0) 100%
-  ), hsl(240, 2%, 13%);
-  --bg-gradient-yellow-1: linear-gradient(
-    to bottom right, 
-    hsl(45, 100%, 71%) 0%, 
-    hsla(36, 100%, 69%, 0) 50%
-  );
-  --bg-gradient-yellow-2: linear-gradient(
-    135deg, 
-    hsla(45, 100%, 71%, 0.251) 0%, 
-    hsla(35, 100%, 68%, 0) 59.86%
-  ), hsl(240, 2%, 13%);
-  --border-gradient-onyx: linear-gradient(
-    to bottom right, 
-    hsl(0, 0%, 25%) 0%, 
-    hsla(0, 0%, 25%, 0) 50%
-  );
-  --text-gradient-yellow: linear-gradient(
-    to right, 
-    hsl(45, 100%, 72%), 
-    hsl(35, 100%, 68%)
-  );
+  --bg-gradient-onyx:     linear-gradient(to bottom right, var(--paper-raised) 3%, var(--paper-sunk) 97%);
+  --bg-gradient-jet:      linear-gradient(to bottom right, var(--ink-04) 0%, transparent 100%), var(--paper-raised);
+  --bg-gradient-yellow-1: linear-gradient(to bottom right, var(--ink-08) 0%, transparent 50%);
+  --bg-gradient-yellow-2: linear-gradient(135deg, var(--ink-08) 0%, transparent 59.86%), var(--paper-raised);
+  --border-gradient-onyx: linear-gradient(to bottom right, var(--ink-15) 0%, transparent 50%);
+  --text-gradient-yellow: linear-gradient(to right, var(--ink), var(--ink-70));
 
   /* solid */
-
-  --jet: hsl(0, 0%, 22%);
-  --onyx: hsl(240, 1%, 17%);
-  --eerie-black-1: hsl(240, 2%, 13%);
-  --eerie-black-2: hsl(240, 2%, 12%);
-  --smoky-black: hsl(0, 0%, 7%);
-  --white-1: hsl(0, 0%, 100%);
-  --white-2: hsl(0, 0%, 98%);
-  --orange-yellow-crayola: hsl(45, 100%, 72%);
-  --vegas-gold: hsl(45, 54%, 58%);
-  --light-gray: hsl(0, 0%, 84%);
-  --light-gray-70: hsla(0, 0%, 84%, 0.7);
-  --bittersweet-shimmer: hsl(0, 43%, 51%);
-
-  /**
-   * typography
-   */
+  --jet:                  var(--ink-15);
+  --onyx:                 var(--ink-15);
+  --eerie-black-1:        var(--paper-raised);
+  --eerie-black-2:        var(--paper-sunk);
+  --smoky-black:          var(--paper);
+  --white-1:              var(--ink);
+  --white-2:              var(--ink);
+  --orange-yellow-crayola: var(--ink);
+  --vegas-gold:           var(--ink-40);
+  --light-gray:           var(--ink-70);
+  --light-gray-70:        var(--ink-40);
+  --bittersweet-shimmer:  var(--ink);
 
   /* font-family */
-  --ff-poppins: 'Poppins', sans-serif;
+  --ff-poppins: var(--ff-mono);
 
   /* font-size */
-  --fs-1: 24px;
-  --fs-2: 18px;
-  --fs-3: 17px;
-  --fs-4: 16px;
-  --fs-5: 15px;
-  --fs-6: 14px;
-  --fs-7: 13px;
-  --fs-8: 11px;
+  --fs-1: var(--fs-h2);
+  --fs-2: var(--fs-h3);
+  --fs-3: var(--fs-h4);
+  --fs-4: 1rem;
+  --fs-5: .9375rem;
+  --fs-6: var(--fs-body);
+  --fs-7: var(--fs-sm);
+  --fs-8: var(--fs-xs);
 
   /* font-weight */
-  --fw-300: 300;
-  --fw-400: 400;
-  --fw-500: 500;
-  --fw-600: 600;
+  --fw-300: 400;
+  --fw-400: var(--fw-regular);
+  --fw-500: var(--fw-medium);
+  --fw-600: var(--fw-bold);
 
-  /**
-   * shadow
-   */
-  
-  --shadow-1: -4px 8px 24px hsla(0, 0%, 0%, 0.25);
-  --shadow-2: 0 16px 30px hsla(0, 0%, 0%, 0.25);
-  --shadow-3: 0 16px 40px hsla(0, 0%, 0%, 0.25);
-  --shadow-4: 0 25px 50px hsla(0, 0%, 0%, 0.15);
-  --shadow-5: 0 24px 80px hsla(0, 0%, 0%, 0.25);
+  /* shadow — light paper needs far less than the old dark theme */
+  --shadow-1: 0 2px 8px  var(--ink-08);
+  --shadow-2: 0 4px 14px var(--ink-08);
+  --shadow-3: 0 6px 20px var(--ink-08);
+  --shadow-4: 0 8px 26px var(--ink-08);
+  --shadow-5: 0 10px 34px var(--ink-08);
 
-  /**
-   * transition
-   */
-
-  --transition-1: 0.25s ease;
-  --transition-2: 0.5s ease-in-out;
+  /* transition */
+  --transition-1: var(--dur-fast) var(--ease-out-expo);
+  --transition-2: var(--dur-slow) var(--ease-in-out-q);
 
 }
 
@@ -153,7 +120,7 @@ input, textarea {
 
 :focus { outline-color: var(--orange-yellow-crayola); }
 
-html { font-family: var(--ff-poppins); }
+html { font-family: var(--ff-mono); }
 
 body { background: var(--smoky-black); }
 
@@ -240,6 +207,9 @@ article.active {
 }
 
 .article-title {
+  font-family: var(--ff-display);
+  letter-spacing: var(--tr-display);
+  text-transform: uppercase;
   position: relative;
   padding-bottom: 7px;
 }
@@ -459,7 +429,7 @@ main {
   bottom: 0;
   left: 0;
   width: 100%;
-  background: hsla(240, 1%, 17%, 0.75);
+  background: color-mix(in srgb, var(--paper-raised) 78%, transparent);
   backdrop-filter: blur(10px);
   border: 1px solid var(--jet);
   border-radius: 12px 12px 0 0;
@@ -476,6 +446,8 @@ main {
 }
 
 .navbar-link {
+  letter-spacing: var(--tr-label);
+  text-transform: uppercase;
   color: var(--light-gray);
   font-size: var(--fs-8);
   padding: 20px 7px;
@@ -495,7 +467,10 @@ main {
   #ABOUT
 \*-----------------------------------*/
 
-.about .article-title { margin-bottom: 15px; }
+.about .article-title {
+  font-family: var(--ff-display);
+  letter-spacing: var(--tr-display);
+  text-transform: uppercase; margin-bottom: 15px; }
 
 .about-text {
   color: var(--light-gray);
@@ -596,7 +571,10 @@ main {
   #RESUME
 \*-----------------------------------*/
 
-.article-title { margin-bottom: 30px; }
+.article-title {
+  font-family: var(--ff-display);
+  letter-spacing: var(--tr-display);
+  text-transform: uppercase; margin-bottom: 30px; }
 
 
 /**
@@ -832,7 +810,7 @@ main {
   border-radius: 8px;
 }
 
-.select-item button:hover { --eerie-black-2: hsl(240, 2%, 20%); }
+.select-item button:hover { --eerie-black-2: var(--ink-08); }
 
 .project-list {
   display: grid;
@@ -875,7 +853,7 @@ main {
   transition: var(--transition-1);
 }
 
-.project-item > a:hover .project-img::before { background: hsla(0, 0%, 0%, 0.5); }
+.project-item > a:hover .project-img::before { background: color-mix(in srgb, var(--ink) 45%, transparent); }
 
 .project-item-icon-box {
   --scale: 0.8;
@@ -1196,6 +1174,9 @@ textarea.form-input::-webkit-resizer { display: none; }
   }
 
   .article-title {
+  font-family: var(--ff-display);
+  letter-spacing: var(--tr-display);
+  text-transform: uppercase;
     font-weight: var(--fw-600);
     padding-bottom: 15px;
   }
@@ -1278,7 +1259,9 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .navbar-list { gap: 20px; }
 
-  .navbar-link { --fs-8: 14px; }
+  .navbar-link {
+  letter-spacing: var(--tr-label);
+  text-transform: uppercase; --fs-8: 14px; }
 
 
 
@@ -1286,7 +1269,10 @@ textarea.form-input::-webkit-resizer { display: none; }
    * #ABOUT
    */
 
-  .about .article-title { margin-bottom: 20px; }
+  .about .article-title {
+  font-family: var(--ff-display);
+  letter-spacing: var(--tr-display);
+  text-transform: uppercase; margin-bottom: 20px; }
 
   .about-text { margin-bottom: 40px; }
 
@@ -1416,7 +1402,9 @@ textarea.form-input::-webkit-resizer { display: none; }
    * NAVBAR
    */
 
-  .navbar-link { --fs-8: 15px; }
+  .navbar-link {
+  letter-spacing: var(--tr-label);
+  text-transform: uppercase; --fs-8: 15px; }
 
 
 
@@ -1424,7 +1412,10 @@ textarea.form-input::-webkit-resizer { display: none; }
    * PORTFOLIO
    */
 
-  .article-title { padding-bottom: 20px; }
+  .article-title {
+  font-family: var(--ff-display);
+  letter-spacing: var(--tr-display);
+  text-transform: uppercase; padding-bottom: 20px; }
 
   .filter-select-box { display: none; }
 
@@ -1489,9 +1480,9 @@ textarea.form-input::-webkit-resizer { display: none; }
     * shadow
     */
 
-    --shadow-1: -4px 8px 24px hsla(0, 0%, 0%, 0.125);
-    --shadow-2: 0 16px 30px hsla(0, 0%, 0%, 0.125);
-    --shadow-3: 0 16px 40px hsla(0, 0%, 0%, 0.125);
+    --shadow-1: 0 2px 8px var(--ink-08);
+    --shadow-2: 0 4px 14px var(--ink-08);
+    --shadow-3: 0 6px 20px var(--ink-08);
 
   }
 
@@ -1543,7 +1534,9 @@ textarea.form-input::-webkit-resizer { display: none; }
     padding: 0 20px;
   }
 
-  .navbar-link { font-weight: var(--fw-500); }
+  .navbar-link {
+  letter-spacing: var(--tr-label);
+  text-transform: uppercase; font-weight: var(--fw-500); }
 
 
 
@@ -1599,13 +1592,13 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   body::-webkit-scrollbar-thumb {
     border: 5px solid var(--smoky-black);
-    background: hsla(0, 0%, 100%, 0.1);
+    background: var(--ink-15);
     border-radius: 20px;
-    box-shadow: inset 1px 1px 0 hsla(0, 0%, 100%, 0.11),
-                inset -1px -1px 0 hsla(0, 0%, 100%, 0.11);
+    box-shadow: inset 1px 1px 0 var(--ink-08),
+                inset -1px -1px 0 var(--ink-08);
   }
 
-  body::-webkit-scrollbar-thumb:hover { background: hsla(0, 0%, 100%, 0.15); }
+  body::-webkit-scrollbar-thumb:hover { background: var(--ink-25); }
 
   body::-webkit-scrollbar-button { height: 60px; }
 

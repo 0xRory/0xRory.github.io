@@ -1,7 +1,8 @@
 /**
  * Hero scanline / glitch dissolve.
  *
- * Technique: the portrait is dithered once to 1-bit, cached as an ImageBitmap,
+ * Technique: the portrait is cached once as an ImageBitmap (full colour — an
+ * explicit exception to the monochrome system, approved for this image only),
  * then redrawn every frame as N horizontal slices with a per-slice horizontal
  * displacement. One canvas layer, one texture, ~0.5ms/frame on a laptop.
  *
@@ -12,13 +13,6 @@
  */
 
 import { reduced, onMotionPrefChange } from './motion-prefs.js';
-
-const BAYER4 = [
-  [0, 8, 2, 10],
-  [12, 4, 14, 6],
-  [3, 11, 1, 9],
-  [15, 7, 13, 5],
-];
 
 export function initHeroScanlines({ gsap, ScrollTrigger }) {
   const canvas = document.querySelector('[data-hero-canvas]');
@@ -40,16 +34,13 @@ export function initHeroScanlines({ gsap, ScrollTrigger }) {
 
   const isMobile = () => window.innerWidth < 768;
 
-  /* ── build the 1-bit source ───────────────────────────────────── */
+  /* ── build the source bitmap ─────────────────────────────────── */
 
   async function buildBitmap() {
-    const styles = getComputedStyle(document.documentElement);
-    const ink = styles.getPropertyValue('--ink').trim() || '#0a0a0a';
-    const paper = styles.getPropertyValue('--paper').trim() || '#f2f2f0';
-
-    // Bake at device-pixel resolution (capped) so the 1-bit grid lands 1:1 on
-    // real pixels. Baking at CSS size and upscaling produced a checkerboard
-    // moire in flat areas.
+    // Bake at device-pixel resolution (capped) so slices land crisply on real
+    // pixels rather than being resampled twice. Source is a 460px GitHub
+    // avatar; smoothing is left on here (unlike the old 1-bit path) since
+    // we're now upscaling real colour, not preserving hard dither edges.
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
     const w = Math.round(Math.min((wrap.clientWidth || 600) * dpr, isMobile() ? 900 : 1600));
     const h = w;
@@ -57,43 +48,13 @@ export function initHeroScanlines({ gsap, ScrollTrigger }) {
     const off = document.createElement('canvas');
     off.width = w;
     off.height = h;
-    const octx = off.getContext('2d', { willReadFrequently: true });
-    octx.imageSmoothingEnabled = false;
+    const octx = off.getContext('2d');
+    octx.imageSmoothingEnabled = true;
+    octx.imageSmoothingQuality = 'high';
     octx.drawImage(fallback, 0, 0, w, h);
-
-    const img = octx.getImageData(0, 0, w, h);
-    const d = img.data;
-    const [ir, ig, ib] = parseColor(ink, octx);
-    const [pr, pg, pb] = parseColor(paper, octx);
-
-    for (let y = 0; y < h; y++) {
-      const row = BAYER4[y & 3];
-      for (let x = 0; x < w; x++) {
-        const i = (y * w + x) * 4;
-        const lum = (d[i] * 0.299 + d[i + 1] * 0.587 + d[i + 2] * 0.114) / 255;
-        const on = lum > (row[x & 3] + 0.5) / 16;
-        d[i] = on ? pr : ir;
-        d[i + 1] = on ? pg : ig;
-        d[i + 2] = on ? pb : ib;
-        d[i + 3] = on ? 0 : 255;   // paper stays transparent so the page shows through
-      }
-    }
-    octx.putImageData(img, 0, 0);
 
     bitmap = await createImageBitmap(off);
     sizeCanvas();
-  }
-
-  function parseColor(css, c) {
-    c.fillStyle = '#000';
-    c.fillStyle = css;
-    const hex = c.fillStyle;
-    if (hex.startsWith('#')) {
-      const n = parseInt(hex.slice(1), 16);
-      return [(n >> 16) & 255, (n >> 8) & 255, n & 255];
-    }
-    const m = hex.match(/[\d.]+/g) || [0, 0, 0];
-    return [Number(m[0]), Number(m[1]), Number(m[2])];
   }
 
   function sizeCanvas() {
@@ -105,7 +66,8 @@ export function initHeroScanlines({ gsap, ScrollTrigger }) {
     canvas.style.width = `${w}px`;
     canvas.style.height = `${h}px`;
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    ctx.imageSmoothingEnabled = false;
+    ctx.imageSmoothingEnabled = true;
+    ctx.imageSmoothingQuality = 'high';
     slices = isMobile() ? 24 : 48;
     burst = new Array(slices).fill(0);
   }
@@ -202,11 +164,6 @@ export function initHeroScanlines({ gsap, ScrollTrigger }) {
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(() => { buildBitmap().then(() => { if (!running) drawStatic(); }); }, 180);
   }, { passive: true });
-
-  // the dither is baked with the current --ink/--paper, so re-bake on theme flip
-  window.addEventListener('themechange', () => {
-    buildBitmap().then(() => { if (!running) drawStatic(); });
-  });
 
   onMotionPrefChange((isReduced) => {
     if (isReduced) { stop(); idleTl?.pause(); drawStatic(); }

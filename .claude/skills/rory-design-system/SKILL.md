@@ -19,6 +19,8 @@ metadata:
 
 Monochrome terminal / brutalist-pixel. Off-white paper, black ink, no accent colour, blocky pixel display type against a wide-tracked monospace UI. Light is the default; dark is an **inversion of the same two tokens**, not a second theme.
 
+**One explicit exception:** the hero/avatar portrait (`assets/images/avatar.*`, the GitHub profile image) renders in full colour, approved by the site owner. `hero-scanlines.js` draws it as-is — no grayscale, no dither. Nothing else on the page gets this exception; don't extend it without asking.
+
 ## Tokens — `assets/css/tokens.css`
 
 Never hardcode these values in component CSS. If you need a value that has no token, add the token.

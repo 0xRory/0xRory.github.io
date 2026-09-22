@@ -50,7 +50,8 @@
   -->
   <link rel="stylesheet" href="./assets/css/tokens.css">
   <link rel="stylesheet" href="./assets/css/base.css">
-  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/layout.css">
+  <link rel="stylesheet" href="./assets/css/components.css">
 
   <script type="application/ld+json">
   {
@@ -87,569 +88,366 @@
 </head>
 
 <body>
+  <a class="skip" href="#work">Skip to work</a>
 
-  <!--
-    - #MAIN
-  -->
+  <div class="frame" data-frame>
 
-  <main>
+    <header class="nav" data-nav>
+      <a class="nav__mark" href="#top" aria-label="Rory — top of page">
+        <span aria-hidden="true">0x</span>
+      </a>
+      <nav class="nav__links" aria-label="Sections">
+        <a href="#work" data-nav-link>Work</a>
+        <a href="#about" data-nav-link>About</a>
+        <a href="#resume" data-nav-link>Resume</a>
+        <a href="#writing" data-nav-link>Writing</a>
+        <a href="#contact" data-nav-link>Contact</a>
+      </nav>
+      <button class="nav__theme" data-theme-toggle type="button"
+              aria-label="Switch colour theme" aria-pressed="false">
+        <span class="nav__theme-dot" aria-hidden="true"></span>
+      </button>
+    </header>
 
-    <!--
-      - #SIDEBAR
-    -->
+    <main id="top">
 
-    <aside class="sidebar" data-sidebar>
-
-      <div class="sidebar-info">
-
-        <figure class="avatar-box">
-          <img src="./assets/images/my-avatar-dithered.png" alt="Rory" width="400" height="400" fetchpriority="high" decoding="async">
-        </figure>
-
-        <div class="info-content">
-          <h1 class="name" title="Rory">Rory</h1>
-
-          <p class="title">Full Stack developer</p>
+      <!-- ─────────────────────────── HERO ─────────────────────────── -->
+      <section class="hero" id="hero">
+        <div class="hero__text">
+          <h1 class="hero__title t-display" data-hero-title>Rory<br>Web3 Engineer</h1>
+          <p class="hero__lede">
+            Full-stack engineer in Taichung, Taiwan. I build blockchain backends and
+            payment rails, and spend the rest of my time on smart-contract security
+            and phishing research.
+          </p>
+          <p class="hero__actions">
+            <a class="btn" href="#work" data-scroll>View work</a>
+            <a class="btn btn--text" href="#writing" data-scroll>&gt; read writing</a>
+          </p>
         </div>
 
-        <button class="info_more-btn" data-sidebar-btn>
-          <span>Show Contacts</span>
+        <div class="hero__canvas-wrap">
+          <img class="hero__fallback" src="./assets/images/hero-portrait-dithered.png"
+               width="1000" height="1000" alt="" fetchpriority="high" decoding="async">
+          <canvas class="hero__canvas" data-hero-canvas aria-hidden="true"></canvas>
+        </div>
+      </section>
 
-          <svg class="icon" aria-hidden="true" focusable="false"><use href="./assets/icons/sprite.svg#chevron-down"></use></svg>
-        </button>
-
-      </div>
-
-      <div class="sidebar-info_more">
-
-        <div class="separator"></div>
-
-        <ul class="contacts-list">
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <svg class="icon" aria-hidden="true" focusable="false"><use href="./assets/icons/sprite.svg#mail-outline"></use></svg>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Email</p>
-
-              <a href="mailto:0x1rory@gmail.com" class="contact-link">0x1rory@gmail.com</a>
-            </div>
-
-          </li>
-
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <svg class="icon" aria-hidden="true" focusable="false"><use href="./assets/icons/sprite.svg#location-outline"></use></svg>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Location</p>
-
-              <address>Taiwan, Taichung </address>
-            </div>
-
-          </li>
-
-        </ul>
-
-        <div class="separator"></div>
-
-        <ul class="social-list">
-
-          <li class="social-item">
-            <a href="https://github.com/0xRory" target="_blank" class="social-link">
-              <svg class="icon" aria-hidden="true" focusable="false"><use href="./assets/icons/sprite.svg#logo-github"></use></svg>
-            </a>
-          </li>
-
-          <li class="social-item">
-            <a href="https://twitter.com/0x_Rory" target="_blank" class="social-link">
-              <svg class="icon" aria-hidden="true" focusable="false"><use href="./assets/icons/sprite.svg#logo-twitter"></use></svg>
-            </a>
-          </li>
-
-        </ul>
-
-      </div>
-
-    </aside>
-
-
-
-
-
-    <!--
-      - #main-content
-    -->
-
-    <div class="main-content">
-
-      <!--
-        - #NAVBAR
-      -->
-
-      <nav class="navbar">
-
-        <ul class="navbar-list">
-
-          <li class="navbar-item">
-            <button class="navbar-link  active" data-nav-link>About</button>
-          </li>
-
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Resume</button>
-          </li>
-
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Portfolio</button>
-          </li>
-
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Blog</button>
-          </li>
-
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Contact</button>
-          </li>
-
-        </ul>
-
-      </nav>
-
-
-
-
-
-      <!--
-        - #ABOUT
-      -->
-
-      <article class="about  active" data-page="about">
-
-        <header>
-          <h2 class="h2 article-title">About me</h2>
+      <!-- ─────────────────────────── WORK ─────────────────────────── -->
+      <section class="section" id="work">
+        <header class="section__head" data-reveal>
+          <p class="t-label">[01] Selected work</p>
+          <h2 class="section__title">Work</h2>
         </header>
 
-        <section class="about-text">
-          <h1 id="hi-my-name-is-0xrory">Hi, My name is Rory</h1>
+        <div class="work__filter" data-filter role="group" aria-label="Filter work">
+          <button class="work__filter-btn is-active" data-filter-btn="all" type="button">All</button>
+          <button class="work__filter-btn" data-filter-btn="Website" type="button">Website</button>
+          <button class="work__filter-btn" data-filter-btn="Web3 / DApp" type="button">Web3 / DApp</button>
+          <button class="work__filter-btn" data-filter-btn="App / IoT" type="button">App / IoT</button>
+          <button class="work__filter-btn" data-filter-btn="Commerce App" type="button">Commerce App</button>
+          <button class="work__filter-btn" data-filter-btn="Backend" type="button">Backend</button>
+          <button class="work__filter-btn" data-filter-btn="Enterprise" type="button">Enterprise</button>
+        </div>
 
-          <p>
-            👨‍💻 Jack of all trades, a versatile engineer. Besides daily focus on front-end and back-end technologies,
-            mobile and desktop development, I am also deeply interested in emerging technologies like Web 3, blockchain,
-            AI, and more.
-          </p>
+        <ul class="work__grid" data-work-grid>
+        <li class="work__item" data-reveal data-category="Website">
+          <a class="card" href="https://plancker.org/" target="_blank" rel="noopener">
+            <span class="card__index" data-count-to="1">[01]</span>
+            <span class="card__media" data-flip-id="plocker"><picture><source srcset="./assets/project1/p1.avif" type="image/avif"><source srcset="./assets/project1/p1.webp" type="image/webp"><img src="./assets/project1/p1.png" alt="Plocker.org" width="2640" height="1180" loading="lazy" decoding="async"></picture></span>
+            <span class="card__body">
+              <span class="card__title">Plocker.org</span>
+              <span class="card__meta">Website <span class="card__year">2023</span></span>
+              <span class="stack-tags"><span class="tag">Vue</span><span class="tag">Tailwind CSS</span></span>
+            </span>
+            <span class="card__cta">visit site &nearr;</span>
+          </a>
+        </li>
+        <li class="work__item" data-reveal data-category="Website">
+          <a class="card" href="https://seedao.xyz/" target="_blank" rel="noopener">
+            <span class="card__index" data-count-to="2">[02]</span>
+            <span class="card__media" data-flip-id="seedao"><picture><source srcset="./assets/project2/seedao.avif" type="image/avif"><source srcset="./assets/project2/seedao.webp" type="image/webp"><img src="./assets/project2/seedao.png" alt="SeeDao" width="2666" height="1406" loading="lazy" decoding="async"></picture></span>
+            <span class="card__body">
+              <span class="card__title">SeeDao</span>
+              <span class="card__meta">Website <span class="card__year">2023</span></span>
+              <span class="stack-tags"><span class="tag">Vue</span><span class="tag">Bootstrap</span></span>
+            </span>
+            <span class="card__cta">visit site &nearr;</span>
+          </a>
+        </li>
+        <li class="work__item" data-reveal data-category="Web3 / DApp">
+          <button class="card" type="button" data-case="csbs" aria-haspopup="dialog">
+            <span class="card__index" data-count-to="3">[03]</span>
+            <span class="card__media" data-flip-id="csbs"><picture><source srcset="./assets/project3/p3.avif" type="image/avif"><source srcset="./assets/project3/p3.webp" type="image/webp"><img src="./assets/project3/p3.png" alt="CSBS" width="2530" height="1410" loading="lazy" decoding="async"></picture></span>
+            <span class="card__body">
+              <span class="card__title">CSBS</span>
+              <span class="card__meta">Web3 / DApp <span class="card__year">2023</span></span>
+              <span class="stack-tags"><span class="tag">React</span><span class="tag">Tailwind CSS</span></span>
+            </span>
+            <span class="card__cta">view case &rarr;</span>
+          </button>
+        </li>
+        <li class="work__item" data-reveal data-category="App / IoT">
+          <button class="card" type="button" data-case="ilolly" aria-haspopup="dialog">
+            <span class="card__index" data-count-to="4">[04]</span>
+            <span class="card__media" data-flip-id="ilolly"><picture><source srcset="./assets/project4/p4.avif" type="image/avif"><source srcset="./assets/project4/p4.webp" type="image/webp"><img src="./assets/project4/p4.jpeg" alt="i-lolly" width="422" height="303" loading="lazy" decoding="async"></picture></span>
+            <span class="card__body">
+              <span class="card__title">i-lolly</span>
+              <span class="card__meta">App / IoT <span class="card__year">2021</span></span>
+              <span class="stack-tags"><span class="tag">Php</span><span class="tag">Vue</span><span class="tag">Flutter</span><span class="tag">Linux</span></span>
+            </span>
+            <span class="card__cta">view case &rarr;</span>
+          </button>
+        </li>
+        <li class="work__item" data-reveal data-category="App / IoT">
+          <button class="card" type="button" data-case="areadrop" aria-haspopup="dialog">
+            <span class="card__index" data-count-to="5">[05]</span>
+            <span class="card__media" data-flip-id="areadrop"><picture><source srcset="./assets/project5/p5.avif" type="image/avif"><source srcset="./assets/project5/p5.webp" type="image/webp"><img src="./assets/project5/p5.jpg" alt="AreaDrop" width="1280" height="915" loading="lazy" decoding="async"></picture></span>
+            <span class="card__body">
+              <span class="card__title">AreaDrop</span>
+              <span class="card__meta">App / IoT <span class="card__year">2020</span></span>
+              <span class="stack-tags"><span class="tag">Android</span><span class="tag">RaspberryPi</span><span class="tag">Html</span></span>
+            </span>
+            <span class="card__cta">view case &rarr;</span>
+          </button>
+        </li>
+        <li class="work__item" data-reveal data-category="Commerce App">
+          <button class="card" type="button" data-case="crazyg" aria-haspopup="dialog">
+            <span class="card__index" data-count-to="6">[06]</span>
+            <span class="card__media" data-flip-id="crazyg"><picture><source srcset="./assets/project6/p6.avif" type="image/avif"><source srcset="./assets/project6/p6.webp" type="image/webp"><img src="./assets/project6/p6.jpg" alt="CrazyG" width="254" height="182" loading="lazy" decoding="async"></picture></span>
+            <span class="card__body">
+              <span class="card__title">CrazyG</span>
+              <span class="card__meta">Commerce App <span class="card__year">2020</span></span>
+              <span class="stack-tags"><span class="tag">Php</span><span class="tag">Vue</span><span class="tag">Uniapp</span></span>
+            </span>
+            <span class="card__cta">view case &rarr;</span>
+          </button>
+        </li>
+        <li class="work__item" data-reveal data-category="Backend">
+          <button class="card" type="button" data-case="airweb" aria-haspopup="dialog">
+            <span class="card__index" data-count-to="7">[07]</span>
+            <span class="card__media" data-flip-id="airweb"><picture><source srcset="./assets/project7/product_7_bg.avif" type="image/avif"><source srcset="./assets/project7/product_7_bg.webp" type="image/webp"><img src="./assets/project7/product_7_bg.jpg" alt="AirWeb" width="2550" height="1336" loading="lazy" decoding="async"></picture></span>
+            <span class="card__body">
+              <span class="card__title">AirWeb</span>
+              <span class="card__meta">Backend <span class="card__year">2018</span></span>
+              <span class="stack-tags"><span class="tag">Django</span><span class="tag">Linux</span></span>
+            </span>
+            <span class="card__cta">view case &rarr;</span>
+          </button>
+        </li>
+        <li class="work__item" data-reveal data-category="Enterprise">
+          <button class="card" type="button" data-case="bloodbank" aria-haspopup="dialog">
+            <span class="card__index" data-count-to="8">[08]</span>
+            <span class="card__media" data-flip-id="bloodbank"><picture><source srcset="./assets/project8/w644.webp" type="image/webp"><img src="./assets/project8/w644.jpeg" alt="Blood Bank" width="644" height="429" loading="lazy" decoding="async"></picture></span>
+            <span class="card__body">
+              <span class="card__title">Blood Bank</span>
+              <span class="card__meta">Enterprise <span class="card__year">2017</span></span>
+              <span class="stack-tags"><span class="tag">C#</span><span class="tag">Bootstrap</span><span class="tag">Cordova</span></span>
+            </span>
+            <span class="card__cta">view case &rarr;</span>
+          </button>
+        </li>
+        </ul>
+      </section>
 
-          <h3 class="h4 stack-heading" lang="zh-Hant-TW">語言</h3>
+      <!-- ─────────────────────────── ABOUT ────────────────────────── -->
+      <section class="section" id="about">
+        <header class="section__head" data-reveal>
+          <p class="t-label">[02] Background</p>
+          <h2 class="section__title">About</h2>
+        </header>
 
-          <dl class="stack">
-            <dt class="stack-label" lang="zh-Hant-TW">日常</dt>
-            <dd class="stack-tags">
-              <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">TypeScript</span><span class="tag">Go</span>
-            </dd>
+        <div class="about">
+          <div class="about__bio" data-reveal>
+            <p class="about__lede">
+              Jack of all trades, a versatile engineer. Besides day-to-day front-end and
+              back-end work, mobile and desktop development, I am deeply interested in
+              Web3, blockchain and AI.
+            </p>
+            <p>
+              Right now I am focused on raising awareness about Web3 security — studying
+              phishing incidents and writing them up, and keeping current with the latest
+              smart-contract security work. I also help organise events and co-learning
+              sessions for the DeFiHackLabs community.
+            </p>
+          </div>
 
-            <dt class="stack-label" lang="zh-Hant-TW">偶爾</dt>
-            <dd class="stack-tags">
-              <span class="tag">Docker</span><span class="tag">Linux</span>
-            </dd>
+          <div class="about__stack" data-reveal>
+            <h3 class="t-label">Languages</h3>
+            <dl class="stack">
+              <dt class="stack-label" lang="zh-Hant-TW">日常</dt>
+              <dd class="stack-tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">TypeScript</span><span class="tag">Go</span></dd>
+              <dt class="stack-label" lang="zh-Hant-TW">偶爾</dt>
+              <dd class="stack-tags"><span class="tag">Docker</span><span class="tag">Linux</span></dd>
+              <dt class="stack-label" lang="zh-Hant-TW">關注</dt>
+              <dd class="stack-tags"><span class="tag">Solidity</span><span class="tag">Dart</span><span class="tag">Python</span></dd>
+            </dl>
 
-            <dt class="stack-label" lang="zh-Hant-TW">關注</dt>
-            <dd class="stack-tags">
-              <span class="tag">Solidity</span><span class="tag">Dart</span><span class="tag">Python</span>
-            </dd>
-          </dl>
+            <h3 class="t-label">Frameworks</h3>
+            <dl class="stack">
+              <dt class="stack-label">Frontend</dt>
+              <dd class="stack-tags"><span class="tag">React</span><span class="tag">Vue</span><span class="tag">Flutter</span><span class="tag">React Native</span><span class="tag">Webpack</span><span class="tag">Less</span><span class="tag">Sass</span><span class="tag">Tailwind CSS</span><span class="tag">Ant Design</span></dd>
+              <dt class="stack-label">Backend</dt>
+              <dd class="stack-tags"><span class="tag">Next.js</span><span class="tag">Nest.js</span><span class="tag">Express</span><span class="tag">Django</span><span class="tag">Fiber</span></dd>
+              <dt class="stack-label">Database</dt>
+              <dd class="stack-tags"><span class="tag">MySQL</span><span class="tag">PostgreSQL</span><span class="tag">MongoDB</span><span class="tag">Redis</span></dd>
+              <dt class="stack-label">Web3</dt>
+              <dd class="stack-tags"><span class="tag">Solidity</span><span class="tag">web3.js</span><span class="tag">ethers.js</span></dd>
+            </dl>
+          </div>
+        </div>
+      </section>
 
-          <h3 class="h4 stack-heading" lang="zh-Hant-TW">框架</h3>
+      <!-- ────────────────────────── RESUME ────────────────────────── -->
+      <section class="section" id="resume">
+        <header class="section__head" data-reveal>
+          <p class="t-label">[03] History</p>
+          <h2 class="section__title">Resume</h2>
+        </header>
 
-          <dl class="stack">
-            <dt class="stack-label">Frontend</dt>
-            <dd class="stack-tags">
-              <span class="tag">React</span><span class="tag">Vue</span><span class="tag">Flutter</span><span class="tag">React Native</span><span class="tag">Webpack</span><span class="tag">Less</span><span class="tag">Sass</span><span class="tag">Tailwind CSS</span><span class="tag">Ant Design</span>
-            </dd>
+        <div class="resume">
+          <div class="resume__col">
+            <h3 class="t-label" data-reveal>Experience</h3>
+            <ol class="timeline">
+              <li class="timeline__item" data-reveal>
+                <span class="timeline__when">2023.10 — Present</span>
+                <h4 class="timeline__what">AceMeta Lab</h4>
+                <p class="timeline__text">RPC backend services, CI/CD, and scaling concurrency from 100 to 1000.</p>
+              </li>
+              <li class="timeline__item" data-reveal>
+                <span class="timeline__when">2021.11 — 2023.10</span>
+                <h4 class="timeline__what">YILE TECHNOLOGY</h4>
+                <p class="timeline__text">Web3 and game backends. ETH / Polygon / Tron USDT payment rails.</p>
+              </li>
+              <li class="timeline__item" data-reveal>
+                <span class="timeline__when">2020.4 — 2021.7</span>
+                <h4 class="timeline__what">SHOESCONN TECHNOLOGY</h4>
+                <p class="timeline__text">Led a team of five building IoT web and mobile applications.</p>
+              </li>
+              <li class="timeline__item" data-reveal>
+                <span class="timeline__when">2019.4 — 2020.3</span>
+                <h4 class="timeline__what">SMART ECARE INC</h4>
+                <p class="timeline__text">Research and system architecture for connected-care products.</p>
+              </li>
+              <li class="timeline__item" data-reveal>
+                <span class="timeline__when">2011.9 — 2018.9</span>
+                <h4 class="timeline__what">Kuang Tien General Hospital</h4>
+                <p class="timeline__text">Hospital information systems, integration and in-house tooling.</p>
+              </li>
+            </ol>
+          </div>
 
-            <dt class="stack-label">Backend</dt>
-            <dd class="stack-tags">
-              <span class="tag">Next.js</span><span class="tag">Nest.js</span><span class="tag">Express</span><span class="tag">Django</span><span class="tag">Fiber</span>
-            </dd>
+          <div class="resume__col">
+            <h3 class="t-label" data-reveal>Education</h3>
+            <ol class="timeline">
+              <li class="timeline__item" data-reveal>
+                <span class="timeline__when">2016.09 — 2018.06</span>
+                <h4 class="timeline__what">Tunghai University</h4>
+                <p class="timeline__text">Institute of Information Engineering</p>
+              </li>
+              <li class="timeline__item" data-reveal>
+                <span class="timeline__when">2006.09 — 2010.06</span>
+                <h4 class="timeline__what">Ling Tung University</h4>
+                <p class="timeline__text">Department of Information Management</p>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </section>
 
-            <dt class="stack-label">Database</dt>
-            <dd class="stack-tags">
-              <span class="tag">MySQL</span><span class="tag">PostgreSQL</span><span class="tag">MongoDB</span><span class="tag">Redis</span>
-            </dd>
+      <!-- ────────────────────────── WRITING ───────────────────────── -->
+      <section class="section" id="writing">
+        <header class="section__head" data-reveal>
+          <p class="t-label">[04] Notes &amp; talks</p>
+          <h2 class="section__title">Writing</h2>
+        </header>
 
-            <dt class="stack-label">Web3</dt>
-            <dd class="stack-tags">
-              <span class="tag">Solidity</span><span class="tag">web3.js</span><span class="tag">ethers.js</span>
-            </dd>
-          </dl>
+        <ul class="writing">
+          <li class="writing__item" data-reveal>
+            <a class="writing__link" href="https://github.com/DeFiHackLabs/Solidity-Intensive-CoLearning" target="_blank" rel="noopener">
+              <span class="writing__title">DeFiHackLabs x WTF Academy — Solidity 21-day co-learning</span>
+              <span class="writing__meta">GitHub <span class="writing__year">2024</span> <span aria-hidden="true">&nearr;</span></span>
+            </a>
+          </li>
+          <li class="writing__item" data-reveal>
+            <a class="writing__link" href="https://github.com/0xRory/Phishing" target="_blank" rel="noopener">
+              <span class="writing__title" lang="zh-Hant-TW">探索釣魚攻擊的演變：從 Web2 到 Web3</span>
+              <span class="writing__meta">GitHub <span class="writing__year">2024</span> <span aria-hidden="true">&nearr;</span></span>
+            </a>
+          </li>
+          <li class="writing__item" data-reveal>
+            <a class="writing__link" href="https://ithelp.ithome.com.tw/users/20162055/ironman/6239" target="_blank" rel="noopener">
+              <span class="writing__title" lang="zh-Hant-TW">Viem 介紹</span>
+              <span class="writing__meta">iThome 鐵人賽 <span class="writing__year">2023</span> <span aria-hidden="true">&nearr;</span></span>
+            </a>
+          </li>
+          <li class="writing__item" data-reveal>
+            <a class="writing__link" href="https://github.com/0xRory/web2-to-web3-note" target="_blank" rel="noopener">
+              <span class="writing__title" lang="zh-Hant-TW">Web2 to Web3 學習筆記</span>
+              <span class="writing__meta">GitHub <span class="writing__year">2023</span> <span aria-hidden="true">&nearr;</span></span>
+            </a>
+          </li>
+          <li class="writing__item" data-reveal>
+            <a class="writing__link" href="https://juniper-pecorino-0ba.notion.site/Solidity-Learning-Plan-0ac4b7f4a6d94b0b93ee1b3d3f7a27d5" target="_blank" rel="noopener">
+              <span class="writing__title">Solidity Learning Plan</span>
+              <span class="writing__meta">Notion <span class="writing__year">2023</span> <span aria-hidden="true">&nearr;</span></span>
+            </a>
+          </li>
+        </ul>
+      </section>
 
-          <h3 class="h4 stack-heading" lang="zh-Hant-TW">社交</h3>
+      <!-- ────────────────────────── CONTACT ───────────────────────── -->
+      <section class="section section--contact" id="contact">
+        <header class="section__head" data-reveal>
+          <p class="t-label">[05] Get in touch</p>
+          <h2 class="section__title">Contact</h2>
+        </header>
 
-          <ul class="stack-links">
-            <li><a href="https://github.com/0xRory" target="_blank" rel="noopener">GitHub ↗</a></li>
-            <li><a href="https://twitter.com/0x_Rory" target="_blank" rel="noopener">Twitter ↗</a></li>
+        <div class="contact" data-reveal>
+          <a class="contact__mail" href="mailto:0x1rory@gmail.com">0x1rory@gmail.com</a>
+          <address class="contact__where">Taichung, Taiwan</address>
+          <ul class="contact__social">
+            <li><a href="https://github.com/0xRory" target="_blank" rel="noopener">
+              <svg class="icon is-solid" aria-hidden="true" focusable="false"><use href="./assets/icons/sprite.svg#logo-github"></use></svg>GitHub</a></li>
+            <li><a href="https://twitter.com/0x_Rory" target="_blank" rel="noopener">
+              <svg class="icon is-solid" aria-hidden="true" focusable="false"><use href="./assets/icons/sprite.svg#logo-twitter"></use></svg>Twitter</a></li>
+            <li><a href="https://ithelp.ithome.com.tw/users/20162055" target="_blank" rel="noopener">
+              <svg class="icon" aria-hidden="true" focusable="false"><use href="./assets/icons/sprite.svg#book-outline"></use></svg>iThome</a></li>
           </ul>
-
-        </section>
-
-
-        <!--
-          - service
-        -->
-
-        <section class="service">
-
-          <h3 class="h3 service-title">What i'm doing</h3>
-
-          <ul class="service-list">
-
-
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/images/icon-dev.svg" alt="Web development icon" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Developer</h4>
-
-                <p class="service-item-text">
-                  Use the framework to quickly develop back-end, image websites, shopping carts, and various systems.
-                </p>
-              </div>
-
-            </li>
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/images/icon-app.svg" alt="mobile app icon" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Mobile apps</h4>
-
-                <p class="service-item-text">
-                  Develop for iOS and Android with flutter.
-                </p>
-              </div>
-
-            </li>
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/images/icon-design.svg" alt="camera icon" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Project Management</h4>
-
-                <p class="service-item-text">
-                  Control project progress and verify open source software quickly.
-                </p>
-              </div>
-
-            </li>
-
-          </ul>
-
-        </section>
-
-
-
-
-
-
-
-
-      </article>
-
-
-
-
-
-      <!--
-        - #RESUME
-      -->
-
-      <article class="resume" data-page="resume">
-
-        <header>
-          <h2 class="h2 article-title">Resume</h2>
-        </header>
-
-        <section class="timeline">
-
-          <div class="title-wrapper">
-            <div class="icon-box">
-              <svg class="icon" aria-hidden="true" focusable="false"><use href="./assets/icons/sprite.svg#book-outline"></use></svg>
-            </div>
-
-            <h3 class="h3">Education</h3>
-          </div>
-
-          <ol class="timeline-list">
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Tunghai University</h4>
-              <h5 class="h5"> Institute of Information Engineering.</h5>
-              <span>2016.09 - 2018.06</span>
-
-
-
-            </li>
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title"> Ling Tung University</h4>
-              <h5 class="h5"> Department of Information Management </h5>
-              <span>2006.09 — 2010.06</span>
-
-
-
-            </li>
-
-
-          </ol>
-
-        </section>
-
-        <section class="timeline">
-
-          <div class="title-wrapper">
-            <div class="icon-box">
-              <svg class="icon" aria-hidden="true" focusable="false"><use href="./assets/icons/sprite.svg#book-outline"></use></svg>
-            </div>
-
-            <h3 class="h3">Experience</h3>
-          </div>
-
-          <ol class="timeline-list">
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">AceMeta Lab</h4>
-
-              <span>2023.10 — Present</span>
-
-              <p class="timeline-text">
-                Recently, I completed the development of backend services for RPC and the Fudan mini-program, and was
-                responsible for the deployment and workflow management of CI/CD services, along with server maintenance
-                and optimization. I also assisted in resolving frontend and backend issues, particularly in the
-                ticketing system, where I focused on performance optimization and system architecture improvements to
-                ensure stability. Additionally, successfully increased the system's concurrency from 100 to 1000,
-                significantly enhancing the overall capacity and efficiency.
-              </p>
-
-            </li>
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">YILE TECHNOLOGY</h4>
-
-              <span>2021.11 — 2023.10</span>
-
-              <p class="timeline-text">
-                I am primarily responsible for Web 3.0 development and game backend systems, focusing on building game
-                event backend systems and integrating payment systems for ETH, Polygon, and Tron USDT, providing users
-                with efficient and secure payment experiences.
-              </p>
-
-            </li>
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">SHOESCONN TECHNOLOGY</h4>
-
-              <span>2020.4 — 2021.7</span>
-
-              <p class="timeline-text">
-                Lead a team of five to develop IoT-related Web and mobile applications.
-              </p>
-
-            </li>
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">SMART ECARE INC</h4>
-
-              <span>2019.4 — 2020.3</span>
-
-              <p class="timeline-text">
-                I'm looking to transition into a role focused on research and system architecture development. I would
-                be responsible for projects related to the "Peritoneal Dialysis System," "Respiratory System," IoT
-                integration, and hybrid mobile app development.
-              </p>
-
-            </li>
-
-            <p class="timeline-item">
-
-            <h4 class="h4 timeline-item-title">Kuang Tien General Hospital</h4>
-
-            <span>2011.9 — 2018.9</span>
-
-            <p class="timeline-text">
-              From September 2011 to September 2018, I had a lot of work responsibilities and learned the importance
-              of self-growth. My job duties included:
-            </p>
-            <p class="timeline-text">
-              1. Handling the declaration business for the Health Insurance Bureau and processing IC card uploads.
-            </p>
-            <p class="timeline-text">
-              2. Maintaining and troubleshooting existing programs.
-            </p>
-            <p class="timeline-text">
-              3. Developing an internal indicator system.
-              Managing RIS and LIS systems, as well as handling laboratory and radiological instruments.
-            </p>
-            <p class="timeline-text">
-              4. Assisting with BI data processing.
-            </p>
-            <p class="timeline-text">
-              5. Conducting internal education and training.
-            </p>
-            <p class="timeline-text">
-              However, I eventually felt the desire to explore other career opportunities, which led me to choose to
-              resign from my position.
-            </p>
-
-            </li>
-
-          </ol>
-
-        </section>
-        <section class="skill">
-
-          <h3 class="h3 skills-title">Doing</h3>
-
-          <p style="    color: var(--light-gray);
-          font-size: var(--fs-6);
-          font-weight: var(--fw-3);
-          line-height: 1.6;">
-            Recently, I have been focused on raising awareness about Web3 security, actively studying phishing incidents
-            and creating related notes. Additionally, I stay up-to-date with the latest Web3 security developments. I
-            also contribute to the DeFiHackLabs community by helping organize events and facilitating co-learning
-            sessions on smart contract syntax.
-
-            more information: <a href="https://0xrory.github.io/" target="_blank">https://0xrory.github.io/</a>
-          </p>
-
-        </section>
-
-      </article>
-
-
-
-
-
-      <!--
-        - #PORTFOLIO
-      -->
-
-      <article class="portfolio" data-page="portfolio">
-
-        <header>
-          <h2 class="h2 article-title">Portfolio</h2>
-        </header>
-
-        <section class="projects">
-
-          <!-- <ul class="filter-list">
-
-            <li class="filter-item">
-              <button class="active" data-filter-btn>All</button>
-            </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>Web design</button>
-            </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>Applications</button>
-            </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>Web development</button>
-            </li>
-
-          </ul> -->
-
-          <div class="filter-select-box">
-
-            <button class="filter-select" data-select>
-
-              <!-- <div class="select-value" data-selecct-value>Select category</div> -->
-
-              <!-- <div class="select-icon">
-                <svg class="icon" aria-hidden="true" focusable="false"><use href="./assets/icons/sprite.svg#chevron-down"></use></svg>
-              </div> -->
-
-            </button>
-
-            <!-- <ul class="select-list">
-
-              <li class="select-item">
-                <button data-select-item>All</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>Website</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>APP</button>
-              </li>
-              <li class="select-item">
-                <button data-select-item>Applications</button>
-              </li>
-
-
-            </ul> -->
-
-          </div>
-
-          <!--關閉作品展示-->
-          <div class="tip_product sd">
-            <a href="javascript:;" class="r5 tip_area_close" aria-hidden="true">
-              <svg class="icon" aria-hidden="true" focusable="false"><use href="./assets/icons/sprite.svg#close-outline"></use></svg>
-            </a>
-
-            <div id="tip_carousel" class="carousel slide" data-ride="carousel">
-              <div class="carousel-inner">
-
-                <!--CSBS-->
-                <div class="item">
-                  <div class="banner product_h2">
-                    <div class="logo" style="
-                          font-size: x-large;
-                          text-align: center;
-                          vertical-align: middle;
-                          opacity: 1;
-                          top: 50%;
-                          color: aliceblue;">
-                      <h1>CSBS</h1>
-                    </div>
-                    <div class="banner_bg"></div>
-                  </div>
-                  <div class="descprition" lang="zh-Hant-TW">
-                    <h3><i aria-hidden="true" data-icon="&#xe013;"></i>Community SBT Basket and Seal</h3>
-                    <p class="quote">
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <p>Rory &middot; 0xRory</p>
+      <p>Built with GSAP and Anime.js. No trackers, no third-party requests.</p>
+      <p><span data-year></span></p>
+    </footer>
+
+  </div>
+
+  <dialog class="case" id="case-csbs" aria-labelledby="case-csbs-title">
+    <form method="dialog" class="case__close-form">
+      <button class="case__close" aria-label="Close">
+        <svg class="icon" aria-hidden="true" focusable="false"><use href="./assets/icons/sprite.svg#close-outline"></use></svg>
+      </button>
+    </form>
+    <article class="case__inner" data-flip-target="csbs">
+      <header class="case__head">
+        <p class="t-label">[03] &middot; Web3 / DApp &middot; 2023</p>
+        <h2 class="case__title" id="case-csbs-title">CSBS</h2>
+        <p class="stack-tags"><span class="tag">React</span><span class="tag">Tailwind CSS</span></p>
+      </header>
+      <div class="case__body">
+<p class="case__spec">
                       Community SBT Basket and Seal：一款免費開源的SBT DApp，幫助社區和多重身份的個體來發行和管理分散於各個社區Event、Activity的時光碎片。<br />
                     </p>
                     <p>
                       主要實作：批次發放 SBT , 以及社區活動的管理。
                     </p>
-                    <p class="pic">
-                      <video id="project-video-1" preload="none" controls loop playsinline poster="./assets/images/play.png">
-                        <source src="./assets/project3/demo.mp4" type="video/mp4" />
+                    <p class="case__figure">
+                      <video id="project-video-1"  controls loop playsinline poster="./assets/images/play.png" preload="none" data-src="./assets/project3/demo.mp4" playsinline controls>
                         <span lang="zh-Hant-TW">您的瀏覽器不支援 HTML5 影片播放。</span>
                         Your browser doesn't support the &lt;video&gt; tag.
                       </video>
@@ -660,22 +458,23 @@
 
                 </div>
                 <!--i-lolly-->
-                <div class="item">
-                  <div class="banner product_h3">
-                    <div class="logo" style="
-                          font-size: x-large;
-                          text-align: center;
-                          vertical-align: middle;
-                          opacity: 1;
-                          top: 50%;
-                          color: aliceblue;">
-                      <h1>i-lolly</h1>
-                    </div>
-                    <div class="banner_bg"></div>
-                  </div>
-                  <div class="descprition" lang="zh-Hant-TW">
-                    <h3><i aria-hidden="true" data-icon="&#xe013;"></i>i-lolly</h3>
-                    <p class="quote">
+      </div>
+    </article>
+  </dialog>
+  <dialog class="case" id="case-ilolly" aria-labelledby="case-ilolly-title">
+    <form method="dialog" class="case__close-form">
+      <button class="case__close" aria-label="Close">
+        <svg class="icon" aria-hidden="true" focusable="false"><use href="./assets/icons/sprite.svg#close-outline"></use></svg>
+      </button>
+    </form>
+    <article class="case__inner" data-flip-target="ilolly">
+      <header class="case__head">
+        <p class="t-label">[04] &middot; App / IoT &middot; 2021</p>
+        <h2 class="case__title" id="case-ilolly-title">i-lolly</h2>
+        <p class="stack-tags"><span class="tag">Php</span><span class="tag">Vue</span><span class="tag">Flutter</span><span class="tag">Linux</span></p>
+      </header>
+      <div class="case__body">
+<p class="case__spec">
                       利用 IOT 人臉溫度機＋溫濕度傳感器整合在校園裡面。<br />
                     </p>
                     <p>
@@ -685,50 +484,54 @@
                       IOT 中台是使用 <a href="https://thingsboard.io/docs/getting-started-guides/what-is-thingsboard/"
                         target="_blank">thingsboard</a> 開源軟體施作。
                     </p>
-                    <p class="pic">
-                      <picture><source srcset="./assets/project4/i-lolly-flow.avif" type="image/avif"><source srcset="./assets/project4/i-lolly-flow.webp" type="image/webp"><img class="p4" src="./assets/project4/i-lolly-flow.png" alt="i-lolly架構流程" / width="1173" height="718" loading="lazy" decoding="async"></picture>
+                    <p class="case__figure">
+                      <picture><source srcset="./assets/project4/i-lolly-flow.avif" type="image/avif"><source srcset="./assets/project4/i-lolly-flow.webp" type="image/webp"><img class="p4" src="./assets/project4/i-lolly-flow.png" alt="i-lolly架構流程" width="1173" height="718" loading="lazy" decoding="async"></picture>
                       <span>流程架構</span>
                     </p>
                     <div style="display: flex; justify-content: center;">
                       <a href="https://play.google.com/store/apps/details?id=com.shoesconn.fultter_ims" target="_blank">
-                        <picture><source srcset="./assets/project4/android_download.webp" type="image/webp"><img src="./assets/project4/android_download.jpg" width="200" height="100" alt="android" / loading="lazy" decoding="async"></picture>
+                        <picture><source srcset="./assets/project4/android_download.webp" type="image/webp"><img src="./assets/project4/android_download.jpg" width="200" height="100" alt="android" loading="lazy" decoding="async"></picture>
                       </a>
                       <a href="https://apps.apple.com/tw/app/i-lolly/id1526973956" target="_blank">
-                        <picture><source srcset="./assets/project4/apple_download.webp" type="image/webp"><img src="./assets/project4/apple_download.jpg" width="200" height="100" alt="ios" / loading="lazy" decoding="async"></picture>
+                        <picture><source srcset="./assets/project4/apple_download.webp" type="image/webp"><img src="./assets/project4/apple_download.jpg" width="200" height="100" alt="ios" loading="lazy" decoding="async"></picture>
                       </a>
                     </div>
                   </div>
 
                 </div>
                 <!--AreaDrop-->
-                <div class="item active">
-                  <div class="banner product_h1">
-                    <div class="logo"
-                      style="font-size: x-large;text-align: center;vertical-align: middle;opacity: 1;top: 50%;color: aliceblue;">
-                      <h1>AreaDrop</h1>
-                    </div>
-                    <div class="banner_bg"></div>
-                  </div>
-                  <div class="descprition" lang="zh-Hant-TW">
-                    <h3><i aria-hidden="true" data-icon="&#xe0e6;"></i>AreaDrop</h3>
-                    <p>主要是練習Java和Android並模仿Apple MAC的AirDrop，所以功能名稱命名為AreaDrop</p>
+      </div>
+    </article>
+  </dialog>
+  <dialog class="case" id="case-areadrop" aria-labelledby="case-areadrop-title">
+    <form method="dialog" class="case__close-form">
+      <button class="case__close" aria-label="Close">
+        <svg class="icon" aria-hidden="true" focusable="false"><use href="./assets/icons/sprite.svg#close-outline"></use></svg>
+      </button>
+    </form>
+    <article class="case__inner" data-flip-target="areadrop">
+      <header class="case__head">
+        <p class="t-label">[05] &middot; App / IoT &middot; 2020</p>
+        <h2 class="case__title" id="case-areadrop-title">AreaDrop</h2>
+        <p class="stack-tags"><span class="tag">Android</span><span class="tag">RaspberryPi</span><span class="tag">Html</span></p>
+      </header>
+      <div class="case__body">
+<p>主要是練習Java和Android並模仿Apple MAC的AirDrop，所以功能名稱命名為AreaDrop</p>
                     <p>通常設定裝置IOT網路都非常麻煩，所以使用手機去設定！另外使用Ｗebstock來做傳輸。</p>
-                    <p class="pic">
-                      <picture><source srcset="./assets/project5/pic_lw_login.webp" type="image/webp"><img src="./assets/project5/pic_lw_login.jpg" width="400" height="400" alt="概念架構" / loading="lazy" decoding="async"></picture>
+                    <p class="case__figure">
+                      <picture><source srcset="./assets/project5/pic_lw_login.webp" type="image/webp"><img src="./assets/project5/pic_lw_login.jpg" width="400" height="400" alt="概念架構" loading="lazy" decoding="async"></picture>
                       <span>概念架構</span>
                     </p>
                     <p>下列展示手機設定伺服器網路</p>
-                    <p class="pic">
-                      <video id="project-video-2" preload="none" controls loop playsinline poster="./assets/images/play.png">
-                        <source src="./assets/project5/bindmodel.mp4" type="video/mp4" />
+                    <p class="case__figure">
+                      <video id="project-video-2"  controls loop playsinline poster="./assets/images/play.png" preload="none" data-src="./assets/project5/bindmodel.mp4" playsinline controls>
                         <span lang="zh-Hant-TW">您的瀏覽器不支援 HTML5 影片播放。</span>
                         Your browser doesn't support the &lt;video&gt; tag.
                       </video>
                     </p>
                     <p>下列展示跨平台傳輸檔案（手機、電腦）。</p>
-                    <p class="pic">
-                      <video id="project-video-3" preload="none" controls loop playsinline poster="./assets/images/play.png">
-                        <source src="./assets/project5/sendmodel.mp4" type="video/mp4" />
+                    <p class="case__figure">
+                      <video id="project-video-3"  controls loop playsinline poster="./assets/images/play.png" preload="none" data-src="./assets/project5/sendmodel.mp4" playsinline controls>
                         <span lang="zh-Hant-TW">您的瀏覽器不支援 HTML5 影片播放。</span>
                         Your browser doesn't support the &lt;video&gt; tag.
                       </video>
@@ -736,531 +539,154 @@
                   </div>
                 </div>
                 <!--CrazyG-->
-                <div class="item">
-                  <div class="banner product_h4">
-                    <div class="logo" style="
-                          font-size: x-large;
-                          text-align: center;
-                          vertical-align: middle;
-                          opacity: 1;
-                          top: 50%;
-                          color: aliceblue;">
-                      <h1 lang="zh-Hant-TW">瘋 G 點</h1>
-                    </div>
-                    <div class="banner_bg"></div>
-                  </div>
-                  <div class="descprition" lang="zh-Hant-TW">
-                    <h3 lang="zh-Hant-TW"><i aria-hidden="true" data-icon="&#xe013;"></i>瘋 G 點(電商 APP)</h3>
-                    <div style="display: flex; flex-wrap: wrap;justify-content: center;">
+      </div>
+    </article>
+  </dialog>
+  <dialog class="case" id="case-crazyg" aria-labelledby="case-crazyg-title">
+    <form method="dialog" class="case__close-form">
+      <button class="case__close" aria-label="Close">
+        <svg class="icon" aria-hidden="true" focusable="false"><use href="./assets/icons/sprite.svg#close-outline"></use></svg>
+      </button>
+    </form>
+    <article class="case__inner" data-flip-target="crazyg">
+      <header class="case__head">
+        <p class="t-label">[06] &middot; Commerce App &middot; 2020</p>
+        <h2 class="case__title" id="case-crazyg-title">CrazyG</h2>
+        <p class="stack-tags"><span class="tag">Php</span><span class="tag">Vue</span><span class="tag">Uniapp</span></p>
+      </header>
+      <div class="case__body">
+<div style="display: flex; flex-wrap: wrap;justify-content: center;">
                       <p style="text-align: -webkit-center;">
-                        <picture><source srcset="./assets/project6/index-1.avif" type="image/avif"><source srcset="./assets/project6/index-1.webp" type="image/webp"><img class="p6" src="./assets/project6/index-1.jpeg" width="200" height="400" alt="android" / loading="lazy" decoding="async"></picture>
+                        <picture><source srcset="./assets/project6/index-1.avif" type="image/avif"><source srcset="./assets/project6/index-1.webp" type="image/webp"><img class="p6" src="./assets/project6/index-1.jpeg" width="200" height="400" alt="android" loading="lazy" decoding="async"></picture>
                       </p>
                       <p style="text-align: -webkit-center;">
-                        <picture><source srcset="./assets/project6/index-2.avif" type="image/avif"><source srcset="./assets/project6/index-2.webp" type="image/webp"><img class="p6" src="./assets/project6/index-2.jpeg" width="200" height="400" alt="android" / loading="lazy" decoding="async"></picture>
+                        <picture><source srcset="./assets/project6/index-2.avif" type="image/avif"><source srcset="./assets/project6/index-2.webp" type="image/webp"><img class="p6" src="./assets/project6/index-2.jpeg" width="200" height="400" alt="android" loading="lazy" decoding="async"></picture>
                       </p>
                       <p style="text-align: -webkit-center;">
-                        <picture><source srcset="./assets/project6/index-3.avif" type="image/avif"><source srcset="./assets/project6/index-3.webp" type="image/webp"><img class="p6" src="./assets/project6/index-3.jpeg" width="200" height="400" alt="android" / loading="lazy" decoding="async"></picture>
+                        <picture><source srcset="./assets/project6/index-3.avif" type="image/avif"><source srcset="./assets/project6/index-3.webp" type="image/webp"><img class="p6" src="./assets/project6/index-3.jpeg" width="200" height="400" alt="android" loading="lazy" decoding="async"></picture>
                       </p>
                       <p style="text-align: -webkit-center;">
-                        <picture><source srcset="./assets/project6/index-4.avif" type="image/avif"><source srcset="./assets/project6/index-4.webp" type="image/webp"><img class="p6" src="./assets/project6/index-4.jpeg" width="200" height="400" alt="android" / loading="lazy" decoding="async"></picture>
+                        <picture><source srcset="./assets/project6/index-4.avif" type="image/avif"><source srcset="./assets/project6/index-4.webp" type="image/webp"><img class="p6" src="./assets/project6/index-4.jpeg" width="200" height="400" alt="android" loading="lazy" decoding="async"></picture>
                       </p>
                       <p style="text-align: -webkit-center;">
-                        <picture><source srcset="./assets/project6/index-5.avif" type="image/avif"><source srcset="./assets/project6/index-5.webp" type="image/webp"><img class="p6" src="./assets/project6/index-5.jpeg" width="200" height="400" alt="android" / loading="lazy" decoding="async"></picture>
+                        <picture><source srcset="./assets/project6/index-5.avif" type="image/avif"><source srcset="./assets/project6/index-5.webp" type="image/webp"><img class="p6" src="./assets/project6/index-5.jpeg" width="200" height="400" alt="android" loading="lazy" decoding="async"></picture>
                       </p>
 
                     </div>
-                    <p class="pic">
+                    <p class="case__figure">
                       <span>呈現畫面</span>
                     </p>
-                    <p class="pic">
-                      <video id="project-video-4" preload="none" controls loop playsinline poster="./assets/images/play.png">
-                        <source src="./assets/project6/demo.mp4" type="video/mp4" />
+                    <p class="case__figure">
+                      <video id="project-video-4"  controls loop playsinline poster="./assets/images/play.png" preload="none" data-src="./assets/project6/demo.mp4" playsinline controls>
                         <span lang="zh-Hant-TW">您的瀏覽器不支援 HTML5 影片播放。</span>
                         Your browser doesn't support the &lt;video&gt; tag.
                       </video>
                     </p>
-                    <p class="pic">
+                    <p class="case__figure">
                       <span>點數兌換</span>
                     </p>
                     <div style="display: flex; justify-content: center;">
                       <a href="https://play.google.com/store/apps/details?id=io.uniapp.crazyg" target="_blank">
-                        <picture><source srcset="./assets/project4/android_download.webp" type="image/webp"><img src="./assets/project4/android_download.jpg" width="200" height="100" alt="android" / loading="lazy" decoding="async"></picture>
+                        <picture><source srcset="./assets/project4/android_download.webp" type="image/webp"><img src="./assets/project4/android_download.jpg" width="200" height="100" alt="android" loading="lazy" decoding="async"></picture>
                       </a>
                     </div>
                   </div>
 
                 </div>
                 <!-- airweb-->
-                <div class="item">
-                  <div class="banner product_h5">
-                    <div class="logo" style="
-                                          font-size: x-large;
-                                          text-align: center;
-                                          vertical-align: middle;
-                                          opacity: 1;
-                                          top: 50%;
-                                          color: aliceblue;">
-                      <h1 lang="zh-Hant-TW">空氣網(後台)</h1>
-                    </div>
-                    <div class="banner_bg"></div>
-                  </div>
-                  <div class="descprition" lang="zh-Hant-TW">
-                    <h3 lang="zh-Hant-TW"><i aria-hidden="true" data-icon="&#xe108;"></i>空氣網(後台)<a href="https://wot.epa.gov.tw/"
-                        target="_blank" class="btn_green r5">網站</a></h3>
-                    <p>主要是串接中華電信IoT智慧聯網大平台之感測資料於環保署做呈現</p>
-                    <p class="quote">
+      </div>
+    </article>
+  </dialog>
+  <dialog class="case" id="case-airweb" aria-labelledby="case-airweb-title">
+    <form method="dialog" class="case__close-form">
+      <button class="case__close" aria-label="Close">
+        <svg class="icon" aria-hidden="true" focusable="false"><use href="./assets/icons/sprite.svg#close-outline"></use></svg>
+      </button>
+    </form>
+    <article class="case__inner" data-flip-target="airweb">
+      <header class="case__head">
+        <p class="t-label">[07] &middot; Backend &middot; 2018</p>
+        <h2 class="case__title" id="case-airweb-title">AirWeb</h2>
+        <p class="stack-tags"><span class="tag">Django</span><span class="tag">Linux</span></p>
+      </header>
+      <div class="case__body">
+<p>主要是串接中華電信IoT智慧聯網大平台之感測資料於環保署做呈現</p>
+                    <p class="case__spec">
                       2018年10月有機會合作串接IOT設備在做空氣污染資料介接。<br />
                       主要使用Python 為後端開發語言，使用django來作為後端開發框架。<br />
                       網頁伺服器使用:NGINX，與其串接使用uWSGI，另外ＡＰＩ建立框架使用REST framework。<br>
                       管理服務及排層工具:supervisor、Crontab<br>
                       因每天資料量非常大3G~10G，故使用監控軟體(ZABBIX)來監控伺服器狀況及ＤＢ容量，呈現則使用(Grfana)。
                     </p>
-                    <p class="pic">
-                      <picture><source srcset="./assets/project7/Air_Postflow.avif" type="image/avif"><source srcset="./assets/project7/Air_Postflow.webp" type="image/webp"><img src="./assets/project7/Air_Postflow.png" width="500" height="300" alt="系統架構圖" / loading="lazy" decoding="async"></picture>
+                    <p class="case__figure">
+                      <picture><source srcset="./assets/project7/Air_Postflow.avif" type="image/avif"><source srcset="./assets/project7/Air_Postflow.webp" type="image/webp"><img src="./assets/project7/Air_Postflow.png" width="500" height="300" alt="系統架構圖" loading="lazy" decoding="async"></picture>
                       <span>系統架構</span>
                     </p>
-                    <div class="time">
+                    <div class="case__time">
                       <em>2018</em>年<em>10</em>月<b>-</b><em>2019</em>年<em>03</em>月
                     </div>
                   </div>
 
                 </div>
                 <!--Blood-->
-                <div class="item">
-                  <div class="banner product_h6">
-                    <div class="logo" style="
-                                          font-size: x-large;
-                                          text-align: center;
-                                          vertical-align: middle;
-                                          opacity: 1;
-                                          top: 50%;
-                                          color: aliceblue;">
-                      <h1 lang="zh-Hant-TW">血庫核對系統</h1>
-                    </div>
-                    <div class="banner_bg"></div>
-                  </div>
-                  <div class="descprition" lang="zh-Hant-TW">
-                    <h3 lang="zh-Hant-TW"><i aria-hidden="true" data-icon="&#xe013;"></i>血庫核對系統</h3>
-                    <p>血袋核對手機化，血袋都是有時效性的，透過手機做血液傳送時關卡的確認，病服員使用『識別證』＋血袋條碼，確定寫待領取。</p>
-                    <p class="quote">
+      </div>
+    </article>
+  </dialog>
+  <dialog class="case" id="case-bloodbank" aria-labelledby="case-bloodbank-title">
+    <form method="dialog" class="case__close-form">
+      <button class="case__close" aria-label="Close">
+        <svg class="icon" aria-hidden="true" focusable="false"><use href="./assets/icons/sprite.svg#close-outline"></use></svg>
+      </button>
+    </form>
+    <article class="case__inner" data-flip-target="bloodbank">
+      <header class="case__head">
+        <p class="t-label">[08] &middot; Enterprise &middot; 2017</p>
+        <h2 class="case__title" id="case-bloodbank-title">Blood Bank</h2>
+        <p class="stack-tags"><span class="tag">C#</span><span class="tag">Bootstrap</span><span class="tag">Cordova</span></p>
+      </header>
+      <div class="case__body">
+<p>血袋核對手機化，血袋都是有時效性的，透過手機做血液傳送時關卡的確認，病服員使用『識別證』＋血袋條碼，確定寫待領取。</p>
+                    <p class="case__spec">
                       主要使用Cordova將網頁包成App<br />
                       前端使用：AngularJS 1.5<br />
                       後端使用：ASP.Net MVC 5、Linq、Dapper、C# 6.0 <br />
                     </p>
-                    <p class="pic">
-                      <picture><source srcset="./assets/project8/bol_system.avif" type="image/avif"><source srcset="./assets/project8/bol_system.webp" type="image/webp"><img src="./assets/project8/bol_system.png" width="500" height="300" alt="架構流程" / loading="lazy" decoding="async"></picture>
+                    <p class="case__figure">
+                      <picture><source srcset="./assets/project8/bol_system.avif" type="image/avif"><source srcset="./assets/project8/bol_system.webp" type="image/webp"><img src="./assets/project8/bol_system.png" width="500" height="300" alt="架構流程" loading="lazy" decoding="async"></picture>
                       <span>流程架構</span>
                     </p>
-                    <p class="pic">
-                      <picture><source srcset="./assets/project8/bol_login.avif" type="image/avif"><source srcset="./assets/project8/bol_login.webp" type="image/webp"><img src="./assets/project8/bol_login.PNG" alt="登入畫面" / width="511" height="858" loading="lazy" decoding="async"></picture>
+                    <p class="case__figure">
+                      <picture><source srcset="./assets/project8/bol_login.avif" type="image/avif"><source srcset="./assets/project8/bol_login.webp" type="image/webp"><img src="./assets/project8/bol_login.PNG" alt="登入畫面" width="511" height="858" loading="lazy" decoding="async"></picture>
                       <span>登入畫面</span>
                     </p>
-                    <p class="pic">
-                      <picture><source srcset="./assets/project8/bol_step1.avif" type="image/avif"><source srcset="./assets/project8/bol_step1.webp" type="image/webp"><img src="./assets/project8/bol_step1.PNG" alt="合血單資訊" / width="391" height="699" loading="lazy" decoding="async"></picture>
+                    <p class="case__figure">
+                      <picture><source srcset="./assets/project8/bol_step1.avif" type="image/avif"><source srcset="./assets/project8/bol_step1.webp" type="image/webp"><img src="./assets/project8/bol_step1.PNG" alt="合血單資訊" width="391" height="699" loading="lazy" decoding="async"></picture>
                       <span>合血單資訊畫面</span>
                     </p>
-                    <p class="pic">
-                      <picture><source srcset="./assets/project8/bol_step2.avif" type="image/avif"><source srcset="./assets/project8/bol_step2.webp" type="image/webp"><img src="./assets/project8/bol_step2.PNG" alt="合血單確認" / width="415" height="708" loading="lazy" decoding="async"></picture>
+                    <p class="case__figure">
+                      <picture><source srcset="./assets/project8/bol_step2.avif" type="image/avif"><source srcset="./assets/project8/bol_step2.webp" type="image/webp"><img src="./assets/project8/bol_step2.PNG" alt="合血單確認" width="415" height="708" loading="lazy" decoding="async"></picture>
                       <span>合血單確認畫面</span>
                     </p>
-                    <div class="time">
+                    <div class="case__time">
                       <em>2017</em>年<em>5</em>月<b>-</b><em>2017</em>年<em>6</em>月
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <ul class="project-list">
-            <!-- Plocker -->
-            <li class="project-item  active" data-filter-item data-category="Website">
-              <a href="https://plancker.org/" target="_blank">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <svg class="icon" aria-hidden="true" focusable="false"><use href="./assets/icons/sprite.svg#eye-outline"></use></svg>
-                  </div>
-
-                  <picture><source srcset="./assets/project1/p1.avif" type="image/avif"><source srcset="./assets/project1/p1.webp" type="image/webp"><img src="./assets/project1/p1.png" alt="plocker.org" loading="lazy" width="2640" height="1180" decoding="async"></picture>
-                </figure>
-
-                <h3 class="project-title">Plocker.org</h3>
-
-                <p class="project-category">Websites</p>
-              </a>
-              <div class="stack-tags project-tags">
-                <span class="tag">Vue</span>
-                <span class="tag">Tailwind CSS</span>
-              </div>
-            </li>
-            <!-- SeeDao -->
-            <li class="project-item  active" data-filter-item data-category="Website">
-              <a href="https://seedao.xyz/" target="_blank">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <svg class="icon" aria-hidden="true" focusable="false"><use href="./assets/icons/sprite.svg#eye-outline"></use></svg>
-                  </div>
-
-                  <picture><source srcset="./assets/project2/seedao.avif" type="image/avif"><source srcset="./assets/project2/seedao.webp" type="image/webp"><img src="./assets/project2/seedao.png" alt="seedao" loading="lazy" width="2666" height="1406" decoding="async"></picture>
-                </figure>
-
-                <h3 class="project-title">SeeDao</h3>
-
-                <p class="project-category">Websites</p>
-              </a>
-              <div class="stack-tags project-tags">
-                <span class="tag">Vue</span>
-                <span class="tag">Bootstrap</span>
-              </div>
-            </li>
-            <!-- CSBS -->
-            <li class="project-item  active" data-filter-item data-category="Website">
-              <a href="javascript:;" class="btn_go btn_green product_1 r5">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <svg class="icon" aria-hidden="true" focusable="false"><use href="./assets/icons/sprite.svg#eye-outline"></use></svg>
-                  </div>
-
-                  <picture><source srcset="./assets/project3/p3.avif" type="image/avif"><source srcset="./assets/project3/p3.webp" type="image/webp"><img src="./assets/project3/p3.png" alt="CSBS" loading="lazy" width="2530" height="1410" decoding="async"></picture>
-                </figure>
-
-                <h3 class="project-title">CSBS</h3>
-
-                <p class="project-category">Websites</p>
-              </a>
-              <div class="stack-tags project-tags">
-                <span class="tag">React</span>
-                <span class="tag">Tailwind CSS</span>
-              </div>
-            </li>
-            <!-- i-lolly -->
-            <li class="project-item  active" data-filter-item data-category="APP">
-              <a href="javascript:;" class="btn_go btn_green product_2 r5">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <svg class="icon" aria-hidden="true" focusable="false"><use href="./assets/icons/sprite.svg#eye-outline"></use></svg>
-                  </div>
-
-                  <picture><source srcset="./assets/project4/p4.avif" type="image/avif"><source srcset="./assets/project4/p4.webp" type="image/webp"><img src="./assets/project4/p4.jpeg" alt="i-lolly" loading="lazy" width="422" height="303" decoding="async"></picture>
-                </figure>
-
-                <h3 class="project-title">i-lolly</h3>
-
-                <p class="project-category">App</p>
-              </a>
-              <div class="stack-tags project-tags">
-                <span class="tag">Php</span>
-                <span class="tag">Vue</span>
-                <span class="tag">Flutter</span>
-                <span class="tag">Linux</span>
-              </div>
-            </li>
-            <!-- AreaDrop -->
-            <li class="project-item  active" data-filter-item data-category="Applications">
-              <a href="javascript:;" class="btn_go btn_green product_3 r5">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <svg class="icon" aria-hidden="true" focusable="false"><use href="./assets/icons/sprite.svg#eye-outline"></use></svg>
-                  </div>
-
-                  <picture><source srcset="./assets/project5/p5.avif" type="image/avif"><source srcset="./assets/project5/p5.webp" type="image/webp"><img src="./assets/project5/p5.jpg" alt="finance" loading="lazy" width="1280" height="915" decoding="async"></picture>
-                </figure>
-
-                <h3 class="project-title">AreaDrop</h3>
-
-                <p class="project-category">App</p>
-              </a>
-              <div class="stack-tags project-tags">
-                <span class="tag">Android</span>
-                <span class="tag">RaspberryPi</span>
-                <span class="tag">Html</span>
-              </div>
-            </li>
-            <!-- CrazyG -->
-            <li class="project-item  active" data-filter-item data-category="APP">
-              <a href="javascript:;" class="btn_go btn_green product_4 r5">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <svg class="icon" aria-hidden="true" focusable="false"><use href="./assets/icons/sprite.svg#eye-outline"></use></svg>
-                  </div>
-
-                  <picture><source srcset="./assets/project6/p6.avif" type="image/avif"><source srcset="./assets/project6/p6.webp" type="image/webp"><img src="./assets/project6/p6.jpg" alt="metaspark" loading="lazy" width="254" height="182" decoding="async"></picture>
-                </figure>
-                <h3 class="project-title">CrazyG</h3>
-                <p class="project-category">APP</p>
-              </a>
-              <div class="stack-tags project-tags">
-                <span class="tag">Php</span>
-                <span class="tag">Vue</span>
-                <span class="tag">Uniapp</span>
-              </div>
-            </li>
-            <!-- AirWeb -->
-            <li class="project-item  active" data-filter-item data-category="Website">
-              <a href="javascript:;" class="btn_go btn_green product_5 r5">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <svg class="icon" aria-hidden="true" focusable="false"><use href="./assets/icons/sprite.svg#eye-outline"></use></svg>
-                  </div>
-
-                  <picture><source srcset="./assets/project7/product_7_bg.avif" type="image/avif"><source srcset="./assets/project7/product_7_bg.webp" type="image/webp"><img src="./assets/project7/product_7_bg.jpg" alt="summary" loading="lazy" width="2550" height="1336" decoding="async"></picture>
-                </figure>
-
-                <h3 class="project-title">AirWeb</h3>
-
-                <p class="project-category">Website</p>
-              </a>
-              <div class="stack-tags project-tags">
-                <span class="tag">Django</span>
-                <span class="tag">Linux</span>
-              </div>
-            </li>
-            <!-- Blood -->
-            <li class="project-item  active" data-filter-item data-category="Applications">
-              <a href="javascript:;" class="btn_go btn_green product_6 r5">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <svg class="icon" aria-hidden="true" focusable="false"><use href="./assets/icons/sprite.svg#eye-outline"></use></svg>
-                  </div>
-
-                  <picture><source srcset="./assets/project8/w644.webp" type="image/webp"><img src="./assets/project8/w644.jpeg" alt="task manager" loading="lazy" width="644" height="429" decoding="async"></picture>
-                </figure>
-
-                <h3 class="project-title" lang="zh-Hant-TW">血庫核對e化系統</h3>
-
-                <p class="project-category">Applications</p>
-              </a>
-              <div class="stack-tags project-tags">
-                <span class="tag">C#</span>
-                <span class="tag">Bootstrap</span>
-                <span class="tag">Cordova</span>
-              </div>
-            </li>
-
-
-
-          </ul>
-
-        </section>
-
-      </article>
-
-
-      <!--
-        - #BLOG
-      -->
-
-      <article class="blog" data-page="blog">
-
-        <header>
-          <h2 class="h2 article-title">Blog</h2>
-        </header>
-
-        <section class="blog-posts">
-
-          <ul class="blog-posts-list">
-            <li class="blog-post-item">
-              <a href="https://github.com/DeFiHackLabs/Solidity-Intensive-CoLearning" target="_blank">
-
-                <figure class="blog-banner-box">
-                  <picture><source srcset="./assets/images/blog-5.webp" type="image/webp"><img src="./assets/images/blog-5.png" loading="lazy" width="460" height="114" decoding="async" alt=""></picture>
-                </figure>
-
-                <div class="blog-content">
-
-
-                  <h3 class="h3 blog-item-title" lang="zh-Hant-TW">DeFiHackLabs x WTF Academy
-                    Solidity 21天共學計畫(ing)</h3>
-
-
-                </div>
-
-              </a>
-            </li>
-            <li class="blog-post-item">
-              <a href="https://github.com/0xRory/Phishing" target="_blank">
-
-                <figure class="blog-banner-box">
-                  <picture><source srcset="./assets/images/blog-4.avif" type="image/avif"><source srcset="./assets/images/blog-4.webp" type="image/webp"><img src="./assets/images/blog-4.png" loading="lazy" width="300" height="168" decoding="async" alt=""></picture>
-                </figure>
-
-                <div class="blog-content">
-
-
-                  <h3 class="h3 blog-item-title" lang="zh-Hant-TW">🎣 探索釣魚攻擊的演變：從 Web2 到 Web3 🎣</h3>
-
-
-                </div>
-
-              </a>
-            </li>
-            <li class="blog-post-item">
-              <a href="https://ithelp.ithome.com.tw/users/20162055/ironman/6239" target="_blank">
-
-                <figure class="blog-banner-box">
-                  <picture><source srcset="./assets/images/blog-3.avif" type="image/avif"><source srcset="./assets/images/blog-3.webp" type="image/webp"><img src="./assets/images/blog-3.png" loading="lazy" width="1158" height="796" decoding="async" alt=""></picture>
-                </figure>
-
-                <div class="blog-content">
-
-
-                  <h3 class="h3 blog-item-title" lang="zh-Hant-TW">Viem 介紹</h3>
-
-
-                </div>
-
-              </a>
-            </li>
-            <li class="blog-post-item">
-              <a href="https://github.com/0xRory/web2-to-web3-note" target="_blank">
-
-                <figure class="blog-banner-box">
-                  <picture><source srcset="./assets/images/blog-2.avif" type="image/avif"><source srcset="./assets/images/blog-2.webp" type="image/webp"><img src="./assets/images/blog-2.png" loading="lazy" width="1280" height="720" decoding="async" alt=""></picture>
-                </figure>
-
-                <div class="blog-content">
-
-
-                  <h3 class="h3 blog-item-title" lang="zh-Hant-TW">Web2 to Web3 學習筆記(keep..)</h3>
-
-
-                </div>
-
-              </a>
-            </li>
-            <li class="blog-post-item">
-              <a href="https://juniper-pecorino-0ba.notion.site/Solidity-Learning-Plan-4a02ea1aaa8d4edd9b9a8bff109ac26e"
-                target="_blank">
-
-                <figure class="blog-banner-box">
-                  <picture><source srcset="./assets/images/blog-1.avif" type="image/avif"><source srcset="./assets/images/blog-1.webp" type="image/webp"><img src="./assets/images/blog-1.jpg" loading="lazy" width="1024" height="683" decoding="async" alt=""></picture>
-                </figure>
-
-                <div class="blog-content">
-
-
-                  <h3 class="h3 blog-item-title">Solidity Learning Plan</h3>
-
-
-                </div>
-
-              </a>
-            </li>
-
-
-
-                      <li class="blog-post-item">
-              <a href="https://ithelp.ithome.com.tw/users/20162055/ironman/6239" target="_blank">
-
-                <figure class="blog-banner-box">
-                  <picture><source srcset="./assets/images/blog-3.avif" type="image/avif"><source srcset="./assets/images/blog-3.webp" type="image/webp"><img src="./assets/images/blog-3.png" loading="lazy" width="1158" height="796" decoding="async" alt=""></picture>
-                </figure>
-
-                <div class="blog-content">
-
-
-                  <h3 class="h3 blog-item-title" lang="zh-Hant-TW">Viem 介紹(ing)</h3>
-
-
-                </div>
-
-              </a>
-            </li>
-            <li class="blog-post-item">
-              <a href="https://juniper-pecorino-0ba.notion.site/Solidity-Learning-Plan-4a02ea1aaa8d4edd9b9a8bff109ac26e"
-                target="_blank">
-
-                <figure class="blog-banner-box">
-                  <picture><source srcset="./assets/images/blog-1.avif" type="image/avif"><source srcset="./assets/images/blog-1.webp" type="image/webp"><img src="./assets/images/blog-1.jpg" loading="lazy" width="1024" height="683" decoding="async" alt=""></picture>
-                </figure>
-
-                <div class="blog-content">
-
-
-                  <h3 class="h3 blog-item-title">Solidity Learning Plan</h3>
-
-
-                </div>
-
-              </a>
-            </li>
-
-          </ul>
-
-        </section>
-
-      </article>
-
-
-
-
-      <!--
-        - #CONTACT
-      -->
-
-      <article class="contact" data-page="contact">
-
-        <header>
-          <h2 class="h2 article-title">Contact</h2>
-        </header>
-
-
-
-        <section class="contact-form">
-
-          <h3 class="h3 form-title">Contact Form</h3>
-
-          <form action="#" class="form" data-form>
-
-            <div class="input-wrapper">
-              <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
-
-              <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
-            </div>
-
-            <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
-
-            <button class="form-btn" type="submit" disabled data-form-btn>
-              <svg class="icon" aria-hidden="true" focusable="false"><use href="./assets/icons/sprite.svg#paper-plane"></use></svg>
-              <span>Send Message</span>
-            </button>
-
-          </form>
-
-        </section>
-
-      </article>
-
-    </div>
-
-  </main>
-
-
-
-
-
-
-  <!--
-    - custom js link
-  -->
-  <script src="./assets/js/script.js"></script>
-
-  <!--
-    - ionicon link
-  -->
-  <script type="text/javascript" src="./assets/js/jquery-2.1.1.min.js"></script>
-  <script type="text/javascript" src="./assets/js/jquery.transit.min.js"></script>
-  <script type="text/javascript" src="./assets/js/carousel.min.js"></script>
-  <script type="text/javascript" src="./assets/js/common.js"></script>
+      </div>
+    </article>
+  </dialog>
+
+  <div class="cursor" data-cursor aria-hidden="true"></div>
+
+  <!-- GSAP: UMD single files, exposes window.gsap. Vendored, pinned 3.15.0. -->
+  <script src="./assets/js/vendor/gsap.min.js"></script>
+  <script src="./assets/js/vendor/ScrollTrigger.min.js"></script>
+  <script src="./assets/js/vendor/SplitText.min.js"></script>
+  <script src="./assets/js/vendor/Flip.min.js"></script>
+  <script src="./assets/js/vendor/ScrollToPlugin.min.js"></script>
+
+  <!-- Anime.js v4 is ESM-only. Vendored, pinned 4.5.0. -->
+  <script type="importmap">
+  { "imports": { "animejs": "./assets/js/vendor/anime.esm.js" } }
+  </script>
+  <script type="module" src="./assets/js/main.js"></script>
 </body>
 
 </html>

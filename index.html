@@ -87,25 +87,26 @@
 </head>
 
 <body>
-  <a class="skip" href="#work">Skip to work</a>
+  <a class="skip" href="#work" data-i18n="skip.work">Skip to work</a>
 
   <div class="frame" data-frame>
 
     <header class="nav" data-nav>
-      <a class="nav__mark" href="#top" aria-label="Rory — top of page">
+      <a class="nav__mark" href="#top" aria-label="Rory — top of page" data-i18n-aria="nav.mark">
         <span aria-hidden="true">0x</span>
       </a>
       <nav class="nav__links" aria-label="Sections">
-        <a href="#work" data-nav-link>Work</a>
-        <a href="#about" data-nav-link>About</a>
-        <a href="#resume" data-nav-link>Resume</a>
-        <a href="#writing" data-nav-link>Writing</a>
-        <a href="#contact" data-nav-link>Contact</a>
+        <a href="#work" data-nav-link data-i18n="nav.work">Work</a>
+        <a href="#about" data-nav-link data-i18n="nav.about">About</a>
+        <a href="#resume" data-nav-link data-i18n="nav.resume">Resume</a>
+        <a href="#writing" data-nav-link data-i18n="nav.writing">Writing</a>
+        <a href="#contact" data-nav-link data-i18n="nav.contact">Contact</a>
       </nav>
       <button class="nav__theme" data-theme-toggle type="button"
-              aria-label="Switch colour theme" aria-pressed="false">
+              aria-label="Switch colour theme" aria-pressed="false" data-i18n-aria="nav.theme">
         <span class="nav__theme-dot" aria-hidden="true"></span>
       </button>
+      <button class="nav__lang" data-lang-toggle type="button" aria-label="Switch to Chinese">&#20013;</button>
     </header>
 
     <main id="top">
@@ -114,14 +115,14 @@
       <section class="hero" id="hero">
         <div class="hero__text">
           <h1 class="hero__title t-display" data-hero-title>Rory<br>Full-Stack<br>Engineer</h1>
-          <p class="hero__lede">
+          <p class="hero__lede" data-i18n="hero.lede">
             Full-stack engineer in Taichung, Taiwan. I build blockchain backends and
             AI-powered products, and I'm currently deepening my AI engineering skills
             alongside smart-contract security and phishing research.
           </p>
           <p class="hero__actions">
-            <a class="btn" href="#work" data-scroll>View work</a>
-            <a class="btn btn--text" href="#writing" data-scroll>&gt; read writing</a>
+            <a class="btn" href="#work" data-scroll data-i18n="hero.btnWork">View work</a>
+            <a class="btn btn--text" href="#writing" data-scroll data-i18n="hero.btnWriting">&gt; read writing</a>
           </p>
         </div>
 
@@ -139,20 +140,20 @@
       <!-- ─────────────────────────── WORK ─────────────────────────── -->
       <section class="section" id="work">
         <header class="section__head" data-reveal>
-          <p class="t-label">[01] Selected work</p>
+          <p class="t-label" data-i18n="work.label">[01] Selected work</p>
           <h2 class="section__title">Work</h2>
         </header>
 
         <div class="work__filter" data-filter role="group" aria-label="Filter work">
-          <button class="work__filter-btn is-active" data-filter-btn="all" type="button">All</button>
-          <button class="work__filter-btn" data-filter-btn="Website" type="button">Website</button>
-          <button class="work__filter-btn" data-filter-btn="AI App" type="button">AI App</button>
-          <button class="work__filter-btn" data-filter-btn="Security" type="button">Security</button>
-          <button class="work__filter-btn" data-filter-btn="Web3 / DApp" type="button">Web3 / DApp</button>
-          <button class="work__filter-btn" data-filter-btn="App / IoT" type="button">App / IoT</button>
-          <button class="work__filter-btn" data-filter-btn="Commerce App" type="button">Commerce App</button>
-          <button class="work__filter-btn" data-filter-btn="Backend" type="button">Backend</button>
-          <button class="work__filter-btn" data-filter-btn="Enterprise" type="button">Enterprise</button>
+          <button class="work__filter-btn is-active" data-filter-btn="all" type="button" data-i18n="cat.all">All</button>
+          <button class="work__filter-btn" data-filter-btn="Website" type="button" data-i18n="cat.website">Website</button>
+          <button class="work__filter-btn" data-filter-btn="AI App" type="button" data-i18n="cat.aiApp">AI App</button>
+          <button class="work__filter-btn" data-filter-btn="Security" type="button" data-i18n="cat.security">Security</button>
+          <button class="work__filter-btn" data-filter-btn="Web3 / DApp" type="button" data-i18n="cat.web3Dapp">Web3 / DApp</button>
+          <button class="work__filter-btn" data-filter-btn="App / IoT" type="button" data-i18n="cat.appIot">App / IoT</button>
+          <button class="work__filter-btn" data-filter-btn="Commerce App" type="button" data-i18n="cat.commerceApp">Commerce App</button>
+          <button class="work__filter-btn" data-filter-btn="Backend" type="button" data-i18n="cat.backend">Backend</button>
+          <button class="work__filter-btn" data-filter-btn="Enterprise" type="button" data-i18n="cat.enterprise">Enterprise</button>
         </div>
 
         <ul class="work__grid" data-work-grid>
@@ -162,10 +163,10 @@
             <span class="card__media" data-flip-id="plocker"><picture><source srcset="./assets/project1/p1.avif" type="image/avif"><source srcset="./assets/project1/p1.webp" type="image/webp"><img src="./assets/project1/p1.png" alt="Plocker.org" width="2640" height="1180" loading="lazy" decoding="async"></picture></span>
             <span class="card__body">
               <span class="card__title">Plocker.org</span>
-              <span class="card__meta">Website <span class="card__year">2023</span></span>
+              <span class="card__meta"><span data-i18n="cat.website">Website</span> <span class="card__year">2023</span></span>
               <span class="stack-tags"><span class="tag">Vue</span><span class="tag">Tailwind CSS</span></span>
             </span>
-            <span class="card__cta">visit site &nearr;</span>
+            <span class="card__cta" data-i18n="work.cta.visitSite">visit site &nearr;</span>
           </a>
         </li>
         <li class="work__item" data-reveal data-category="Website">
@@ -174,10 +175,10 @@
             <span class="card__media" data-flip-id="seedao"><picture><source srcset="./assets/project2/seedao.avif" type="image/avif"><source srcset="./assets/project2/seedao.webp" type="image/webp"><img src="./assets/project2/seedao.png" alt="SeeDao" width="2666" height="1406" loading="lazy" decoding="async"></picture></span>
             <span class="card__body">
               <span class="card__title">SeeDao</span>
-              <span class="card__meta">Website <span class="card__year">2023</span></span>
+              <span class="card__meta"><span data-i18n="cat.website">Website</span> <span class="card__year">2023</span></span>
               <span class="stack-tags"><span class="tag">Vue</span><span class="tag">Bootstrap</span></span>
             </span>
-            <span class="card__cta">visit site &nearr;</span>
+            <span class="card__cta" data-i18n="work.cta.visitSite">visit site &nearr;</span>
           </a>
         </li>
         <li class="work__item" data-reveal data-category="Web3 / DApp">
@@ -186,10 +187,10 @@
             <span class="card__media" data-flip-id="csbs"><picture><source srcset="./assets/project3/p3.avif" type="image/avif"><source srcset="./assets/project3/p3.webp" type="image/webp"><img src="./assets/project3/p3.png" alt="CSBS" width="2530" height="1410" loading="lazy" decoding="async"></picture></span>
             <span class="card__body">
               <span class="card__title">CSBS</span>
-              <span class="card__meta">Web3 / DApp <span class="card__year">2023</span></span>
+              <span class="card__meta"><span data-i18n="cat.web3Dapp">Web3 / DApp</span> <span class="card__year">2023</span></span>
               <span class="stack-tags"><span class="tag">React</span><span class="tag">Tailwind CSS</span></span>
             </span>
-            <span class="card__cta">view case &rarr;</span>
+            <span class="card__cta" data-i18n="work.cta.viewCase">view case &rarr;</span>
           </button>
         </li>
         <li class="work__item" data-reveal data-category="App / IoT">
@@ -198,10 +199,10 @@
             <span class="card__media" data-flip-id="ilolly"><picture><source srcset="./assets/project4/p4.avif" type="image/avif"><source srcset="./assets/project4/p4.webp" type="image/webp"><img src="./assets/project4/p4.jpeg" alt="i-lolly" width="422" height="303" loading="lazy" decoding="async"></picture></span>
             <span class="card__body">
               <span class="card__title">i-lolly</span>
-              <span class="card__meta">App / IoT <span class="card__year">2021</span></span>
+              <span class="card__meta"><span data-i18n="cat.appIot">App / IoT</span> <span class="card__year">2021</span></span>
               <span class="stack-tags"><span class="tag">Php</span><span class="tag">Vue</span><span class="tag">Flutter</span><span class="tag">Linux</span></span>
             </span>
-            <span class="card__cta">view case &rarr;</span>
+            <span class="card__cta" data-i18n="work.cta.viewCase">view case &rarr;</span>
           </button>
         </li>
         <li class="work__item" data-reveal data-category="App / IoT">
@@ -210,10 +211,10 @@
             <span class="card__media" data-flip-id="areadrop"><picture><source srcset="./assets/project5/p5.avif" type="image/avif"><source srcset="./assets/project5/p5.webp" type="image/webp"><img src="./assets/project5/p5.jpg" alt="AreaDrop" width="1280" height="915" loading="lazy" decoding="async"></picture></span>
             <span class="card__body">
               <span class="card__title">AreaDrop</span>
-              <span class="card__meta">App / IoT <span class="card__year">2020</span></span>
+              <span class="card__meta"><span data-i18n="cat.appIot">App / IoT</span> <span class="card__year">2020</span></span>
               <span class="stack-tags"><span class="tag">Android</span><span class="tag">RaspberryPi</span><span class="tag">Html</span></span>
             </span>
-            <span class="card__cta">view case &rarr;</span>
+            <span class="card__cta" data-i18n="work.cta.viewCase">view case &rarr;</span>
           </button>
         </li>
         <li class="work__item" data-reveal data-category="Commerce App">
@@ -222,10 +223,10 @@
             <span class="card__media" data-flip-id="crazyg"><picture><source srcset="./assets/project6/p6.avif" type="image/avif"><source srcset="./assets/project6/p6.webp" type="image/webp"><img src="./assets/project6/p6.jpg" alt="CrazyG" width="254" height="182" loading="lazy" decoding="async"></picture></span>
             <span class="card__body">
               <span class="card__title">CrazyG</span>
-              <span class="card__meta">Commerce App <span class="card__year">2020</span></span>
+              <span class="card__meta"><span data-i18n="cat.commerceApp">Commerce App</span> <span class="card__year">2020</span></span>
               <span class="stack-tags"><span class="tag">Php</span><span class="tag">Vue</span><span class="tag">Uniapp</span></span>
             </span>
-            <span class="card__cta">view case &rarr;</span>
+            <span class="card__cta" data-i18n="work.cta.viewCase">view case &rarr;</span>
           </button>
         </li>
         <li class="work__item" data-reveal data-category="Backend">
@@ -234,10 +235,10 @@
             <span class="card__media" data-flip-id="airweb"><picture><source srcset="./assets/project7/product_7_bg.avif" type="image/avif"><source srcset="./assets/project7/product_7_bg.webp" type="image/webp"><img src="./assets/project7/product_7_bg.jpg" alt="AirWeb" width="2550" height="1336" loading="lazy" decoding="async"></picture></span>
             <span class="card__body">
               <span class="card__title">AirWeb</span>
-              <span class="card__meta">Backend <span class="card__year">2018</span></span>
+              <span class="card__meta"><span data-i18n="cat.backend">Backend</span> <span class="card__year">2018</span></span>
               <span class="stack-tags"><span class="tag">Django</span><span class="tag">Linux</span></span>
             </span>
-            <span class="card__cta">view case &rarr;</span>
+            <span class="card__cta" data-i18n="work.cta.viewCase">view case &rarr;</span>
           </button>
         </li>
         <li class="work__item" data-reveal data-category="Enterprise">
@@ -246,10 +247,10 @@
             <span class="card__media" data-flip-id="bloodbank"><picture><source srcset="./assets/project8/w644.webp" type="image/webp"><img src="./assets/project8/w644.jpeg" alt="Blood Bank" width="644" height="429" loading="lazy" decoding="async"></picture></span>
             <span class="card__body">
               <span class="card__title">Blood Bank</span>
-              <span class="card__meta">Enterprise <span class="card__year">2017</span></span>
+              <span class="card__meta"><span data-i18n="cat.enterprise">Enterprise</span> <span class="card__year">2017</span></span>
               <span class="stack-tags"><span class="tag">C#</span><span class="tag">Bootstrap</span><span class="tag">Cordova</span></span>
             </span>
-            <span class="card__cta">view case &rarr;</span>
+            <span class="card__cta" data-i18n="work.cta.viewCase">view case &rarr;</span>
           </button>
         </li>
         <li class="work__item" data-reveal data-category="AI App">
@@ -258,10 +259,10 @@
             <span class="card__media" data-flip-id="maxo"><picture><source srcset="./assets/project9/maxo.avif" type="image/avif"><source srcset="./assets/project9/maxo.webp" type="image/webp"><img src="./assets/project9/maxo.png" alt="MAXO" width="1600" height="1000" loading="lazy" decoding="async"></picture></span>
             <span class="card__body">
               <span class="card__title">MAXO</span>
-              <span class="card__meta">AI App <span class="card__year">2026</span></span>
+              <span class="card__meta"><span data-i18n="cat.aiApp">AI App</span> <span class="card__year">2026</span></span>
               <span class="stack-tags"><span class="tag">Django</span><span class="tag">React</span><span class="tag">OpenAI</span><span class="tag">GCP</span></span>
             </span>
-            <span class="card__cta">view case &rarr;</span>
+            <span class="card__cta" data-i18n="work.cta.viewCase">view case &rarr;</span>
           </button>
         </li>
         <li class="work__item" data-reveal data-category="Security">
@@ -270,10 +271,10 @@
             <span class="card__media" data-flip-id="unphishable"><picture><source srcset="./assets/project10/unphishable.avif" type="image/avif"><source srcset="./assets/project10/unphishable.webp" type="image/webp"><img src="./assets/project10/unphishable.png" alt="Unphishable" width="1600" height="1000" loading="lazy" decoding="async"></picture></span>
             <span class="card__body">
               <span class="card__title">Unphishable</span>
-              <span class="card__meta">Security <span class="card__year">2025</span></span>
+              <span class="card__meta"><span data-i18n="cat.security">Security</span> <span class="card__year">2025</span></span>
               <span class="stack-tags"><span class="tag">Next.js</span><span class="tag">TypeScript</span><span class="tag">Web3</span></span>
             </span>
-            <span class="card__cta">view case &rarr;</span>
+            <span class="card__cta" data-i18n="work.cta.viewCase">view case &rarr;</span>
           </button>
         </li>
         </ul>
@@ -282,18 +283,18 @@
       <!-- ─────────────────────────── ABOUT ────────────────────────── -->
       <section class="section" id="about">
         <header class="section__head" data-reveal>
-          <p class="t-label">[02] Background</p>
+          <p class="t-label" data-i18n="about.label">[02] Background</p>
           <h2 class="section__title">About</h2>
         </header>
 
         <div class="about">
           <div class="about__bio" data-reveal>
-            <p class="about__lede">
+            <p class="about__lede" data-i18n="about.lede">
               Jack of all trades, a versatile engineer. Besides day-to-day front-end and
               back-end work, mobile and desktop development, I am deeply interested in
               Web3, blockchain and AI.
             </p>
-            <p>
+            <p data-i18n="about.body">
               Right now I am focused on raising awareness about Web3 security — studying
               phishing incidents and writing them up, and keeping current with the latest
               smart-contract security work. I also help organise events and co-learning
@@ -302,7 +303,7 @@
           </div>
 
           <div class="about__stack" data-reveal>
-            <h3 class="t-label">Languages</h3>
+            <h3 class="t-label" data-i18n="about.languagesHeading">Languages</h3>
             <dl class="stack">
               <dt class="stack-label" lang="zh-Hant-TW">日常</dt>
               <dd class="stack-tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">TypeScript</span><span class="tag">Go</span></dd>
@@ -312,7 +313,7 @@
               <dd class="stack-tags"><span class="tag">Solidity</span><span class="tag">Dart</span><span class="tag">Python</span></dd>
             </dl>
 
-            <h3 class="t-label">Frameworks</h3>
+            <h3 class="t-label" data-i18n="about.frameworksHeading">Frameworks</h3>
             <dl class="stack">
               <dt class="stack-label">Frontend</dt>
               <dd class="stack-tags"><span class="tag">React</span><span class="tag">Vue</span><span class="tag">Flutter</span><span class="tag">React Native</span><span class="tag">Webpack</span><span class="tag">Less</span><span class="tag">Sass</span><span class="tag">Tailwind CSS</span><span class="tag">Ant Design</span></dd>
@@ -334,59 +335,59 @@
       <!-- ────────────────────────── RESUME ────────────────────────── -->
       <section class="section" id="resume">
         <header class="section__head" data-reveal>
-          <p class="t-label">[03] History</p>
+          <p class="t-label" data-i18n="resume.label">[03] History</p>
           <h2 class="section__title">Resume</h2>
         </header>
 
         <div class="resume">
           <div class="resume__col">
-            <h3 class="t-label" data-reveal>Experience</h3>
+            <h3 class="t-label" data-reveal data-i18n="resume.experienceHeading">Experience</h3>
             <ol class="timeline">
               <li class="timeline__item" data-reveal>
                 <span class="timeline__when">2026.01 — 2026.09</span>
                 <h4 class="timeline__what">Dandelion</h4>
-                <p class="timeline__text">Full-stack engineer on MAXO, an AI business &amp; marketing platform — Django/DRF backend, React frontend and admin, multi-model LLM orchestration (OpenAI, Gemini) on GCP.</p>
+                <p class="timeline__text" data-i18n="resume.dandelion.text">Full-stack engineer on MAXO, an AI business &amp; marketing platform — Django/DRF backend, React frontend and admin, multi-model LLM orchestration (OpenAI, Gemini) on GCP.</p>
               </li>
               <li class="timeline__item" data-reveal>
-                <span class="timeline__when">2023.10 — Present</span>
+                <span class="timeline__when">2023.10 — <span data-i18n="resume.present">Present</span></span>
                 <h4 class="timeline__what">AceMeta Lab</h4>
-                <p class="timeline__text">RPC backend services, CI/CD, and scaling concurrency from 100 to 1000.</p>
+                <p class="timeline__text" data-i18n="resume.acemeta.text">RPC backend services, CI/CD, and scaling concurrency from 100 to 1000.</p>
               </li>
               <li class="timeline__item" data-reveal>
                 <span class="timeline__when">2021.11 — 2023.10</span>
                 <h4 class="timeline__what">YILE TECHNOLOGY</h4>
-                <p class="timeline__text">Web3 and game backends. ETH / Polygon / Tron USDT payment rails.</p>
+                <p class="timeline__text" data-i18n="resume.yile.text">Web3 and game backends. ETH / Polygon / Tron USDT payment rails.</p>
               </li>
               <li class="timeline__item" data-reveal>
                 <span class="timeline__when">2020.4 — 2021.7</span>
                 <h4 class="timeline__what">SHOESCONN TECHNOLOGY</h4>
-                <p class="timeline__text">Led a team of five building IoT web and mobile applications.</p>
+                <p class="timeline__text" data-i18n="resume.shoesconn.text">Led a team of five building IoT web and mobile applications.</p>
               </li>
               <li class="timeline__item" data-reveal>
                 <span class="timeline__when">2019.4 — 2020.3</span>
                 <h4 class="timeline__what">SMART ECARE INC</h4>
-                <p class="timeline__text">Research and system architecture for connected-care products.</p>
+                <p class="timeline__text" data-i18n="resume.smartecare.text">Research and system architecture for connected-care products.</p>
               </li>
               <li class="timeline__item" data-reveal>
                 <span class="timeline__when">2011.9 — 2018.9</span>
                 <h4 class="timeline__what">Kuang Tien General Hospital</h4>
-                <p class="timeline__text">Hospital information systems, integration and in-house tooling.</p>
+                <p class="timeline__text" data-i18n="resume.kuangtien.text">Hospital information systems, integration and in-house tooling.</p>
               </li>
             </ol>
           </div>
 
           <div class="resume__col">
-            <h3 class="t-label" data-reveal>Education</h3>
+            <h3 class="t-label" data-reveal data-i18n="resume.educationHeading">Education</h3>
             <ol class="timeline">
               <li class="timeline__item" data-reveal>
                 <span class="timeline__when">2016.09 — 2018.06</span>
                 <h4 class="timeline__what">Tunghai University</h4>
-                <p class="timeline__text">Institute of Information Engineering</p>
+                <p class="timeline__text" data-i18n="resume.tunghai.text">Institute of Information Engineering</p>
               </li>
               <li class="timeline__item" data-reveal>
                 <span class="timeline__when">2006.09 — 2010.06</span>
                 <h4 class="timeline__what">Ling Tung University</h4>
-                <p class="timeline__text">Department of Information Management</p>
+                <p class="timeline__text" data-i18n="resume.lingtung.text">Department of Information Management</p>
               </li>
             </ol>
           </div>
@@ -396,44 +397,44 @@
       <!-- ────────────────────────── WRITING ───────────────────────── -->
       <section class="section" id="writing">
         <header class="section__head" data-reveal>
-          <p class="t-label">[04] Notes &amp; talks</p>
+          <p class="t-label" data-i18n="writing.label">[04] Notes &amp; talks</p>
           <h2 class="section__title">Writing</h2>
         </header>
 
         <ul class="writing">
           <li class="writing__item" data-reveal>
             <a class="writing__link" href="https://www.youtube.com/watch?v=qgztO4qw8yQ" target="_blank" rel="noopener">
-              <span class="writing__title" lang="zh-Hant-TW">釣魚體驗平台 Unphishable：識破 Web3 詐騙陷阱！</span>
+              <span class="writing__title" lang="zh-Hant-TW" data-i18n="writing.unphishable.title">釣魚體驗平台 Unphishable：識破 Web3 詐騙陷阱！</span>
               <span class="writing__meta">COSCUP <span class="writing__year">2025</span> <span aria-hidden="true">&nearr;</span></span>
             </a>
           </li>
           <li class="writing__item" data-reveal>
             <a class="writing__link" href="https://github.com/DeFiHackLabs/Solidity-Intensive-CoLearning" target="_blank" rel="noopener">
-              <span class="writing__title">DeFiHackLabs x WTF Academy — Solidity 21-day co-learning</span>
+              <span class="writing__title" data-i18n="writing.solidityCoLearning.title">DeFiHackLabs x WTF Academy — Solidity 21-day co-learning</span>
               <span class="writing__meta">GitHub <span class="writing__year">2024</span> <span aria-hidden="true">&nearr;</span></span>
             </a>
           </li>
           <li class="writing__item" data-reveal>
             <a class="writing__link" href="https://github.com/0xRory/Phishing" target="_blank" rel="noopener">
-              <span class="writing__title" lang="zh-Hant-TW">探索釣魚攻擊的演變：從 Web2 到 Web3</span>
+              <span class="writing__title" lang="zh-Hant-TW" data-i18n="writing.phishingEvolution.title">探索釣魚攻擊的演變：從 Web2 到 Web3</span>
               <span class="writing__meta">GitHub <span class="writing__year">2024</span> <span aria-hidden="true">&nearr;</span></span>
             </a>
           </li>
           <li class="writing__item" data-reveal>
             <a class="writing__link" href="https://ithelp.ithome.com.tw/users/20162055/ironman/6239" target="_blank" rel="noopener">
-              <span class="writing__title" lang="zh-Hant-TW">Viem 介紹</span>
-              <span class="writing__meta">iThome <span lang="zh-Hant-TW">鐵人賽</span> <span class="writing__year">2023</span> <span aria-hidden="true">&nearr;</span></span>
+              <span class="writing__title" lang="zh-Hant-TW" data-i18n="writing.viem.title">Viem 介紹</span>
+              <span class="writing__meta"><span data-i18n="writing.viem.source">iThome <span lang="zh-Hant-TW">鐵人賽</span></span> <span class="writing__year">2023</span> <span aria-hidden="true">&nearr;</span></span>
             </a>
           </li>
           <li class="writing__item" data-reveal>
             <a class="writing__link" href="https://github.com/0xRory/web2-to-web3-note" target="_blank" rel="noopener">
-              <span class="writing__title" lang="zh-Hant-TW">Web2 to Web3 學習筆記</span>
+              <span class="writing__title" lang="zh-Hant-TW" data-i18n="writing.web2to3notes.title">Web2 to Web3 學習筆記</span>
               <span class="writing__meta">GitHub <span class="writing__year">2023</span> <span aria-hidden="true">&nearr;</span></span>
             </a>
           </li>
           <li class="writing__item" data-reveal>
             <a class="writing__link" href="https://juniper-pecorino-0ba.notion.site/Solidity-Learning-Plan-0ac4b7f4a6d94b0b93ee1b3d3f7a27d5" target="_blank" rel="noopener">
-              <span class="writing__title">Solidity Learning Plan</span>
+              <span class="writing__title" data-i18n="writing.solidityPlan.title">Solidity Learning Plan</span>
               <span class="writing__meta">Notion <span class="writing__year">2023</span> <span aria-hidden="true">&nearr;</span></span>
             </a>
           </li>
@@ -443,13 +444,13 @@
       <!-- ────────────────────────── CONTACT ───────────────────────── -->
       <section class="section section--contact" id="contact">
         <header class="section__head" data-reveal>
-          <p class="t-label">[05] Get in touch</p>
+          <p class="t-label" data-i18n="contact.label">[05] Get in touch</p>
           <h2 class="section__title">Contact</h2>
         </header>
 
         <div class="contact" data-reveal>
           <a class="contact__mail" href="mailto:0x1rory@gmail.com">0x1rory@gmail.com</a>
-          <address class="contact__where">Taichung, Taiwan</address>
+          <address class="contact__where" data-i18n="contact.where">Taichung, Taiwan</address>
           <ul class="contact__social">
             <li><a href="https://github.com/0xRory" target="_blank" rel="noopener">
               <svg class="icon is-solid" aria-hidden="true" focusable="false"><use href="./assets/icons/sprite.svg#logo-github"></use></svg>GitHub</a></li>
@@ -465,7 +466,7 @@
 
     <footer class="footer">
       <p>Rory &middot; 0xRory</p>
-      <p>Built with GSAP and Anime.js. No trackers, no third-party requests.</p>
+      <p data-i18n="footer.built">Built with GSAP and Anime.js. No trackers, no third-party requests.</p>
       <p><span data-year></span></p>
     </footer>
 
@@ -479,29 +480,26 @@
     </form>
     <article class="case__inner" data-flip-target="csbs">
       <header class="case__head">
-        <p class="t-label">[03] &middot; Web3 / DApp &middot; 2023</p>
+        <p class="t-label">[03] &middot; <span data-i18n="cat.web3Dapp">Web3 / DApp</span> &middot; 2023</p>
         <h2 class="case__title" id="case-csbs-title">CSBS</h2>
         <p class="stack-tags"><span class="tag">React</span><span class="tag">Tailwind CSS</span></p>
       </header>
-      <div class="case__body" lang="zh-Hant-TW">
-<p class="case__spec">
-                      Community SBT Basket and Seal：一款免費開源的SBT DApp，幫助社區和多重身份的個體來發行和管理分散於各個社區Event、Activity的時光碎片。<br />
-                    </p>
-                    <p>
-                      主要實作：批次發放 SBT , 以及社區活動的管理。
-                    </p>
-                    <p class="case__figure">
-                      <span class="video-frame"><video id="project-video-1" controls loop playsinline preload="none" data-src="./assets/project3/demo.mp4" data-poster="./assets/project3/poster.webp">
-                        <span lang="zh-Hant-TW">您的瀏覽器不支援 HTML5 影片播放。</span>
-                        Your browser doesn't support the &lt;video&gt; tag.
-                      </video><button class="video-play" type="button" data-video-play aria-label="Play video"><svg class="icon is-solid" aria-hidden="true" focusable="false"><use href="./assets/icons/sprite.svg#play"></use></svg></button></span>
-                    </p>
-                    <p> 可以參考： <a href="https://github.com/PlanckerLabs/CSBS"
-                        target="_blank">https://github.com/PlanckerLabs/CSBS</a></p>
-                  </div>
-
-                </div>
-                <!--i-lolly-->
+      <div class="case__body">
+        <p class="case__spec" data-i18n="case.csbs.spec">
+          Community SBT Basket and Seal &mdash; a free, open-source SBT DApp that
+          helps communities and multi-identity individuals issue and manage
+          soulbound tokens tied to community events and activities.
+        </p>
+        <p data-i18n="case.csbs.p2">
+          Core feature: batch-issuing SBTs and managing community-event participation.
+        </p>
+        <p class="case__figure">
+          <span class="video-frame"><video id="project-video-1" controls loop playsinline preload="none" data-src="./assets/project3/demo.mp4" data-poster="./assets/project3/poster.webp">
+            <span lang="zh-Hant-TW">您的瀏覽器不支援 HTML5 影片播放。</span>
+            Your browser doesn't support the &lt;video&gt; tag.
+          </video><button class="video-play" type="button" data-video-play aria-label="Play video"><svg class="icon is-solid" aria-hidden="true" focusable="false"><use href="./assets/icons/sprite.svg#play"></use></svg></button></span>
+        </p>
+        <p><span data-i18n="case.csbs.ref">Reference:</span> <a href="https://github.com/PlanckerLabs/CSBS" target="_blank">https://github.com/PlanckerLabs/CSBS</a></p>
       </div>
     </article>
   </dialog>
@@ -513,37 +511,34 @@
     </form>
     <article class="case__inner" data-flip-target="ilolly">
       <header class="case__head">
-        <p class="t-label">[04] &middot; App / IoT &middot; 2021</p>
+        <p class="t-label">[04] &middot; <span data-i18n="cat.appIot">App / IoT</span> &middot; 2021</p>
         <h2 class="case__title" id="case-ilolly-title">i-lolly</h2>
         <p class="stack-tags"><span class="tag">Php</span><span class="tag">Vue</span><span class="tag">Flutter</span><span class="tag">Linux</span></p>
       </header>
-      <div class="case__body" lang="zh-Hant-TW">
-<p class="case__spec">
-                      利用 IOT 人臉溫度機＋溫濕度傳感器整合在校園裡面。<br />
-                    </p>
-                    <p>
-                      施作技術 雲端伺服器＋中繼資料緩衝區＋後台＋資料庫＋IOT＋APP(推播通知)
-                    </p>
-                    <p style="display: flex; justify-content: center;">
-                      IOT 中台是使用 <a href="https://thingsboard.io/docs/getting-started-guides/what-is-thingsboard/"
-                        target="_blank">thingsboard</a> 開源軟體施作。
-                    </p>
-                    <p class="case__figure">
-                      <picture><source srcset="./assets/project4/i-lolly-flow.avif" type="image/avif"><source srcset="./assets/project4/i-lolly-flow.webp" type="image/webp"><img class="p4" src="./assets/project4/i-lolly-flow.png" alt="i-lolly架構流程" width="1173" height="718" loading="lazy" decoding="async"></picture>
-                      <span>流程架構</span>
-                    </p>
-                    <div style="display: flex; justify-content: center;">
-                      <a href="https://play.google.com/store/apps/details?id=com.shoesconn.fultter_ims" target="_blank">
-                        <picture><source srcset="./assets/project4/android_download.webp" type="image/webp"><img src="./assets/project4/android_download.jpg" width="200" height="100" alt="android" loading="lazy" decoding="async"></picture>
-                      </a>
-                      <a href="https://apps.apple.com/tw/app/i-lolly/id1526973956" target="_blank">
-                        <picture><source srcset="./assets/project4/apple_download.webp" type="image/webp"><img src="./assets/project4/apple_download.jpg" width="200" height="100" alt="ios" loading="lazy" decoding="async"></picture>
-                      </a>
-                    </div>
-                  </div>
-
-                </div>
-                <!--AreaDrop-->
+      <div class="case__body">
+        <p class="case__spec" data-i18n="case.ilolly.spec">
+          An IoT solution combining facial-recognition thermometers with
+          temperature/humidity sensors, deployed across school campuses.
+        </p>
+        <p data-i18n="case.ilolly.p2">
+          Stack: cloud servers, a message-buffer layer, an admin backend, a
+          database, IoT devices, and a mobile app with push notifications.
+        </p>
+        <p style="display: flex; justify-content: center;" data-i18n="case.ilolly.p3">
+          The IoT middleware is built on the open-source <a href="https://thingsboard.io/docs/getting-started-guides/what-is-thingsboard/" target="_blank">thingsboard</a> platform.
+        </p>
+        <p class="case__figure">
+          <picture><source srcset="./assets/project4/i-lolly-flow.avif" type="image/avif"><source srcset="./assets/project4/i-lolly-flow.webp" type="image/webp"><img class="p4" src="./assets/project4/i-lolly-flow.png" alt="i-lolly architecture flow" width="1173" height="718" loading="lazy" decoding="async"></picture>
+          <span data-i18n="case.ilolly.fig1">Flow architecture</span>
+        </p>
+        <div style="display: flex; justify-content: center;">
+          <a href="https://play.google.com/store/apps/details?id=com.shoesconn.fultter_ims" target="_blank">
+            <picture><source srcset="./assets/project4/android_download.webp" type="image/webp"><img src="./assets/project4/android_download.jpg" width="200" height="100" alt="android" loading="lazy" decoding="async"></picture>
+          </a>
+          <a href="https://apps.apple.com/tw/app/i-lolly/id1526973956" target="_blank">
+            <picture><source srcset="./assets/project4/apple_download.webp" type="image/webp"><img src="./assets/project4/apple_download.jpg" width="200" height="100" alt="ios" loading="lazy" decoding="async"></picture>
+          </a>
+        </div>
       </div>
     </article>
   </dialog>
@@ -555,34 +550,31 @@
     </form>
     <article class="case__inner" data-flip-target="areadrop">
       <header class="case__head">
-        <p class="t-label">[05] &middot; App / IoT &middot; 2020</p>
+        <p class="t-label">[05] &middot; <span data-i18n="cat.appIot">App / IoT</span> &middot; 2020</p>
         <h2 class="case__title" id="case-areadrop-title">AreaDrop</h2>
         <p class="stack-tags"><span class="tag">Android</span><span class="tag">RaspberryPi</span><span class="tag">Html</span></p>
       </header>
-      <div class="case__body" lang="zh-Hant-TW">
-<p>主要是練習Java和Android並模仿Apple MAC的AirDrop，所以功能名稱命名為AreaDrop</p>
-                    <p>通常設定裝置IOT網路都非常麻煩，所以使用手機去設定！另外使用Ｗebstock來做傳輸。</p>
-                    <p class="case__figure">
-                      <picture><source srcset="./assets/project5/pic_lw_login.webp" type="image/webp"><img src="./assets/project5/pic_lw_login.jpg" width="400" height="400" alt="概念架構" loading="lazy" decoding="async"></picture>
-                      <span>概念架構</span>
-                    </p>
-                    <p>下列展示手機設定伺服器網路</p>
-                    <p class="case__figure">
-                      <span class="video-frame"><video id="project-video-2" controls loop playsinline preload="none" data-src="./assets/project5/bindmodel.mp4" data-poster="./assets/project5/bindmodel-poster.webp">
-                        <span lang="zh-Hant-TW">您的瀏覽器不支援 HTML5 影片播放。</span>
-                        Your browser doesn't support the &lt;video&gt; tag.
-                      </video><button class="video-play" type="button" data-video-play aria-label="Play video"><svg class="icon is-solid" aria-hidden="true" focusable="false"><use href="./assets/icons/sprite.svg#play"></use></svg></button></span>
-                    </p>
-                    <p>下列展示跨平台傳輸檔案（手機、電腦）。</p>
-                    <p class="case__figure">
-                      <span class="video-frame"><video id="project-video-3" controls loop playsinline preload="none" data-src="./assets/project5/sendmodel.mp4" data-poster="./assets/project5/sendmodel-poster.webp">
-                        <span lang="zh-Hant-TW">您的瀏覽器不支援 HTML5 影片播放。</span>
-                        Your browser doesn't support the &lt;video&gt; tag.
-                      </video><button class="video-play" type="button" data-video-play aria-label="Play video"><svg class="icon is-solid" aria-hidden="true" focusable="false"><use href="./assets/icons/sprite.svg#play"></use></svg></button></span>
-                    </p>
-                  </div>
-                </div>
-                <!--CrazyG-->
+      <div class="case__body">
+        <p data-i18n="case.areadrop.p1">A Java/Android practice project modelled on Apple's AirDrop &mdash; hence the name AreaDrop.</p>
+        <p data-i18n="case.areadrop.p2">Configuring a device's IoT network is usually a hassle, so this sets it up straight from the phone, using WebSocket for transfer.</p>
+        <p class="case__figure">
+          <picture><source srcset="./assets/project5/pic_lw_login.webp" type="image/webp"><img src="./assets/project5/pic_lw_login.jpg" width="400" height="400" alt="concept architecture" loading="lazy" decoding="async"></picture>
+          <span data-i18n="case.areadrop.fig1">Concept architecture</span>
+        </p>
+        <p data-i18n="case.areadrop.p3">Below: configuring the server network from the phone.</p>
+        <p class="case__figure">
+          <span class="video-frame"><video id="project-video-2" controls loop playsinline preload="none" data-src="./assets/project5/bindmodel.mp4" data-poster="./assets/project5/bindmodel-poster.webp">
+            <span lang="zh-Hant-TW">您的瀏覽器不支援 HTML5 影片播放。</span>
+            Your browser doesn't support the &lt;video&gt; tag.
+          </video><button class="video-play" type="button" data-video-play aria-label="Play video"><svg class="icon is-solid" aria-hidden="true" focusable="false"><use href="./assets/icons/sprite.svg#play"></use></svg></button></span>
+        </p>
+        <p data-i18n="case.areadrop.p4">Below: cross-platform file transfer (phone &harr; computer).</p>
+        <p class="case__figure">
+          <span class="video-frame"><video id="project-video-3" controls loop playsinline preload="none" data-src="./assets/project5/sendmodel.mp4" data-poster="./assets/project5/sendmodel-poster.webp">
+            <span lang="zh-Hant-TW">您的瀏覽器不支援 HTML5 影片播放。</span>
+            Your browser doesn't support the &lt;video&gt; tag.
+          </video><button class="video-play" type="button" data-video-play aria-label="Play video"><svg class="icon is-solid" aria-hidden="true" focusable="false"><use href="./assets/icons/sprite.svg#play"></use></svg></button></span>
+        </p>
       </div>
     </article>
   </dialog>
@@ -594,50 +586,45 @@
     </form>
     <article class="case__inner" data-flip-target="crazyg">
       <header class="case__head">
-        <p class="t-label">[06] &middot; Commerce App &middot; 2020</p>
+        <p class="t-label">[06] &middot; <span data-i18n="cat.commerceApp">Commerce App</span> &middot; 2020</p>
         <h2 class="case__title" id="case-crazyg-title">CrazyG</h2>
         <p class="stack-tags"><span class="tag">Php</span><span class="tag">Vue</span><span class="tag">Uniapp</span></p>
       </header>
-      <div class="case__body" lang="zh-Hant-TW">
-<div style="display: flex; flex-wrap: wrap;justify-content: center;">
-                      <p style="text-align: -webkit-center;">
-                        <picture><source srcset="./assets/project6/index-1.avif" type="image/avif"><source srcset="./assets/project6/index-1.webp" type="image/webp"><img class="p6" src="./assets/project6/index-1.jpeg" width="200" height="400" alt="android" loading="lazy" decoding="async"></picture>
-                      </p>
-                      <p style="text-align: -webkit-center;">
-                        <picture><source srcset="./assets/project6/index-2.avif" type="image/avif"><source srcset="./assets/project6/index-2.webp" type="image/webp"><img class="p6" src="./assets/project6/index-2.jpeg" width="200" height="400" alt="android" loading="lazy" decoding="async"></picture>
-                      </p>
-                      <p style="text-align: -webkit-center;">
-                        <picture><source srcset="./assets/project6/index-3.avif" type="image/avif"><source srcset="./assets/project6/index-3.webp" type="image/webp"><img class="p6" src="./assets/project6/index-3.jpeg" width="200" height="400" alt="android" loading="lazy" decoding="async"></picture>
-                      </p>
-                      <p style="text-align: -webkit-center;">
-                        <picture><source srcset="./assets/project6/index-4.avif" type="image/avif"><source srcset="./assets/project6/index-4.webp" type="image/webp"><img class="p6" src="./assets/project6/index-4.jpeg" width="200" height="400" alt="android" loading="lazy" decoding="async"></picture>
-                      </p>
-                      <p style="text-align: -webkit-center;">
-                        <picture><source srcset="./assets/project6/index-5.avif" type="image/avif"><source srcset="./assets/project6/index-5.webp" type="image/webp"><img class="p6" src="./assets/project6/index-5.jpeg" width="200" height="400" alt="android" loading="lazy" decoding="async"></picture>
-                      </p>
-
-                    </div>
-                    <p class="case__figure">
-                      <span>呈現畫面</span>
-                    </p>
-                    <p class="case__figure">
-                      <span class="video-frame"><video id="project-video-4" controls loop playsinline preload="none" data-src="./assets/project6/demo.mp4" data-poster="./assets/project6/poster.webp">
-                        <span lang="zh-Hant-TW">您的瀏覽器不支援 HTML5 影片播放。</span>
-                        Your browser doesn't support the &lt;video&gt; tag.
-                      </video><button class="video-play" type="button" data-video-play aria-label="Play video"><svg class="icon is-solid" aria-hidden="true" focusable="false"><use href="./assets/icons/sprite.svg#play"></use></svg></button></span>
-                    </p>
-                    <p class="case__figure">
-                      <span>點數兌換</span>
-                    </p>
-                    <div style="display: flex; justify-content: center;">
-                      <a href="https://play.google.com/store/apps/details?id=io.uniapp.crazyg" target="_blank">
-                        <picture><source srcset="./assets/project4/android_download.webp" type="image/webp"><img src="./assets/project4/android_download.jpg" width="200" height="100" alt="android" loading="lazy" decoding="async"></picture>
-                      </a>
-                    </div>
-                  </div>
-
-                </div>
-                <!-- airweb-->
+      <div class="case__body">
+        <div style="display: flex; flex-wrap: wrap;justify-content: center;">
+          <p style="text-align: -webkit-center;">
+            <picture><source srcset="./assets/project6/index-1.avif" type="image/avif"><source srcset="./assets/project6/index-1.webp" type="image/webp"><img class="p6" src="./assets/project6/index-1.jpeg" width="200" height="400" alt="app screen" loading="lazy" decoding="async"></picture>
+          </p>
+          <p style="text-align: -webkit-center;">
+            <picture><source srcset="./assets/project6/index-2.avif" type="image/avif"><source srcset="./assets/project6/index-2.webp" type="image/webp"><img class="p6" src="./assets/project6/index-2.jpeg" width="200" height="400" alt="app screen" loading="lazy" decoding="async"></picture>
+          </p>
+          <p style="text-align: -webkit-center;">
+            <picture><source srcset="./assets/project6/index-3.avif" type="image/avif"><source srcset="./assets/project6/index-3.webp" type="image/webp"><img class="p6" src="./assets/project6/index-3.jpeg" width="200" height="400" alt="app screen" loading="lazy" decoding="async"></picture>
+          </p>
+          <p style="text-align: -webkit-center;">
+            <picture><source srcset="./assets/project6/index-4.avif" type="image/avif"><source srcset="./assets/project6/index-4.webp" type="image/webp"><img class="p6" src="./assets/project6/index-4.jpeg" width="200" height="400" alt="app screen" loading="lazy" decoding="async"></picture>
+          </p>
+          <p style="text-align: -webkit-center;">
+            <picture><source srcset="./assets/project6/index-5.avif" type="image/avif"><source srcset="./assets/project6/index-5.webp" type="image/webp"><img class="p6" src="./assets/project6/index-5.jpeg" width="200" height="400" alt="app screen" loading="lazy" decoding="async"></picture>
+          </p>
+        </div>
+        <p class="case__figure">
+          <span data-i18n="case.crazyg.fig1">Screens</span>
+        </p>
+        <p class="case__figure">
+          <span class="video-frame"><video id="project-video-4" controls loop playsinline preload="none" data-src="./assets/project6/demo.mp4" data-poster="./assets/project6/poster.webp">
+            <span lang="zh-Hant-TW">您的瀏覽器不支援 HTML5 影片播放。</span>
+            Your browser doesn't support the &lt;video&gt; tag.
+          </video><button class="video-play" type="button" data-video-play aria-label="Play video"><svg class="icon is-solid" aria-hidden="true" focusable="false"><use href="./assets/icons/sprite.svg#play"></use></svg></button></span>
+        </p>
+        <p class="case__figure">
+          <span data-i18n="case.crazyg.fig2">Points redemption</span>
+        </p>
+        <div style="display: flex; justify-content: center;">
+          <a href="https://play.google.com/store/apps/details?id=io.uniapp.crazyg" target="_blank">
+            <picture><source srcset="./assets/project4/android_download.webp" type="image/webp"><img src="./assets/project4/android_download.jpg" width="200" height="100" alt="android" loading="lazy" decoding="async"></picture>
+          </a>
+        </div>
       </div>
     </article>
   </dialog>
@@ -649,30 +636,24 @@
     </form>
     <article class="case__inner" data-flip-target="airweb">
       <header class="case__head">
-        <p class="t-label">[07] &middot; Backend &middot; 2018</p>
+        <p class="t-label">[07] &middot; <span data-i18n="cat.backend">Backend</span> &middot; 2018</p>
         <h2 class="case__title" id="case-airweb-title">AirWeb</h2>
         <p class="stack-tags"><span class="tag">Django</span><span class="tag">Linux</span></p>
       </header>
-      <div class="case__body" lang="zh-Hant-TW">
-<p>主要是串接中華電信IoT智慧聯網大平台之感測資料於環保署做呈現</p>
-                    <p class="case__spec">
-                      2018年10月有機會合作串接IOT設備在做空氣污染資料介接。<br />
-                      主要使用Python 為後端開發語言，使用django來作為後端開發框架。<br />
-                      網頁伺服器使用:NGINX，與其串接使用uWSGI，另外ＡＰＩ建立框架使用REST framework。<br>
-                      管理服務及排層工具:supervisor、Crontab<br>
-                      因每天資料量非常大3G~10G，故使用監控軟體(ZABBIX)來監控伺服器狀況及ＤＢ容量，呈現則使用(Grfana)。
-                    </p>
-                    <p class="case__figure">
-                      <picture><source srcset="./assets/project7/Air_Postflow.avif" type="image/avif"><source srcset="./assets/project7/Air_Postflow.webp" type="image/webp"><img src="./assets/project7/Air_Postflow.png" width="500" height="300" alt="系統架構圖" loading="lazy" decoding="async"></picture>
-                      <span>系統架構</span>
-                    </p>
-                    <div class="case__time">
-                      <em>2018</em>年<em>10</em>月<b>-</b><em>2019</em>年<em>03</em>月
-                    </div>
-                  </div>
-
-                </div>
-                <!--Blood-->
+      <div class="case__body">
+        <p data-i18n="case.airweb.p1">Visualised sensor data from Chunghwa Telecom's IoT smart-network platform for Taiwan's Environmental Protection Administration.</p>
+        <p class="case__spec" data-i18n="case.airweb.spec">
+          Joined the project in October 2018 to integrate IoT air-quality sensors.<br>
+          Backend in Python with the Django framework.<br>
+          NGINX serving the app via uWSGI, with a REST framework API layer.<br>
+          Ops tooling: supervisor and Crontab.<br>
+          Given the heavy daily data volume (3&ndash;10 GB), monitored server health and DB capacity with Zabbix, visualised in Grafana.
+        </p>
+        <p class="case__figure">
+          <picture><source srcset="./assets/project7/Air_Postflow.avif" type="image/avif"><source srcset="./assets/project7/Air_Postflow.webp" type="image/webp"><img src="./assets/project7/Air_Postflow.png" width="500" height="300" alt="system architecture diagram" loading="lazy" decoding="async"></picture>
+          <span data-i18n="case.airweb.fig1">System architecture</span>
+        </p>
+        <div class="case__time" data-i18n="case.airweb.time">Oct 2018 &ndash; Mar 2019</div>
       </div>
     </article>
   </dialog>
@@ -684,35 +665,34 @@
     </form>
     <article class="case__inner" data-flip-target="bloodbank">
       <header class="case__head">
-        <p class="t-label">[08] &middot; Enterprise &middot; 2017</p>
+        <p class="t-label">[08] &middot; <span data-i18n="cat.enterprise">Enterprise</span> &middot; 2017</p>
         <h2 class="case__title" id="case-bloodbank-title">Blood Bank</h2>
         <p class="stack-tags"><span class="tag">C#</span><span class="tag">Bootstrap</span><span class="tag">Cordova</span></p>
       </header>
-      <div class="case__body" lang="zh-Hant-TW">
-<p>血袋核對手機化，血袋都是有時效性的，透過手機做血液傳送時關卡的確認，病服員使用『識別證』＋血袋條碼，確定寫待領取。</p>
-                    <p class="case__spec">
-                      主要使用Cordova將網頁包成App<br />
-                      前端使用：AngularJS 1.5<br />
-                      後端使用：ASP.Net MVC 5、Linq、Dapper、C# 6.0 <br />
-                    </p>
-                    <p class="case__figure">
-                      <picture><source srcset="./assets/project8/bol_system.avif" type="image/avif"><source srcset="./assets/project8/bol_system.webp" type="image/webp"><img src="./assets/project8/bol_system.png" width="500" height="300" alt="架構流程" loading="lazy" decoding="async"></picture>
-                      <span>流程架構</span>
-                    </p>
-                    <p class="case__figure">
-                      <picture><source srcset="./assets/project8/bol_login.avif" type="image/avif"><source srcset="./assets/project8/bol_login.webp" type="image/webp"><img src="./assets/project8/bol_login.PNG" alt="登入畫面" width="511" height="858" loading="lazy" decoding="async"></picture>
-                      <span>登入畫面</span>
-                    </p>
-                    <p class="case__figure">
-                      <picture><source srcset="./assets/project8/bol_step1.avif" type="image/avif"><source srcset="./assets/project8/bol_step1.webp" type="image/webp"><img src="./assets/project8/bol_step1.PNG" alt="合血單資訊" width="391" height="699" loading="lazy" decoding="async"></picture>
-                      <span>合血單資訊畫面</span>
-                    </p>
-                    <p class="case__figure">
-                      <picture><source srcset="./assets/project8/bol_step2.avif" type="image/avif"><source srcset="./assets/project8/bol_step2.webp" type="image/webp"><img src="./assets/project8/bol_step2.PNG" alt="合血單確認" width="415" height="708" loading="lazy" decoding="async"></picture>
-                      <span>合血單確認畫面</span>
-                    </p>
-                    <div class="case__time">
-                      <em>2017</em>年<em>5</em>月<b>-</b><em>2017</em>年<em>6</em>月
+      <div class="case__body">
+        <p data-i18n="case.bloodbank.p1">Moved blood-bag verification onto mobile. Blood bags are time-sensitive, so this confirms each hand-off checkpoint during transport by phone &mdash; ward staff scan an ID badge plus the bag&rsquo;s barcode to confirm pickup.</p>
+        <p class="case__spec" data-i18n="case.bloodbank.spec">
+          Packaged as a mobile app with Cordova.<br>
+          Frontend: AngularJS 1.5.<br>
+          Backend: ASP.NET MVC 5, LINQ, Dapper, C# 6.0.
+        </p>
+        <p class="case__figure">
+          <picture><source srcset="./assets/project8/bol_system.avif" type="image/avif"><source srcset="./assets/project8/bol_system.webp" type="image/webp"><img src="./assets/project8/bol_system.png" width="500" height="300" alt="flow architecture" loading="lazy" decoding="async"></picture>
+          <span data-i18n="case.bloodbank.fig1">Flow architecture</span>
+        </p>
+        <p class="case__figure">
+          <picture><source srcset="./assets/project8/bol_login.avif" type="image/avif"><source srcset="./assets/project8/bol_login.webp" type="image/webp"><img src="./assets/project8/bol_login.PNG" alt="login screen" width="511" height="858" loading="lazy" decoding="async"></picture>
+          <span data-i18n="case.bloodbank.fig2">Login screen</span>
+        </p>
+        <p class="case__figure">
+          <picture><source srcset="./assets/project8/bol_step1.avif" type="image/avif"><source srcset="./assets/project8/bol_step1.webp" type="image/webp"><img src="./assets/project8/bol_step1.PNG" alt="cross-match form" width="391" height="699" loading="lazy" decoding="async"></picture>
+          <span data-i18n="case.bloodbank.fig3">Cross-match form screen</span>
+        </p>
+        <p class="case__figure">
+          <picture><source srcset="./assets/project8/bol_step2.avif" type="image/avif"><source srcset="./assets/project8/bol_step2.webp" type="image/webp"><img src="./assets/project8/bol_step2.PNG" alt="cross-match confirmation" width="415" height="708" loading="lazy" decoding="async"></picture>
+          <span data-i18n="case.bloodbank.fig4">Cross-match confirmation screen</span>
+        </p>
+        <div class="case__time" data-i18n="case.bloodbank.time">May 2017 &ndash; Jun 2017</div>
       </div>
     </article>
   </dialog>
@@ -725,12 +705,12 @@
     </form>
     <article class="case__inner" data-flip-target="maxo">
       <header class="case__head">
-        <p class="t-label">[09] &middot; AI App &middot; 2026</p>
+        <p class="t-label">[09] &middot; <span data-i18n="cat.aiApp">AI App</span> &middot; 2026</p>
         <h2 class="case__title" id="case-maxo-title">MAXO</h2>
         <p class="stack-tags"><span class="tag">Django</span><span class="tag">React</span><span class="tag">OpenAI</span><span class="tag">Gemini</span><span class="tag">GCP</span></p>
       </header>
       <div class="case__body">
-        <p class="case__spec">
+        <p class="case__spec" data-i18n="case.maxo.spec">
           MAXO is an AI business &amp; marketing operating system for small and
           mid-sized businesses &mdash; the product's own positioning is
           &ldquo;<span lang="zh-Hant-TW">麥肯錫 + 4A 數位創意總監</span>&rdquo;
@@ -739,7 +719,7 @@
           Director&rdquo; for on-brand creative generation, all backed by an
           agent + LLM architecture.
         </p>
-        <p>
+        <p data-i18n="case.maxo.p2">
           Built and shipped the Django/DRF backend and the React
           frontend and admin console over nine months at Dandelion
           (<span lang="zh-Hant-TW">蒲公英</span>). The platform routes
@@ -751,7 +731,7 @@
           <picture><source srcset="./assets/project9/maxo.avif" type="image/avif"><source srcset="./assets/project9/maxo.webp" type="image/webp"><img src="./assets/project9/maxo.png" alt="MAXO landing page" width="1600" height="1000" loading="lazy" decoding="async"></picture>
           <span>maxoai.ai</span>
         </p>
-        <p>Live at: <a href="https://maxoai.ai/" target="_blank" rel="noopener">https://maxoai.ai/</a></p>
+        <p><span data-i18n="case.liveAt">Live at:</span> <a href="https://maxoai.ai/" target="_blank" rel="noopener">https://maxoai.ai/</a></p>
       </div>
     </article>
   </dialog>
@@ -764,12 +744,12 @@
     </form>
     <article class="case__inner" data-flip-target="unphishable">
       <header class="case__head">
-        <p class="t-label">[10] &middot; Security &middot; 2025</p>
+        <p class="t-label">[10] &middot; <span data-i18n="cat.security">Security</span> &middot; 2025</p>
         <h2 class="case__title" id="case-unphishable-title">Unphishable</h2>
         <p class="stack-tags"><span class="tag">Next.js</span><span class="tag">TypeScript</span><span class="tag">Web3</span></p>
       </header>
       <div class="case__body">
-        <p class="case__spec">
+        <p class="case__spec" data-i18n="case.unphishable.spec">
           Unphishable is an interactive Web3 anti-phishing training
           platform &mdash; 30+ gamified challenges covering seed-phrase
           scams, malicious token approvals, fake airdrops, clipboard
@@ -777,7 +757,7 @@
           Traditional/Simplified Chinese. Built as a public good: free for
           anyone to use.
         </p>
-        <p>
+        <p data-i18n="case.unphishable.p2">
           Core team: <a href="https://github.com/DeFiHackLabs" target="_blank" rel="noopener">DeFiHackLabs</a>,
           ScamSniffer, and SlowMist, with support from the Ethereum
           Ecosystem Support Program. I contribute through DeFiHackLabs,
@@ -788,8 +768,8 @@
           <picture><source srcset="./assets/project10/unphishable.avif" type="image/avif"><source srcset="./assets/project10/unphishable.webp" type="image/webp"><img src="./assets/project10/unphishable.png" alt="Unphishable landing page" width="1600" height="1000" loading="lazy" decoding="async"></picture>
           <span>unphishable.io</span>
         </p>
-        <p>Live at: <a href="https://unphishable.io/" target="_blank" rel="noopener">https://unphishable.io/</a></p>
-        <p>Talk: <a href="https://www.youtube.com/watch?v=qgztO4qw8yQ" target="_blank" rel="noopener" lang="zh-Hant-TW">COSCUP 2025 &mdash; 識破 Web3 詐騙陷阱</a></p>
+        <p><span data-i18n="case.liveAt">Live at:</span> <a href="https://unphishable.io/" target="_blank" rel="noopener">https://unphishable.io/</a></p>
+        <p><span data-i18n="case.talk">Talk:</span> <a href="https://www.youtube.com/watch?v=qgztO4qw8yQ" target="_blank" rel="noopener" lang="zh-Hant-TW">COSCUP 2025 &mdash; 識破 Web3 詐騙陷阱</a></p>
       </div>
     </article>
   </dialog>

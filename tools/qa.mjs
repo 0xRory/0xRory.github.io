@@ -106,6 +106,36 @@ ok(y > 100, `anchor scrolled (scrollY=${y})`);
 await sleep(700);
 ok(await $(`document.querySelector('a[href="#resume"]').classList.contains("is-current")`), 'nav marks current section');
 
+// ── i18n ──────────────────────────────────────────────────────────
+ok(await $('document.documentElement.dataset.lang === "en"'), 'default language is en');
+ok(await $(`document.querySelector('[data-nav-link]').textContent`) === 'Work', 'nav shows English by default');
+ok(await $(`document.querySelector('.hero__title').textContent`).then((t) => t.includes('Full-Stack')), 'hero title stays an English wordmark');
+
+await $(`document.querySelector('[data-lang-toggle]').click()`);
+await sleep(600);
+ok(await $('document.documentElement.dataset.lang === "zh"'), 'toggled to zh');
+ok(await $('document.documentElement.lang === "zh-Hant-TW"'), '<html lang> updates on toggle');
+ok(await $(`document.querySelector('[data-nav-link]').textContent`) === '作品', 'nav switched to Chinese');
+ok(await $(`document.querySelector('.hero__title').textContent`).then((t) => t.includes('Full-Stack')), 'hero title unchanged after toggle (still English wordmark)');
+ok(await $(`localStorage.getItem('lang')`) === 'zh', 'language choice persisted to localStorage');
+
+// csbs is one of the six case studies whose only copy used to be Chinese —
+// confirms the dictionary, not stale inline HTML, is what's showing.
+await $(`document.querySelector('[data-case="csbs"]').click()`);
+await sleep(700);
+const csbsZh = await $(`document.querySelector('#case-csbs .case__spec').textContent`);
+ok(csbsZh.includes('社區'), 'a legacy Chinese-only case study renders its zh translation');
+await $('document.getElementById("case-csbs").close()');
+
+await $(`document.querySelector('[data-lang-toggle]').click()`);
+await sleep(600);
+ok(await $('document.documentElement.dataset.lang === "en"'), 'toggled back to en');
+await $(`document.querySelector('[data-case="csbs"]').click()`);
+await sleep(700);
+const csbsEn = await $(`document.querySelector('#case-csbs .case__spec').textContent`);
+ok(csbsEn.includes('SBT DApp') && !csbsEn.includes('社區'), 'same case study renders its en translation after toggling back');
+await $('document.getElementById("case-csbs").close()');
+
 // ── layout ────────────────────────────────────────────────────────
 const of_ = await $('({s:document.documentElement.scrollWidth,c:document.documentElement.clientWidth})');
 ok(of_.s <= of_.c + 1, `no horizontal overflow (${of_.s} vs ${of_.c})`);

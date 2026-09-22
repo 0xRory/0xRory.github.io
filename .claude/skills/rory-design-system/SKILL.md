@@ -153,6 +153,49 @@ dx = (sin(t*0.7 + i*0.31)*2 + sin(t*2.3 + i*1.7)*1 + burst[i]) * amp
 
 Degradation: `prefers-reduced-motion` or `saveData` → draw **one** static `amp = 0` frame and never register the ticker callback. `< 768px` → `N = 24`, logical width ≤ 900, no `difference` bursts, half `amp`, no scroll scrub.
 
+## Bilingual content — English / Traditional Chinese
+
+`assets/js/i18n.js`. A `DICT` object of `{ key: { en, zh } }` pairs, applied
+by setting `innerHTML` on every `[data-i18n="key"]` element (or `aria-label`
+on `[data-i18n-aria="key"]`). Mechanism mirrors `themeToggle()` in ui.js
+exactly: `data-lang` on `<html>`, persisted to `localStorage`, restored
+before anything else in `boot()` runs (so ScrollTrigger and SplitText
+measure the correct-language DOM from the start, not a stale English layout
+that then reflows under it).
+
+- **English is the static default.** Every `[data-i18n]` element's inline
+  HTML content is the English string, matching `DICT[key].en` — true even
+  for the six legacy case studies whose *only* copy used to be Chinese
+  (CSBS, i-lolly, AreaDrop, CrazyG, AirWeb, Blood Bank). A no-JS visitor or a
+  crawler sees English everywhere, consistently.
+- **The pixel headlines don't translate.** `.hero__title` and every
+  `.section__title` use `--ff-display` (Pixelify Sans), which has no CJK
+  coverage — putting Chinese there would fall through to an ugly system
+  fallback and break the pixel-art look. They're excluded from `[data-i18n]`
+  on purpose and stay as fixed English wordmarks in both languages, the way
+  a logotype usually isn't re-set per locale. Everything that actually
+  carries information (nav, body copy, resume, tags, case studies) *is*
+  translated — only the four-word stylized headers aren't.
+- **Rich content uses `innerHTML`, not `textContent`**, because several
+  entries embed real markup (`<a>` links, `<br>`, a nested
+  `<span lang="zh-Hant-TW">` for a quoted term inside an English sentence).
+  A `data-i18n` value can contain HTML; write it that way in the dictionary
+  when it needs to.
+- **Shared strings get one key, reused.** Category labels (`cat.web3Dapp`,
+  `cat.security`, ...) are defined once and referenced from the filter
+  button, the card's `.card__meta`, and the case dialog's `t-label` header —
+  three places, one key. Don't duplicate a translation that already exists.
+- **New translatable copy**: add the key to `DICT` in `assets/js/i18n.js`
+  with both `en` and `zh` (Traditional Chinese, matching the rest of the
+  site's `zh-Hant-TW`), then reference it via `data-i18n="key"` on the
+  element whose static content is the English string. Run
+  `./tools/check.sh` after — the i18n-specific assertions live in
+  `tools/qa.mjs` and `tools/qa-rm.mjs` verify basic toggle + persistence
+  behaviour, but always click through both languages by hand too.
+- Toggling calls `ScrollTrigger.refresh()` — translated text is rarely the
+  same length, so every scroll-reveal boundary needs re-measuring the same
+  way a font swap already does elsewhere on this page.
+
 ## Reduced motion
 
 `assets/js/motion-prefs.js` exports a live singleton backed by `matchMedia('(prefers-reduced-motion: reduce)')` with a `change` listener.

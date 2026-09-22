@@ -23,6 +23,16 @@ const nav = await q('(()=>{const n=document.querySelector(".nav__links");return 
 ok(true, `nav links ${nav.sw}px in ${nav.cw}px ${nav.sw>nav.cw?'(scrolls)':'(fits)'}`);
 ok(await q('document.documentElement.classList.contains("js")'), 'boot ran');
 
+// a stored language choice should survive a real navigation, not just an
+// in-page toggle — this is the one thing the desktop i18n suite (qa.mjs)
+// can't check, since it never reloads.
+await q(`localStorage.setItem('lang', 'zh')`);
+await cdp.send('Page.navigate', { url: process.env.PAGE });
+await sleep(2500);
+ok(await q('document.documentElement.dataset.lang === "zh"'), 'stored zh language restored after reload');
+ok(await q(`document.querySelector('[data-nav-link]').textContent`) === '作品', 'nav renders in zh immediately after reload');
+await q(`localStorage.removeItem('lang')`);
+
 // walk the whole page so every reveal has a chance
 const hgt = await q('document.documentElement.scrollHeight');
 for (let y = 0; y <= hgt; y += 400) { await q(`window.scrollTo(0,${y})`); await sleep(70); }

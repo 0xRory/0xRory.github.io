@@ -108,6 +108,19 @@
   background: linear-gradient(90deg, var(--ink) 50%, transparent 50%);
 }
 
+.nav__lang {
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  border: var(--hairline-soft);
+  border-radius: var(--r-full);
+  flex-shrink: 0;
+  font-size: .625rem;
+  font-weight: var(--fw-medium);
+  letter-spacing: .02em;
+}
+
 @media (max-width: 579px) {
   .nav { gap: var(--sp-2); padding: var(--sp-3) var(--gutter); }
   /* five labels + mark + toggle is tight at 360px: let the row scroll rather

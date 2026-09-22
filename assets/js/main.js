@@ -12,6 +12,7 @@
 import { initScroll } from './scroll.js';
 import { initUI } from './ui.js';
 import { initHeroScanlines } from './hero-scanlines.js';
+import { initI18n } from './i18n.js';
 
 const { gsap, ScrollTrigger, SplitText, Flip, ScrollToPlugin } = window;
 
@@ -26,6 +27,9 @@ if (!gsap) {
 
   const boot = () => {
     document.documentElement.classList.add('js');
+    // Runs first: swaps in a stored language choice before anything below
+    // measures text (ScrollTrigger positions, SplitText line-splitting).
+    initI18n();
     initUI({ gsap, Flip });
     initScroll({ gsap, ScrollTrigger, SplitText });
     initHeroScanlines({ gsap, ScrollTrigger });

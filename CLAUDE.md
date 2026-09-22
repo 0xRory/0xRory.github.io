@@ -71,8 +71,25 @@ once with the OS "reduce motion" setting on; check 375 / 768 / 1440 px.
 
 JS ≤ 105 KB gzip · CSS ≤ 12 KB gzip · fonts ≤ 45 KB · LCP < 1.2 s on 4G · CLS < 0.02 · INP < 100 ms · third-party requests = 0.
 
+## Bilingual content (English / Traditional Chinese)
+
+The site has a live EN/中 toggle — see `assets/js/i18n.js` for the mechanism and
+`.claude/skills/rory-design-system/SKILL.md` for the full convention. In short:
+
+- New user-facing copy needs **both** an English and a Traditional Chinese
+  version added to the `DICT` object in `assets/js/i18n.js`, referenced from
+  the HTML via `data-i18n="key"` (or `data-i18n-aria="key"` for an
+  aria-label). English is the static/no-JS default; JS applies the stored or
+  default language on load.
+- Exception: `.hero__title` and every `.section__title` (the big pixel
+  headlines) are never translated — `--ff-display` has no CJK glyphs, so
+  those stay fixed English wordmarks in both languages, like a logotype.
+- `<html lang>` updates with the toggle (`en` / `zh-Hant-TW`); it starts as
+  `lang="en"` in the source. Any Chinese text embedded inside an
+  English-default string (a proper noun, a quoted phrase) still needs its own
+  `lang="zh-Hant-TW"` span, same as before this feature existed.
+
 ## Content notes
 
-- `<html lang="en">`; English is canonical. Any remaining zh-TW run gets `lang="zh-Hant-TW"` on its container.
 - Contact email is `0x1rory@gmail.com`. The old `richard@example.com` was template residue.
 - Don't add testimonials, ratings or social proof that isn't real.

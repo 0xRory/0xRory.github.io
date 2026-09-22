@@ -58,6 +58,8 @@ const DICT = {
   },
   'about.languagesHeading': { en: 'Languages', zh: '語言' },
   'about.frameworksHeading': { en: 'Frameworks', zh: '框架' },
+  'about.aiToolsHeading': { en: 'AI Tools', zh: 'AI 工具' },
+  'about.agentsLabel': { en: 'Agents', zh: '代理工具' },
 
   'resume.label': { en: '[03] History', zh: '[03] 經歷' },
   'resume.experienceHeading': { en: 'Experience', zh: '工作經驗' },
@@ -115,8 +117,8 @@ const DICT = {
   'contact.where': { en: 'Taichung, Taiwan', zh: '台灣．台中' },
 
   'footer.built': {
-    en: 'Built with GSAP and Anime.js. No trackers, no third-party requests.',
-    zh: '以 GSAP 與 Anime.js 打造。無追蹤器，無第三方請求。',
+    en: '',
+    zh: ''
   },
 
   // ── case studies ──────────────────────────────────────────────────

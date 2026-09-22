@@ -153,33 +153,56 @@
 
 /* ── case dialog ────────────────────────────────────────────────── */
 
+/* Full-page takeover rather than a small floating card: the dialog fills the
+   viewport using the same inset/radius the page's own .frame uses, so it
+   reads as "this case now occupies the device frame" instead of a generic
+   centred modal. <dialog>'s top-layer rendering means it sits outside .frame
+   entirely, so it needs to restate that treatment itself. */
 .case {
-  width: min(64rem, 100vw - 2rem);
+  position: fixed;
+  inset: var(--sp-3);
+  width: auto;
+  height: auto;
   max-width: none;
-  max-height: calc(100svh - 2rem);
+  max-height: none;
+  margin: 0;
   padding: 0;
   border: var(--hairline-soft);
-  border-radius: var(--r-md);
+  border-radius: var(--r-frame);
   background: var(--paper);
   color: var(--ink);
-  overflow: auto;
+  overflow-y: auto;
   overscroll-behavior: contain;
 }
 .case::backdrop { background: color-mix(in srgb, var(--ink) 55%, transparent); backdrop-filter: blur(3px); }
+
+@media (max-width: 579px) {
+  .case { inset: var(--sp-2); border-radius: var(--r-md); }
+}
 
 .case__close-form { position: sticky; top: 0; z-index: 2; display: flex; justify-content: flex-end; padding: var(--sp-3); background: linear-gradient(var(--paper), transparent); }
 .case__close { display: grid; place-items: center; width: 2.25rem; height: 2.25rem; border: var(--hairline-soft); border-radius: var(--r-full); background: var(--paper); }
 .case__close .icon { width: 1.1em; height: 1.1em; }
 
-.case__inner { padding: 0 clamp(var(--sp-4), 4vw, var(--sp-12)) var(--sp-12); }
+/* The dialog itself is full width now; the content column stays centred and
+   capped so text and figures don't stretch edge-to-edge on a wide monitor. */
+.case__inner {
+  max-width: 78rem;
+  margin-inline: auto;
+  padding: var(--sp-4) clamp(var(--sp-4), 5vw, var(--sp-16)) var(--sp-16);
+}
 .case__head { padding-bottom: var(--sp-6); margin-bottom: var(--sp-8); border-bottom: var(--hairline-soft); }
 .case__title { font-family: var(--ff-display); font-size: var(--fs-h2); letter-spacing: var(--tr-display); text-transform: uppercase; margin: var(--sp-2) 0 var(--sp-4); }
 
-.case__body { max-width: var(--measure); }
+/* Prose stays readable at --measure; figures (images/video) are allowed the
+   full width of .case__inner so diagrams and screenshots actually benefit
+   from the extra room a full-page dialog gives them. */
+.case__body p:not(.case__figure) { max-width: var(--measure); }
 .case__body p { margin-bottom: var(--sp-4); color: var(--ink-70); }
 .case__body a { text-decoration: underline; text-underline-offset: .2em; }
 
 .case__spec {
+  max-width: var(--measure);
   padding: var(--sp-4);
   border-left: 2px solid var(--ink);
   background: var(--ink-04);
@@ -188,7 +211,7 @@
 }
 
 .case__figure { margin: var(--sp-8) 0; }
-.case__figure img { width: 100%; border: var(--hairline-soft); border-radius: var(--r-sm); }
+.case__figure img { width: 100%; max-height: 80vh; object-fit: contain; border: var(--hairline-soft); border-radius: var(--r-sm); }
 .case__figure span { display: block; margin-top: var(--sp-2); font-size: var(--fs-xs); letter-spacing: var(--tr-ui); color: var(--ink-40); text-align: center; }
 
 /* Nested inside a <p class="case__figure">, which already sets the vertical

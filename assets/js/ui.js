@@ -15,6 +15,7 @@ export function initUI({ gsap, Flip }) {
   cardCounters();
   workFilter();
   caseDialogs(gsap, Flip);
+  videoPlayButtons();
   themeToggle();
   customCursor();
 }
@@ -126,10 +127,11 @@ function caseDialogs(gsap, Flip) {
       const media = trigger.querySelector('[data-flip-id]');
       const state = media && Flip && !reduced() ? Flip.getState(media) : null;
 
-      // Videos carry data-src so the four project clips are never fetched
-      // until a case is actually opened.
+      // Videos carry data-src/data-poster so the four project clips (and
+      // their preview frames) are never fetched until a case is opened.
       dialog.querySelectorAll('video[data-src]').forEach((v) => {
         if (!v.src) v.src = v.dataset.src;
+        if (v.dataset.poster && !v.poster) v.poster = v.dataset.poster;
       });
 
       dialog.showModal();
@@ -146,12 +148,36 @@ function caseDialogs(gsap, Flip) {
 
     dialog.addEventListener('close', () => {
       dialog.querySelectorAll('video').forEach((v) => { v.pause(); v.removeAttribute('src'); v.load(); });
+      // .load() resets playback state, so the custom play button belongs
+      // back on top for the next time this case is opened.
+      dialog.querySelectorAll('.video-play').forEach((btn) => btn.classList.remove('is-hidden'));
     });
 
     // click on the backdrop closes
     dialog.addEventListener('click', (e) => {
       if (e.target === dialog) dialog.close();
     });
+  });
+}
+
+/* ── project video play buttons ─────────────────────────────────── */
+
+// The poster-baked play glyph the old vCard template used wasn't a real
+// control — clicking the circle drawn into the image did nothing, only the
+// native controls bar underneath it actually worked. This replaces it with
+// a real <button> that plays the video and then gets out of the way.
+function videoPlayButtons() {
+  document.querySelectorAll('[data-video-play]').forEach((btn) => {
+    const video = btn.previousElementSibling;
+    if (!(video instanceof HTMLVideoElement)) return;
+
+    btn.addEventListener('click', () => {
+      video.play().catch(() => {});
+    });
+
+    const hide = () => btn.classList.add('is-hidden');
+    video.addEventListener('play', hide);
+    video.addEventListener('playing', hide);
   });
 }
 

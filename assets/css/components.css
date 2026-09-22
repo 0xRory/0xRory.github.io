@@ -191,7 +191,61 @@
 .case__figure img { width: 100%; border: var(--hairline-soft); border-radius: var(--r-sm); }
 .case__figure span { display: block; margin-top: var(--sp-2); font-size: var(--fs-xs); letter-spacing: var(--tr-ui); color: var(--ink-40); text-align: center; }
 
-.case__body video { width: 100%; margin: var(--sp-8) 0; border: var(--hairline-soft); border-radius: var(--r-sm); }
+/* Nested inside a <p class="case__figure">, which already sets the vertical
+   rhythm the same way it does for a plain <picture> — no margin here. */
+.video-frame {
+  position: relative;
+  display: block;
+}
+
+.case__body video {
+  display: block;
+  width: 100%;
+  border: var(--hairline-soft);
+  border-radius: var(--r-sm);
+  background: var(--paper-sunk);   /* shows while the poster is still loading */
+}
+
+/* Real control, not decoration: the old template baked a play glyph into the
+   poster image itself, which looked clickable but did nothing. This is an
+   actual <button> that calls video.play(), then fades out of the way — the
+   native controls bar underneath handles everything after that. */
+.video-play {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: clamp(3.25rem, 14%, 4.5rem);
+  height: clamp(3.25rem, 14%, 4.5rem);
+  display: grid;
+  place-items: center;
+  background: var(--ink);
+  border-radius: var(--r-full);
+  box-shadow: 0 6px 24px var(--ink-40);
+  opacity: 1;
+  transform: scale(1);
+  transition: transform var(--dur-fast) var(--ease-out-expo),
+              opacity   var(--dur-fast) var(--ease-out-expo),
+              background var(--dur-fast) var(--ease-out-expo);
+}
+.video-play .icon {
+  width: 38%;
+  height: 38%;
+  margin-left: 6%;   /* optical centring: a triangle's mass sits left of its bbox */
+  color: var(--paper);
+}
+.video-play:hover,
+.video-play:focus-visible { transform: scale(1.08); background: var(--ink-70); }
+.video-play:active { transform: scale(0.94); }
+.video-play.is-hidden {
+  opacity: 0;
+  transform: scale(0.8);
+  pointer-events: none;
+  transition-duration: var(--dur-instant);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .video-play { transition: opacity var(--dur-instant) linear; }
+}
 
 .case__time { margin-top: var(--sp-12); padding-top: var(--sp-6); border-top: var(--hairline-soft); text-align: center; font-size: var(--fs-sm); color: var(--ink-40); font-variant-numeric: tabular-nums; }
 .case__time em { font-style: normal; color: var(--ink-70); }

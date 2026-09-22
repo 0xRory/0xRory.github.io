@@ -18,7 +18,11 @@ PROFILE=$(mktemp -d)
 python3 -m http.server "$PORT" >/dev/null 2>&1 & SRV=$!
 "$CHROME" --headless=new --disable-gpu --no-sandbox \
   --remote-debugging-port="$CDP_PORT" --user-data-dir="$PROFILE" about:blank >/dev/null 2>&1 & CHR=$!
-trap 'kill $SRV $CHR 2>/dev/null || true; rm -rf "$PROFILE"' EXIT
+# The whole cleanup is wrapped in one subshell with its own `|| true`: under
+# set -e, a failing command inside an EXIT trap (e.g. rm racing Chrome's own
+# profile-dir writes as it shuts down) can silently override an already
+# "all suites passed" exit status. Don't let cleanup flakiness fail the run.
+trap '{ kill $SRV $CHR; sleep 0.3; rm -rf "$PROFILE"; } >/dev/null 2>&1 || true' EXIT
 sleep 3
 
 echo "── desktop 1280x900 ─────────────────────────────"
@@ -30,4 +34,10 @@ CDP_PORT=$CDP_PORT PAGE="http://localhost:$PORT/" W=390 H=844 node tools/qa-rm.m
 echo "── prefers-reduced-motion: reduce ───────────────"
 CDP_PORT=$CDP_PORT PAGE="http://localhost:$PORT/" W=1280 H=900 RM=1 node tools/qa-rm.mjs || FAILED=1
 
-[ -z "${FAILED:-}" ] && echo "all suites passed" || { echo "some suites failed"; exit 1; }
+if [ -z "${FAILED:-}" ]; then
+  echo "all suites passed"
+  exit 0
+else
+  echo "some suites failed"
+  exit 1
+fi
